@@ -83,12 +83,14 @@
         body::-webkit-scrollbar {
             display: none;
         }
-        .reveal-delay {
-            animation: fadeIn 1.5s ease-out forwards;
+        .hero-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 2s ease-out, transform 2s ease-out;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .hero-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .scroll-lock {
             overflow: hidden !important;
@@ -103,8 +105,8 @@
 <!-- TopNavBar -->
 <nav class="fixed top-0 left-0 w-full z-[100] flex justify-between items-center px-6 md:px-12 py-8 bg-transparent backdrop-blur-sm">
 <div class="text-2xl font-black tracking-widest text-[#e2e2e2] font-headline uppercase">
-        AMBER LAB
-    </div>
+            AMBER LAB
+        </div>
 <div class="hidden md:flex gap-12">
 <a class="font-headline font-bold tracking-tighter uppercase text-[#ffbc00] border-b-2 border-[#ffbc00] pb-1 transition-all duration-500" href="#">Identity</a>
 <a class="font-headline font-bold tracking-tighter uppercase text-[#e2e2e2] opacity-70 hover:opacity-100 hover:text-[#ffbc00] transition-all duration-500" href="#">Vision</a>
@@ -118,20 +120,20 @@
 <!-- Hero Section: The Obsidian Lens -->
 <section class="relative h-screen w-full flex items-end justify-start overflow-hidden bg-surface-container-lowest">
 <div class="absolute inset-0 z-0">
-<!-- High-quality cinematic abstract video -->
-<video autoplay="" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity scale-100" loop="" muted="" playsinline="" poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&amp;fit=crop&amp;q=80&amp;w=2072">
-<source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-dark-ink-swirling-in-water-32857-large.mp4" type="video/mp4"/>
+<!-- Updated high-quality cinematic abstract video from Pexels -->
+<video autoplay="" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity scale-100" loop="" muted="" playsinline="" poster="https://images.pexels.com/photos/3141210/pexels-photo-3141210.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2">
+<source src="https://player.vimeo.com/external/362670356.sd.mp4?s=319a9d20c3a819b7d59048a60f9e1596c8052f53&amp;profile_id=164&amp;oauth2_token_id=57447761" type="video/mp4"/>
 </video>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
 </div>
-<div class="relative z-10 px-6 md:px-24 pb-24 max-w-5xl reveal-delay">
+<div class="relative z-10 px-6 md:px-24 pb-24 max-w-5xl hero-reveal" id="hero-content">
 <span class="font-label text-xs tracking-[0.4em] uppercase text-primary mb-4 block">EST. 2026 / NORDIC CORE</span>
 <h1 class="font-headline text-6xl md:text-9xl font-black tracking-tighter leading-none uppercase mb-8">
 <span class="text-primary">PRESERVING IDENTITY.</span>
 </h1>
 <p class="font-body text-lg md:text-xl text-on-surface-variant max-w-xl leading-relaxed opacity-90">
-            Crafting the future of digital expression by granting access to generative AI to Europe's creatives, hosted in the Nordics.
-        </p>
+                Crafting the future of digital expression by granting access to generative AI to Europe's creatives, hosted in the Nordics.
+            </p>
 </div>
 <!-- Scroll Lock Indicator / Progress -->
 <div class="absolute bottom-12 right-12 z-20 flex flex-col items-end gap-4" id="system-status-container">
@@ -149,12 +151,12 @@
 <div class="md:col-span-8">
 <span class="font-label text-xs tracking-[0.4em] uppercase text-primary mb-6 block">01 / VISION</span>
 <h2 class="font-headline text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9] mb-12">
-                The Future of<br/>Digital Expression
-            </h2>
+                    The Future of<br/>Digital Expression
+                </h2>
 <div class="h-[1px] w-24 bg-primary mb-12"></div>
 <p class="font-body text-xl md:text-2xl text-on-surface max-w-2xl leading-relaxed">
-                We redefine the boundary between the virtual and the visceral. AMBER LAB creates identity systems that breathe with the weight of physical reality, engineered for the next era of European digital sovereignty.
-            </p>
+                    We redefine the boundary between the virtual and the visceral. AMBER LAB creates identity systems that breathe with the weight of physical reality, engineered for the next era of European digital sovereignty.
+                </p>
 </div>
 <div class="md:col-span-4 aspect-[3/4] bg-surface-container relative">
 <img alt="Expression through tech" class="w-full h-full object-cover grayscale brightness-50 hover:brightness-100 transition-all duration-1000" data-alt="high fashion portrait of a digital persona with intricate light patterns projected on face sharp contrast editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByrJqbVvOmg7Sf_A4n06DNjgWoADX3CVAHZOWkxGZuZLtGt-JaY-c0F0ajOsYo_I_mvZzDB7wdFJNBUsvmbyDjr6uF2V63Gvs67lX33FrhnWggfR2hmqvUItzov_rnDvqdACpo7lTJRU4aPo5r7VS3iTbKXilUcXegp5ucYw2vIeJvNGgXQKvrhf69HFlWr4yjUdEFVwWon1MH8DB3jEk0KkdyupX_Fpf3XKQ2KCmI3om3cYEu1_7OLpG14Ene4k5nea84R8ORmYY"/>
@@ -167,8 +169,8 @@
 <div class="max-w-3xl">
 <span class="font-label text-xs tracking-[0.4em] uppercase text-primary mb-6 block">02 / REGIONAL IMPACT</span>
 <h2 class="font-headline text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9]">
-                Empowering Nordic<br/>Creative Tech
-            </h2>
+                    Empowering Nordic<br/>Creative Tech
+                </h2>
 </div>
 <div class="md:self-end text-right">
 <span class="font-headline text-7xl font-light text-surface-container-highest tracking-tighter italic block">2026</span>
@@ -203,11 +205,11 @@
 <div class="relative z-10 flex flex-col items-center text-center">
 <span class="font-label text-xs tracking-[0.4em] uppercase text-primary mb-8 block">03 / AUTHORITY</span>
 <h2 class="font-headline text-5xl md:text-9xl font-black tracking-tighter uppercase leading-none mb-16">
-                Leader in <span class="text-outline">Emerging</span><br/>Creative Practice
-            </h2>
+                    Leader in <span class="text-outline">Emerging</span><br/>Creative Practice
+                </h2>
 <button class="px-12 py-6 bg-primary text-on-primary font-headline font-bold uppercase tracking-widest hover:bg-amber-400 transition-all duration-500 group">
-                View Strategic Roadmap
-                <span class="material-symbols-outlined align-middle ml-4 group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+                    View Strategic Roadmap
+                    <span class="material-symbols-outlined align-middle ml-4 group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
 </button>
 </div>
 </div>
@@ -227,11 +229,11 @@
 <div class="order-1 lg:order-2">
 <span class="font-label text-xs tracking-[0.4em] uppercase text-primary mb-6 block">04 / THE CORE</span>
 <h2 class="font-headline text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9] mb-12">
-                The Lab: Where Art<br/>Meets Innovation
-            </h2>
+                    The Lab: Where Art<br/>Meets Innovation
+                </h2>
 <p class="font-body text-xl text-on-surface-variant leading-relaxed mb-12">
-                Our laboratory is a sanctuary for high-tension experimentation. We dissolve the traditional silos of engineering and aesthetic theory to produce outcomes that are functionally flawless and emotionally resonant.
-            </p>
+                    Our laboratory is a sanctuary for high-tension experimentation. We dissolve the traditional silos of engineering and aesthetic theory to produce outcomes that are functionally flawless and emotionally resonant.
+                </p>
 <ul class="space-y-6">
 <li class="flex items-center gap-6 group cursor-default">
 <span class="w-12 h-[1px] bg-primary group-hover:w-24 transition-all duration-700"></span>
@@ -262,46 +264,56 @@
 </div>
 </footer>
 <script>
-    // Robust 7-second scroll lock script
-    (function() {
-        const LOCK_DURATION = 7000;
-        const progressBar = document.getElementById('unlock-progress');
-        const statusText = document.getElementById('status-text');
-        const statusContainer = document.getElementById('system-status-container');
+        // Robust 7-second scroll lock script with delayed hero content reveal
+        (function() {
+            const LOCK_DURATION = 7000;
+            const REVEAL_DELAY = 2500; // 2.5 seconds delay for hero content
+            const progressBar = document.getElementById('unlock-progress');
+            const statusText = document.getElementById('status-text');
+            const statusContainer = document.getElementById('system-status-container');
+            const heroContent = document.getElementById('hero-content');
 
-        // Start progress bar animation
-        requestAnimationFrame(() => {
-            progressBar.style.transform = 'scaleX(1)';
-        });
+            // Start progress bar animation
+            requestAnimationFrame(() => {
+                progressBar.style.transform = 'scaleX(1)';
+            });
 
-        const timer = setTimeout(() => {
-            // Unlock scrolling
-            document.body.classList.remove('scroll-lock');
-            
-            // Update UI status
-            if (statusText) {
-                statusText.textContent = 'SYSTEM UNLOCKED. EXPLORE.';
-                statusText.classList.add('text-primary');
-                statusText.classList.remove('opacity-50');
-            }
-            
-            // Fade out the indicator after 2 more seconds
+            // Delayed smooth reveal of hero content
             setTimeout(() => {
-                if (statusContainer) {
-                    statusContainer.style.opacity = '0';
-                    setTimeout(() => statusContainer.remove(), 1000);
+                if (heroContent) {
+                    heroContent.classList.add('visible');
                 }
-            }, 2000);
-            
-        }, LOCK_DURATION);
+            }, REVEAL_DELAY);
 
-        // Backup to ensure body style is always correct on reload/init
-        window.addEventListener('load', () => {
-            if (window.scrollY > 0) {
-                // If user refreshed while scrolled, force unlock or handle appropriately
-                // For this cinematic experience, we stick to the lock
-            }
-        });
-    })();
-</script>
+            const timer = setTimeout(() => {
+                // Unlock scrolling
+                document.body.classList.remove('scroll-lock');
+                
+                // Update UI status
+                if (statusText) {
+                    statusText.textContent = 'SYSTEM UNLOCKED. EXPLORE.';
+                    statusText.classList.add('text-primary');
+                    statusText.classList.remove('opacity-50');
+                }
+                
+                // Fade out the indicator after 2 more seconds
+                setTimeout(() => {
+                    if (statusContainer) {
+                        statusContainer.style.opacity = '0';
+                        setTimeout(() => statusContainer.remove(), 1000);
+                    }
+                }, 2000);
+                
+            }, LOCK_DURATION);
+
+            // Backup to ensure body style is always correct on reload/init
+            window.addEventListener('load', () => {
+                if (window.scrollY > 0) {
+                    // Force unlock if already scrolled
+                    document.body.classList.remove('scroll-lock');
+                    if (heroContent) heroContent.classList.add('visible');
+                }
+            });
+        })();
+    </script>
 </body></html>
