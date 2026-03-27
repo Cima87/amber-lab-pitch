@@ -5,7 +5,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>AMBER LAB | Cinematic AI Hub</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&amp;family=Inter:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&amp;family=Inter:wght@300;400;700&amp;family=JetBrains+Mono:wght@300&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
@@ -64,7 +64,8 @@
                     fontFamily: {
                         "headline": ["Space Grotesk"],
                         "body": ["Inter"],
-                        "label": ["Inter"]
+                        "label": ["Inter"],
+                        "mono": ["JetBrains Mono"]
                     },
                     borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
                 },
@@ -83,18 +84,57 @@
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
 
-        /* Minimalist Europe Map Styling */
         .europe-map {
             opacity: 0.15;
             pointer-events: none;
+        }
+
+        /* Diagonal Menu Animation */
+        #side-nav {
+            clip-path: circle(0% at 3rem 3rem);
+            transition: clip-path 1.2s cubic-bezier(0.85, 0, 0.15, 1);
+        }
+        #side-nav.active {
+            clip-path: circle(150% at 3rem 3rem);
+        }
+
+        /* Noise Background */
+        .noise-bg {
+            background-color: #0e0e0e;
+            position: relative;
+        }
+        .noise-bg::before {
+            content: "";
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+            pointer-events: none;
+            animation: noise-move 8s steps(10) infinite;
+        }
+        @keyframes noise-move {
+            0% { transform: translate(0,0); }
+            10% { transform: translate(-5%,-5%); }
+            20% { transform: translate(-10%,5%); }
+            30% { transform: translate(5%,-10%); }
+            40% { transform: translate(-5%,15%); }
+            50% { transform: translate(-10%,5%); }
+            60% { transform: translate(15%,0); }
+            70% { transform: translate(0,10%); }
+            80% { transform: translate(-15%,0); }
+            90% { transform: translate(10%,5%); }
+            100% { transform: translate(5%,0); }
         }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container overflow-hidden" id="main-body">
 <!-- TopAppBar -->
-<header class="fixed top-0 w-full z-[100] flex justify-between items-center px-12 py-8 bg-transparent">
+<header class="fixed top-0 w-full z-[110] flex justify-between items-center px-12 py-8 bg-transparent">
 <div class="flex items-center gap-4">
-<button class="text-on-surface scale-125 hover:text-[#ffbc00] transition-colors z-[110]" id="menu-toggle">
+<button class="text-on-surface scale-125 hover:text-[#ffbc00] transition-colors z-[120]" id="menu-toggle">
 <span class="material-symbols-outlined" id="menu-icon">add</span>
 </button>
 </div>
@@ -106,13 +146,13 @@
 </nav>
 </header>
 <!-- Full Screen Overlay Menu -->
-<div class="fixed inset-0 z-[90] bg-black translate-y-full transition-transform duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] flex flex-col justify-center items-start px-12 md:px-24" id="side-nav">
-<div class="flex flex-col gap-4">
+<div class="fixed inset-0 z-[100] noise-bg flex flex-col justify-center items-start px-12 md:px-24" id="side-nav">
+<div class="flex flex-col gap-4 relative z-10">
 <a class="font-headline text-7xl md:text-[10vw] font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none" href="#vision">VISION</a>
 <a class="font-headline text-7xl md:text-[10vw] font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none" href="#podcast">PURPOSE</a>
 <a class="font-headline text-7xl md:text-[10vw] font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none" href="#contact">ABOUT</a>
 </div>
-<div class="mt-16 flex flex-col md:flex-row gap-12 text-sm font-label tracking-widest text-on-surface-variant uppercase">
+<div class="mt-16 flex flex-col md:flex-row gap-12 text-sm font-label tracking-widest text-on-surface-variant uppercase relative z-10">
 <div>
 <p class="mb-2 opacity-50">General</p>
 <p>hello@amberlab.ai</p>
@@ -132,7 +172,6 @@
 </section>
 <!-- Section 2: Vision -->
 <section class="bg-black flex items-center p-12 md:p-24 overflow-hidden" id="vision">
-<!-- Simplified Map Graphic (Left side) -->
 <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full md:w-1/2 h-full europe-map">
 <svg class="w-full h-full" viewbox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
 <g fill="none" stroke="white" stroke-dasharray="2 4" stroke-width="1">
@@ -143,19 +182,19 @@
 <circle cx="350" cy="350" fill="white" r="2"></circle>
 <path d="M400 300 L420 280 L450 250" opacity="0.5"></path>
 <path d="M400 300 L380 320 L350 350" opacity="0.5"></path>
-<!-- Symbolic representation of European grid -->
 <line opacity="0.2" x1="100" x2="700" y1="100" y2="500"></line>
 <line opacity="0.2" x1="700" x2="100" y1="100" y2="500"></line>
 </g>
 </svg>
 </div>
-<div class="relative z-10 max-w-5xl">
-<h2 class="font-headline text-8xl md:text-[10rem] font-black italic tracking-tighter text-white mb-12 leading-none uppercase">
+<div class="relative z-10 flex flex-col items-start">
+<h2 class="font-headline text-8xl md:text-[10rem] font-black italic tracking-tighter text-white mb-8 leading-none uppercase" id="vision-title">
             VISION
         </h2>
-<div class="max-w-3xl space-y-8">
-<p class="font-headline text-2xl md:text-4xl font-bold leading-tight tracking-tight text-white/90 border-l-4 border-[#ffbc00] pl-8">
-                Empowering Europe’s creatives through access to generative AI, virtual production, and XR. We bridge the gap between Nordic cultural heritage—folk songs, textile patterns, and forgotten stories—and the future of expression. The lab is a cultural hub for artists, ensuring technology serves as a vital bridge for memory and innovation.
+<div class="max-w-[8em] md:max-w-[9ch]">
+<!-- Width constrained to headline 'VISION' approximate width -->
+<p class="font-body text-sm md:text-base font-normal leading-relaxed text-white/80 border-l border-[#ffbc00] pl-6 py-2">
+                Empowering Europe’s creatives through access to generative AI, virtual production, and XR. We bridge the gap between Nordic cultural heritage and the future of expression. The lab is a cultural hub for artists, ensuring technology serves as a vital bridge for memory and innovation.
             </p>
 </div>
 </div>
@@ -213,7 +252,7 @@
 </div>
 </section>
 <!-- Footer -->
-<footer class="fixed bottom-0 w-full flex justify-center items-center px-12 py-10 bg-transparent text-center z-50 pointer-events-none">
+<footer class="fixed bottom-0 w-full flex justify-center items-center px-12 py-10 bg-transparent text-center z-[110] pointer-events-none">
 <div class="font-label text-[10px] uppercase tracking-widest leading-loose text-[#e2e2e2]/40 max-w-4xl pointer-events-auto">
         AMBER LAB, providing generative AI to Europe's creatives, hosted by the Nordics.
     </div>
@@ -222,7 +261,6 @@
     // 8-second scroll lock logic
     document.addEventListener('DOMContentLoaded', () => {
         const body = document.getElementById('main-body');
-        // Initial state: locked
         body.classList.add('overflow-hidden');
         
         setTimeout(() => {
@@ -240,16 +278,15 @@
     menuToggle.addEventListener('click', () => {
         isMenuOpen = !isMenuOpen;
         if (isMenuOpen) {
-            sideNav.classList.remove('translate-y-full');
-            sideNav.classList.add('translate-y-0');
+            sideNav.classList.add('active');
             menuIcon.textContent = 'close';
             document.body.style.overflow = 'hidden';
         } else {
-            sideNav.classList.remove('translate-y-0');
-            sideNav.classList.add('translate-y-full');
+            sideNav.classList.remove('active');
             menuIcon.textContent = 'add';
             // Only re-enable scroll if we are past the initial 8s lock
-            if (window.scrollY > 0 || !document.body.classList.contains('overflow-hidden')) {
+            const body = document.getElementById('main-body');
+            if (window.scrollY > 0 || !body.classList.contains('overflow-hidden')) {
                 document.body.style.overflow = '';
             }
         }
@@ -259,7 +296,7 @@
     document.querySelectorAll('#side-nav a').forEach(link => {
         link.addEventListener('click', () => {
             isMenuOpen = false;
-            sideNav.classList.add('translate-y-full');
+            sideNav.classList.remove('active');
             menuIcon.textContent = 'add';
             document.body.style.overflow = '';
         });
