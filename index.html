@@ -7,7 +7,6 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&amp;family=Inter:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -73,45 +72,57 @@
         }
     </script>
 <style>
-        @keyframes reveal-glow {
-            from { text-shadow: 0 0 0px transparent; opacity: 0; }
-            to { text-shadow: 0 0 20px #ffbc00; opacity: 1; }
-        }
-        .reveal-text:hover {
-            color: #ffbc00;
-            transition: color 2s ease;
-        }
         ::-webkit-scrollbar { width: 0px; }
         html { scroll-behavior: smooth; scroll-snap-type: y mandatory; }
         section { scroll-snap-align: start; height: 100vh; position: relative; overflow: hidden; }
         
-        /* The Obsidian Lens Textures */
         .obsidian-gradient {
             background: linear-gradient(180deg, rgba(14,14,14,0) 0%, rgba(14,14,14,1) 100%);
         }
-        .amber-filament {
-            background: linear-gradient(90deg, #ffbc00 0%, #ffbf00 100%);
-        }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Minimalist Europe Map Styling */
+        .europe-map {
+            opacity: 0.15;
+            pointer-events: none;
         }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container overflow-hidden" id="main-body">
 <!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-8 bg-transparent backdrop-blur-md">
+<header class="fixed top-0 w-full z-[100] flex justify-between items-center px-12 py-8 bg-transparent">
 <div class="flex items-center gap-4">
-<button class="text-[#ffbc00] scale-95 active:scale-90 transition-transform">
-<span class="material-symbols-outlined" data-icon="add">add</span>
+<button class="text-on-surface scale-125 hover:text-[#ffbc00] transition-colors z-[110]" id="menu-toggle">
+<span class="material-symbols-outlined" id="menu-icon">add</span>
 </button>
 </div>
 <div class="text-2xl font-bold tracking-[0.2em] text-[#e2e2e2] font-headline uppercase">
-            AMBER LAB
-        </div>
+        AMBER LAB
+    </div>
 <nav class="flex gap-8">
 <a class="text-[#e2e2e2] font-headline tracking-tighter uppercase hover:text-[#ffbc00] transition-colors duration-500 ease-in-out" href="#contact">Contact</a>
 </nav>
 </header>
+<!-- Full Screen Overlay Menu -->
+<div class="fixed inset-0 z-[90] bg-black translate-y-full transition-transform duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] flex flex-col justify-center items-start px-12 md:px-24" id="side-nav">
+<div class="flex flex-col gap-4">
+<a class="font-headline text-7xl md:text-[10vw] font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none" href="#vision">VISION</a>
+<a class="font-headline text-7xl md:text-[10vw] font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none" href="#podcast">PURPOSE</a>
+<a class="font-headline text-7xl md:text-[10vw] font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none" href="#contact">ABOUT</a>
+</div>
+<div class="mt-16 flex flex-col md:flex-row gap-12 text-sm font-label tracking-widest text-on-surface-variant uppercase">
+<div>
+<p class="mb-2 opacity-50">General</p>
+<p>hello@amberlab.ai</p>
+</div>
+<div>
+<p class="mb-2 opacity-50">Studio</p>
+<p>studio@amberlab.ai</p>
+</div>
+</div>
+</div>
 <!-- Section 1: Cinematic Hero -->
 <section class="relative bg-surface-container-lowest" id="hero">
 <video autoplay="" class="w-full h-full object-cover opacity-60" loop="" muted="" playsinline="">
@@ -119,30 +130,44 @@
 </video>
 <div class="absolute inset-0 obsidian-gradient pointer-events-none"></div>
 </section>
-<!-- Section 2: Vision Reveal -->
-<section class="bg-surface-container-lowest flex items-center justify-center p-24" id="vision">
-<div class="relative w-full h-full flex items-center justify-center group">
-<!-- Massive typography placeholder for the interactive effect described -->
-<h2 class="font-headline text-[25vw] font-black italic tracking-tighter text-[#1b1b1b] transition-all duration-1000 group-hover:text-[#ffbc00] cursor-crosshair select-none leading-none">
-                VISION
-            </h2>
-<!-- Absolute overlay for mission text that appears on "explosion" -->
-<div class="absolute inset-0 flex items-center justify-center opacity-0 group-active:opacity-100 transition-opacity duration-700 bg-surface-container-lowest/90 px-12 text-center pointer-events-none group-active:pointer-events-auto">
-<p class="max-w-4xl text-4xl md:text-6xl font-headline font-bold leading-tight tracking-tighter text-on-surface">
-                    Empowering Europe’s <span class="text-primary-container">creatives</span>, providing generative AI, to give a voice to the unheard. A Hub for cultural exchange powered by creativity and accelerated by AI.
-                </p>
+<!-- Section 2: Vision -->
+<section class="bg-black flex items-center p-12 md:p-24 overflow-hidden" id="vision">
+<!-- Simplified Map Graphic (Left side) -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full md:w-1/2 h-full europe-map">
+<svg class="w-full h-full" viewbox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+<g fill="none" stroke="white" stroke-dasharray="2 4" stroke-width="1">
+<circle cx="400" cy="300" fill="white" r="2"></circle>
+<circle cx="420" cy="280" fill="white" r="2"></circle>
+<circle cx="380" cy="320" fill="white" r="2"></circle>
+<circle cx="450" cy="250" fill="white" r="2"></circle>
+<circle cx="350" cy="350" fill="white" r="2"></circle>
+<path d="M400 300 L420 280 L450 250" opacity="0.5"></path>
+<path d="M400 300 L380 320 L350 350" opacity="0.5"></path>
+<!-- Symbolic representation of European grid -->
+<line opacity="0.2" x1="100" x2="700" y1="100" y2="500"></line>
+<line opacity="0.2" x1="700" x2="100" y1="100" y2="500"></line>
+</g>
+</svg>
+</div>
+<div class="relative z-10 max-w-5xl">
+<h2 class="font-headline text-8xl md:text-[10rem] font-black italic tracking-tighter text-white mb-12 leading-none uppercase">
+            VISION
+        </h2>
+<div class="max-w-3xl space-y-8">
+<p class="font-headline text-2xl md:text-4xl font-bold leading-tight tracking-tight text-white/90 border-l-4 border-[#ffbc00] pl-8">
+                Empowering Europe’s creatives through access to generative AI, virtual production, and XR. We bridge the gap between Nordic cultural heritage—folk songs, textile patterns, and forgotten stories—and the future of expression. The lab is a cultural hub for artists, ensuring technology serves as a vital bridge for memory and innovation.
+            </p>
 </div>
 </div>
 </section>
-<!-- Section 3: Podcast -->
+<!-- Section 3: Podcast (Purpose) -->
 <section class="bg-surface-container-low flex flex-col justify-center px-12 md:px-24" id="podcast">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
 <div class="md:col-span-8">
 <span class="font-label text-xs tracking-[0.3em] text-primary-container uppercase mb-6 block">Featured Episode</span>
 <h2 class="font-headline text-6xl md:text-8xl font-black italic tracking-tighter text-on-surface mb-12">
-                    SUSTAINABILITY OF THE AMBER LAB
-                </h2>
-<!-- Minimalist Audio Player -->
+                SUSTAINABILITY OF THE AMBER LAB
+            </h2>
 <div class="bg-surface-container-highest p-8 flex flex-col md:flex-row items-center gap-8 border-l-4 border-primary-container">
 <button class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center hover:scale-105 transition-transform">
 <span class="material-symbols-outlined text-4xl" data-icon="play_arrow">play_arrow</span>
@@ -164,7 +189,7 @@
 </div>
 <div class="md:col-span-4 hidden md:block">
 <div class="aspect-square bg-surface-container-high overflow-hidden">
-<img alt="Minimalist abstract representation of sound waves in amber and charcoal colors" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A cinematic close-up of amber fluid swirling in dark water with micro-bubbles and dramatic golden lighting, abstract and premium" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5mdUy0lTn-FQws30l4pPlFV_OUcmg3dqgP0p7uscHv8HfGPEI0JNwclBFFtXqAylXPL-iIgRVWu25av6P5e3eYn4bGGy0oqLctwDX_oUnpndPsWnyeqlrZxoaFzgE78qnqud3nRZIccb8CBSsLcVIllzVt73W3DXe7BPi_6FLaEPPexKeM8qkhHbG68Hv73rMPScIKt4ukslKDgGTXgr5e6_imOMOMOQfewb93fzP397mEKoIh427bAwiferroOu_LHNnqULbX30"/>
+<img alt="Minimalist abstract representation of sound waves in amber and charcoal colors" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5mdUy0lTn-FQws30l4pPlFV_OUcmg3dqgP0p7uscHv8HfGPEI0JNwclBFFtXqAylXPL-iIgRVWu25av6P5e3eYn4bGGy0oqLctwDX_oUnpndPsWnyeqlrZxoaFzgE78qnqud3nRZIccb8CBSsLcVIllzVt73W3DXe7BPi_6FLaEPPexKeM8qkhHbG68Hv73rMPScIKt4ukslKDgGTXgr5e6_imOMOMOQfewb93fzP397mEKoIh427bAwiferroOu_LHNnqULbX30"/>
 </div>
 </div>
 </div>
@@ -173,8 +198,8 @@
 <section class="bg-surface-container-lowest flex items-center justify-center text-center p-12" id="contact">
 <div class="space-y-12">
 <h2 class="font-headline text-8xl md:text-[12rem] font-black italic tracking-tighter text-on-surface hover:text-primary-container transition-colors duration-700 cursor-pointer">
-                GET IN TOUCH
-            </h2>
+            GET IN TOUCH
+        </h2>
 <div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
 <div class="text-left space-y-2">
 <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">General Inquiries</p>
@@ -188,48 +213,56 @@
 </div>
 </section>
 <!-- Footer -->
-<footer class="fixed bottom-0 w-full flex justify-center items-center px-12 py-10 bg-transparent text-center z-50">
-<div class="font-label text-[10px] uppercase tracking-widest leading-loose text-[#e2e2e2]/40 max-w-lg">
-            AMBER LAB, providing generative AI to Europe's creatives, hosted by the Nordics.
-        </div>
+<footer class="fixed bottom-0 w-full flex justify-center items-center px-12 py-10 bg-transparent text-center z-50 pointer-events-none">
+<div class="font-label text-[10px] uppercase tracking-widest leading-loose text-[#e2e2e2]/40 max-w-4xl pointer-events-auto">
+        AMBER LAB, providing generative AI to Europe's creatives, hosted by the Nordics.
+    </div>
 </footer>
-<!-- Side Navigation Placeholder (Hidden initially, part of JSON logic) -->
-<div class="hidden fixed inset-0 z-[60] bg-[#0e0e0e]/95 backdrop-blur-2xl flex flex-col justify-center items-start px-24 w-full h-full" id="side-nav">
-<div class="space-y-4">
-<div class="text-3xl font-bold text-[#ffbc00] mb-12 font-headline uppercase">AMBER LAB</div>
-<a class="font-headline text-6xl font-black italic tracking-tighter text-[#353535] hover:text-[#ffbc00] hover:translate-x-4 transition-all duration-500 uppercase" href="#hero">VISION</a>
-<a class="font-headline text-6xl font-black italic tracking-tighter text-[#353535] hover:text-[#ffbc00] hover:translate-x-4 transition-all duration-500 uppercase" href="#podcast">PURPOSE</a>
-<a class="font-headline text-6xl font-black italic tracking-tighter text-[#353535] hover:text-[#ffbc00] hover:translate-x-4 transition-all duration-500 uppercase" href="#contact">ABOUT</a>
-</div>
-<div class="mt-24">
-<button class="bg-primary-container text-on-primary px-12 py-6 font-headline font-bold uppercase tracking-widest">GET IN TOUCH</button>
-</div>
-</div>
-<!-- Script for interaction requirements -->
 <script>
-        // 8-second scroll lock
-        document.addEventListener('DOMContentLoaded', () => {
-            const body = document.getElementById('main-body');
-            body.classList.add('overflow-hidden');
-            
-            setTimeout(() => {
-                body.classList.remove('overflow-hidden');
-                body.classList.add('overflow-y-auto');
-            }, 8000);
-        });
+    // 8-second scroll lock logic
+    document.addEventListener('DOMContentLoaded', () => {
+        const body = document.getElementById('main-body');
+        // Initial state: locked
+        body.classList.add('overflow-hidden');
+        
+        setTimeout(() => {
+            body.classList.remove('overflow-hidden');
+            body.classList.add('overflow-y-auto');
+        }, 8000);
+    });
 
-        // Toggle side nav on '+' click
-        const plusButton = document.querySelector('header button');
-        const sideNav = document.getElementById('side-nav');
-        plusButton.addEventListener('click', () => {
-            sideNav.classList.toggle('hidden');
-        });
+    // Navigation Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuIcon = document.getElementById('menu-icon');
+    const sideNav = document.getElementById('side-nav');
+    let isMenuOpen = false;
 
-        // Close nav on link click
-        document.querySelectorAll('#side-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                sideNav.classList.add('hidden');
-            });
+    menuToggle.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        if (isMenuOpen) {
+            sideNav.classList.remove('translate-y-full');
+            sideNav.classList.add('translate-y-0');
+            menuIcon.textContent = 'close';
+            document.body.style.overflow = 'hidden';
+        } else {
+            sideNav.classList.remove('translate-y-0');
+            sideNav.classList.add('translate-y-full');
+            menuIcon.textContent = 'add';
+            // Only re-enable scroll if we are past the initial 8s lock
+            if (window.scrollY > 0 || !document.body.classList.contains('overflow-hidden')) {
+                document.body.style.overflow = '';
+            }
+        }
+    });
+
+    // Close menu on link click
+    document.querySelectorAll('#side-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            isMenuOpen = false;
+            sideNav.classList.add('translate-y-full');
+            menuIcon.textContent = 'add';
+            document.body.style.overflow = '';
         });
-    </script>
+    });
+</script>
 </body></html>
