@@ -7,6 +7,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&amp;family=Inter:wght@300;400;700&amp;family=JetBrains+Mono:wght@300&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -35,6 +36,317 @@
                         "surface": "#131313",
                         "on-tertiary-fixed": "#1a1c1c",
                         "on-secondary": "#690100",
+                        "surface-dim": "#131313",
+                        "on-primary-fixed": "#261a00",
+                        "primary-fixed": "#ffdfa0",
+                        "primary-container": "#ffbf00",
+                        "outline": "#9c8f78",
+                        "on-error": "#690005",
+                        "surface-container-highest": "#353535",
+                        "inverse-primary": "#795900",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#504532",
+                        "secondary-fixed": "#ffdad4",
+                        "primary": "#ffe2ab",
+                        "secondary-container": "#ff5540",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-container": "#1f1f1f",
+                        "on-primary": "#402d00",
+                        "on-primary-container": "#6d5000",
+                        "error-container": "#93000a",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-container": "#535455",
+                        "on-surface": "#e2e2e2",
+                        "on-secondary-container": "#5c0000",
+                        "tertiary": "#e5e5e5",
+                        "on-secondary-fixed-variant": "#930100",
+                        "on-background": "#e2e2e2"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        ::-webkit-scrollbar { width: 0px; }
+        html { scroll-behavior: smooth; scroll-snap-type: y mandatory; }
+        section { scroll-snap-align: start; height: 100vh; position: relative; overflow: hidden; }
+        
+        .obsidian-gradient {
+            background: linear-gradient(180deg, rgba(14,14,14,0) 0%, rgba(14,14,14,1) 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Diagonal Menu Animation */
+        #side-nav {
+            clip-path: circle(0% at 3rem 3rem);
+            transition: clip-path 1.2s cubic-bezier(0.85, 0, 0.15, 1);
+        }
+        #side-nav.active {
+            clip-path: circle(150% at 3rem 3rem);
+        }
+
+        /* Noise Background */
+        .noise-bg {
+            background-color: #0e0e0e;
+            position: relative;
+        }
+        .noise-bg::before {
+            content: "";
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+            pointer-events: none;
+            animation: noise-move 8s steps(10) infinite;
+        }
+        @keyframes noise-move {
+            0% { transform: translate(0,0); }
+            10% { transform: translate(-5%,-5%); }
+            20% { transform: translate(-10%,5%); }
+            30% { transform: translate(5%,-10%); }
+            40% { transform: translate(-5%,15%); }
+            50% { transform: translate(-10%,5%); }
+            60% { transform: translate(15%,0); }
+            70% { transform: translate(0,10%); }
+            80% { transform: translate(-15%,0); }
+            90% { transform: translate(10%,5%); }
+            100% { transform: translate(5%,0); }
+        }
+
+        /* Custom Mermaid Styling to match theme */
+        .mermaid svg {
+            max-width: 100% !important;
+            height: auto !important;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container overflow-hidden" id="main-body">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-[110] flex justify-between items-center px-12 py-8 bg-transparent">
+<div class="flex items-center gap-4">
+<button class="text-on-surface scale-125 hover:text-[#ffbc00] transition-colors z-[120]" id="menu-toggle">
+<span class="material-symbols-outlined" id="menu-icon">add</span>
+</button>
+</div>
+<div class="text-2xl font-bold tracking-[0.2em] text-[#e2e2e2] font-headline uppercase">
+        AMBER LAB
+    </div>
+<nav class="flex gap-8">
+<a class="text-[#e2e2e2] font-headline tracking-tighter uppercase hover:text-[#ffbc00] transition-colors duration-500 ease-in-out" href="#contact">Contact</a>
+</nav>
+</header>
+<!-- Full Screen Overlay Menu -->
+<div class="fixed inset-0 z-[100] noise-bg flex flex-col justify-center items-start px-12 md:px-24" id="side-nav">
+<div class="flex flex-col gap-4 relative z-10">
+<a class="font-headline text-7xl md:text-[10vw] font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none" href="#vision">VISION</a>
+<a class="font-headline text-7xl md:text-[10vw] font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none" href="#podcast">PURPOSE</a>
+<a class="font-headline text-7xl md:text-[10vw] font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none" href="#budget">BUDGET</a>
+<a class="font-headline text-7xl md:text-[10vw] font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none" href="#contact">ABOUT</a>
+</div>
+<div class="mt-16 flex flex-col md:flex-row gap-12 text-sm font-label tracking-widest text-on-surface-variant uppercase relative z-10">
+<div>
+<p class="mb-2 opacity-50">General</p>
+<p>hello@amberlab.ai</p>
+</div>
+<div>
+<p class="mb-2 opacity-50">Studio</p>
+<p>studio@amberlab.ai</p>
+</div>
+</div>
+</div>
+<!-- Section 1: Cinematic Hero -->
+<section class="relative bg-surface-container-lowest" id="hero">
+<video autoplay="" class="w-full h-full object-cover opacity-60" loop="" muted="" playsinline="">
+<source src="BG_VIDEO.mp4" type="video/mp4"/>
+</video>
+<div class="absolute inset-0 obsidian-gradient pointer-events-none"></div>
+</section>
+<!-- Section 2: Vision -->
+<section class="bg-black flex flex-col justify-start items-start p-12 md:p-24" id="vision">
+<div class="relative z-10 flex flex-col items-start w-full">
+<h2 class="font-headline text-7xl md:text-[10rem] font-black italic tracking-tighter text-white leading-none uppercase mb-8" id="vision-title">
+            VISION
+        </h2>
+<div class="max-w-[45ch] md:max-w-[60ch]">
+<p class="font-body text-base md:text-lg font-light leading-relaxed text-white/70">
+                Empowering Europe’s creatives through access to generative AI, virtual production, and XR. We bridge the gap between Nordic cultural heritage and the future of expression. The lab is a cultural hub for artists, ensuring technology serves as a vital bridge for memory and innovation.
+            </p>
+</div>
+</div>
+</section>
+<!-- Section 3: Podcast (Purpose) -->
+<section class="bg-surface-container-low flex flex-col justify-center px-12 md:px-24" id="podcast">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
+<div class="md:col-span-8">
+<span class="font-label text-xs tracking-[0.3em] text-primary-container uppercase mb-6 block">Featured Episode</span>
+<h2 class="font-headline text-6xl md:text-8xl font-black italic tracking-tighter text-on-surface mb-12">
+                SUSTAINABILITY OF THE AMBER LAB
+            </h2>
+<div class="bg-surface-container-highest p-8 flex flex-col md:flex-row items-center gap-8 border-l-4 border-primary-container">
+<button class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-4xl" data-icon="play_arrow">play_arrow</span>
+</button>
+<div class="flex-1 w-full">
+<div class="h-1 bg-surface-variant w-full relative">
+<div class="absolute h-full bg-primary-container w-1/3"></div>
+</div>
+<div class="flex justify-between mt-2 font-label text-[10px] text-on-surface-variant uppercase tracking-widest">
+<span>12:45</span>
+<span>45:00</span>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary-container cursor-pointer" data-icon="volume_up">volume_up</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary-container cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 hidden md:block">
+<div class="aspect-square bg-surface-container-high overflow-hidden">
+<img alt="Minimalist abstract representation of sound waves in amber and charcoal colors" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5mdUy0lTn-FQws30l4pPlFV_OUcmg3dqgP0p7uscHv8HfGPEI0JNwclBFFtXqAylXPL-iIgRVWu25av6P5e3eYn4bGGy0oqLctwDX_oUnpndPsWnyeqlrZxoaFzgE78qnqud3nRZIccb8CBSsLcVIllzVt73W3DXe7BPi_6FLaEPPexKeM8qkhHbG68Hv73rMPScIKt4ukslKDgGTXgr5e6_imOMOMOQfewb93fzP397mEKoIh427bAwiferroOu_LHNnqULbX30"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Budget Allocation -->
+<section class="bg-background flex flex-col justify-center px-12 md:px-24" id="budget">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<!-- Left Column: Pie Chart -->
+<div class="flex flex-col items-center">
+<h3 class="font-headline text-3xl md:text-5xl font-black italic tracking-tighter text-on-surface mb-12 self-start uppercase">Budget Allocation</h3>
+<div class="mermaid w-full flex justify-center">
+                pie title €1.8M Total Investment
+                    "Green Computing" : 750000
+                    "Direct Creator Support" : 450000
+                    "Guest Artist Residency" : 400000
+                    "Community Outreach" : 150000
+                    "Data Sovereignty" : 50000
+            </div>
+</div>
+<!-- Right Column: Text Content -->
+<div class="space-y-12">
+<div>
+<h4 class="font-headline text-xl font-bold text-primary mb-4 uppercase tracking-widest">Vision &amp; Core Philosophy</h4>
+<p class="text-on-surface-variant font-light leading-relaxed">
+                    Our financial architecture reflects our commitment to ethical innovation. We prioritize the <span class="text-on-surface font-semibold">decentralization of creative power</span>, ensuring that resources flow directly into the hands of those defining the next generation of digital culture.
+                </p>
+</div>
+<div>
+<h4 class="font-headline text-xl font-bold text-primary mb-4 uppercase tracking-widest">Highlighting Underrepresented Demographics</h4>
+<p class="text-on-surface-variant font-light leading-relaxed">
+                    AMBER LAB actively targets <span class="bg-primary/20 text-primary px-1">Nordic indigenous voices</span> and <span class="bg-primary/20 text-primary px-1">emerging digital artists</span> who have historically lacked access to high-end virtual production tools. Our outreach program is designed to lower the barrier for <span class="bg-primary/20 text-primary px-1">independent film creators</span> across Europe.
+                </p>
+</div>
+<div>
+<h4 class="font-headline text-xl font-bold text-primary mb-4 uppercase tracking-widest">Sustainability Legacy</h4>
+<p class="text-on-surface-variant font-light leading-relaxed">
+                    The €750k earmarked for Green Computing represents our pledge to carbon-neutral rendering and AI training. We aren't just building a lab; we are establishing a <span class="text-on-surface font-semibold">circular creative economy</span> that respects both culture and climate.
+                </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Contact -->
+<section class="bg-surface-container-lowest flex items-center justify-center text-center p-12" id="contact">
+<div class="space-y-12">
+<h2 class="font-headline text-8xl md:text-[12rem] font-black italic tracking-tighter text-on-surface hover:text-primary-container transition-colors duration-700 cursor-pointer">
+            GET IN TOUCH
+        </h2>
+<div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
+<div class="text-left space-y-2">
+<p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">General Inquiries</p>
+<p class="font-headline text-2xl text-on-surface">hello@amberlab.ai</p>
+</div>
+<div class="text-left space-y-2">
+<p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Creative Hub</p>
+<p class="font-headline text-2xl text-on-surface">studio@amberlab.ai</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="fixed bottom-0 w-full flex justify-center items-center px-12 py-10 bg-transparent text-center z-[110] pointer-events-none">
+<div class="font-label text-[10px] uppercase tracking-widest leading-loose text-[#e2e2e2]/40 max-w-4xl pointer-events-auto">
+        AMBER LAB, providing generative AI to Europe's creatives, hosted by the Nordics.
+    </div>
+</footer>
+<script>
+    // Initialize Mermaid with custom colors
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'base',
+        themeVariables: {
+            pie1: '#ffffff', // White
+            pie2: '#888888', // Grey
+            pie3: '#FF4D4D', // Red
+            pie4: '#FFD700', // Yellow
+            pie5: '#3B82F6', // Blue
+            pieTitleTextSize: '16px',
+            pieTitleTextColor: '#e2e2e2',
+            pieSectionTextColor: '#131313',
+            pieSectionTextSize: '12px',
+            pieLegendTextSize: '12px',
+            pieLegendTextColor: '#d4c5ab',
+            backgroundColor: 'transparent'
+        }
+    });
+
+    // 8-second scroll lock logic
+    document.addEventListener('DOMContentLoaded', () => {
+        const body = document.getElementById('main-body');
+        body.classList.add('overflow-hidden');
+        
+        setTimeout(() => {
+            body.classList.remove('overflow-hidden');
+            body.classList.add('overflow-y-auto');
+        }, 8000);
+    });
+
+    // Navigation Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuIcon = document.getElementById('menu-icon');
+    const sideNav = document.getElementById('side-nav');
+    let isMenuOpen = false;
+
+    menuToggle.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        if (isMenuOpen) {
+            sideNav.classList.add('active');
+            menuIcon.textContent = 'close';
+            document.body.style.overflow = 'hidden';
+        } else {
+            sideNav.classList.remove('active');
+            menuIcon.textContent = 'add';
+            const body = document.getElementById('main-body');
+            if (window.scrollY > 0 || !body.classList.contains('overflow-hidden')) {
+                document.body.style.overflow = '';
+            }
+        }
+    });
+
+    // Close menu on link click
+    document.querySelectorAll('#side-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            isMenuOpen = false;
+            sideNav.classList.remove('active');
+            menuIcon.textContent = 'add';
+            document.body.style.overflow = '';
+        });
+    });
+</script>
+</body></html>                        "on-secondary": "#690100",
                         "surface-dim": "#131313",
                         "on-primary-fixed": "#261a00",
                         "primary-fixed": "#ffdfa0",
