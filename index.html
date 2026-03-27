@@ -3,301 +3,232 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AMBER LAB | PRESERVING IDENTITY</title>
+<title>AMBER LAB | Cinematic AI Hub</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&amp;family=Inter:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in-delayed {
-            opacity: 0;
-            animation: fadeIn 1.5s ease-out 3s forwards;
-        }
-
-        .scroll-lock {
-            overflow: hidden;
-        }
-
-        /* Section Layering Effect */
-        .section-layer {
-            position: relative;
-            z-index: 10;
-            background-color: #131313;
-        }
-
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-
-        body {
-            background-color: #0e0e0e;
-            color: #e2e2e2;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .headline-font {
-            font-family: 'Space Grotesk', sans-serif;
-        }
-    </style>
 <script id="tailwind-config">
         tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              colors: {
-                "on-secondary-container": "#5c0000",
-                "on-surface": "#e2e2e2",
-                "surface-variant": "#353535",
-                "on-error": "#690005",
-                "surface-container-high": "#2a2a2a",
-                "on-primary": "#402d00",
-                "on-secondary-fixed": "#410000",
-                "on-background": "#e2e2e2",
-                "surface-container": "#1f1f1f",
-                "outline-variant": "#504532",
-                "surface-dim": "#131313",
-                "secondary-fixed": "#ffdad4",
-                "surface-container-low": "#1b1b1b",
-                "on-error-container": "#ffdad6",
-                "secondary-fixed-dim": "#ffb4a8",
-                "tertiary-container": "#c9c9c9",
-                "on-tertiary-container": "#535455",
-                "surface": "#131313",
-                "secondary": "#ffb4a8",
-                "surface-container-lowest": "#0e0e0e",
-                "surface-container-highest": "#353535",
-                "background": "#131313",
-                "primary-fixed-dim": "#fbbc00",
-                "outline": "#9c8f78",
-                "tertiary-fixed-dim": "#c6c6c7",
-                "on-secondary": "#690100",
-                "primary-container": "#ffbf00",
-                "tertiary-fixed": "#e2e2e2",
-                "tertiary": "#e5e5e5",
-                "on-primary-container": "#6d5000",
-                "on-primary-fixed": "#261a00",
-                "inverse-primary": "#795900",
-                "surface-tint": "#fbbc00",
-                "error": "#ffb4ab",
-                "on-primary-fixed-variant": "#5c4300",
-                "on-tertiary-fixed": "#1a1c1c",
-                "primary": "#ffe2ab",
-                "on-tertiary-fixed-variant": "#454747",
-                "secondary-container": "#ff5540",
-                "on-tertiary": "#2f3131",
-                "inverse-on-surface": "#303030",
-                "on-surface-variant": "#d4c5ab",
-                "on-secondary-fixed-variant": "#930100",
-                "surface-bright": "#393939",
-                "primary-fixed": "#ffdfa0",
-                "error-container": "#93000a",
-                "inverse-surface": "#e2e2e2"
-              },
-              fontFamily: {
-                "headline": ["Space Grotesk"],
-                "body": ["Inter"],
-                "label": ["Inter"]
-              },
-              borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#fbbc00",
+                        "on-secondary-fixed": "#410000",
+                        "inverse-on-surface": "#303030",
+                        "background": "#131313",
+                        "secondary": "#ffb4a8",
+                        "tertiary-container": "#c9c9c9",
+                        "on-primary-fixed-variant": "#5c4300",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#1b1b1b",
+                        "secondary-fixed-dim": "#ffb4a8",
+                        "primary-fixed-dim": "#fbbc00",
+                        "on-surface-variant": "#d4c5ab",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-tertiary": "#2f3131",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-variant": "#353535",
+                        "surface-bright": "#393939",
+                        "surface": "#131313",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary": "#690100",
+                        "surface-dim": "#131313",
+                        "on-primary-fixed": "#261a00",
+                        "primary-fixed": "#ffdfa0",
+                        "primary-container": "#ffbf00",
+                        "outline": "#9c8f78",
+                        "on-error": "#690005",
+                        "surface-container-highest": "#353535",
+                        "inverse-primary": "#795900",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#504532",
+                        "secondary-fixed": "#ffdad4",
+                        "primary": "#ffe2ab",
+                        "secondary-container": "#ff5540",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-container": "#1f1f1f",
+                        "on-primary": "#402d00",
+                        "on-primary-container": "#6d5000",
+                        "error-container": "#93000a",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-container": "#535455",
+                        "on-surface": "#e2e2e2",
+                        "on-secondary-container": "#5c0000",
+                        "tertiary": "#e5e5e5",
+                        "on-secondary-fixed-variant": "#930100",
+                        "on-background": "#e2e2e2"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
             },
-          },
         }
     </script>
+<style>
+        @keyframes reveal-glow {
+            from { text-shadow: 0 0 0px transparent; opacity: 0; }
+            to { text-shadow: 0 0 20px #ffbc00; opacity: 1; }
+        }
+        .reveal-text:hover {
+            color: #ffbc00;
+            transition: color 2s ease;
+        }
+        ::-webkit-scrollbar { width: 0px; }
+        html { scroll-behavior: smooth; scroll-snap-type: y mandatory; }
+        section { scroll-snap-align: start; height: 100vh; position: relative; overflow: hidden; }
+        
+        /* The Obsidian Lens Textures */
+        .obsidian-gradient {
+            background: linear-gradient(180deg, rgba(14,14,14,0) 0%, rgba(14,14,14,1) 100%);
+        }
+        .amber-filament {
+            background: linear-gradient(90deg, #ffbc00 0%, #ffbf00 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
 </head>
-<body class="scroll-lock">
-<!-- TopNavBar -->
-<nav class="fixed top-0 left-0 w-full rounded-none z-50 bg-[#131313]/60 backdrop-blur-2xl flex justify-between items-center px-12 py-8 transition-all duration-700">
-<div class="text-2xl font-bold tracking-tighter text-[#ffbc00] headline-font">AMBER LAB</div>
-<div class="hidden md:flex gap-12 items-center font-['Space_Grotesk'] tracking-[0.2em] uppercase text-sm">
-<a class="text-[#ffbc00] font-bold hover:opacity-100 transition-all duration-500" href="#identity">Identity</a>
-<a class="text-[#e2e2e2] opacity-70 hover:opacity-100 hover:text-[#ffbc00] transition-all duration-500" href="#vision">Vision</a>
-<a class="text-[#e2e2e2] opacity-70 hover:opacity-100 hover:text-[#ffbc00] transition-all duration-500" href="#impact">Impact</a>
-<a class="text-[#e2e2e2] opacity-70 hover:opacity-100 hover:text-[#ffbc00] transition-all duration-500" href="#connect">Connect</a>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container overflow-hidden" id="main-body">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-8 bg-transparent backdrop-blur-md">
+<div class="flex items-center gap-4">
+<button class="text-[#ffbc00] scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
 </div>
-<button class="bg-primary-container text-on-primary-container px-8 py-3 headline-font font-bold uppercase tracking-widest text-xs hover:bg-[#ffbc00] active:scale-95 transition-all duration-300">
-            Inquire
-        </button>
-</nav>
-<!-- Hero Section -->
-<header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
-<!-- Background Video -->
-<div class="absolute inset-0 z-0">
-<video autoplay="" class="w-full h-full object-cover grayscale opacity-40" loop="" muted="" playsinline="">
-<source src="https://player.vimeo.com/external/371831825.hd.mp4?s=70f90c309831776b052d92d47833a6f1165e648f&amp;profile_id=174" type="video/mp4"/>
-</video>
-<div class="absolute inset-0 bg-gradient-to-b from-[#131313]/80 via-transparent to-[#131313]"></div>
-</div>
-<!-- Hero Content -->
-<div class="relative z-10 container mx-auto px-12 flex flex-col items-start fade-in-delayed">
-<div class="mb-6 flex items-center gap-4">
-<span class="h-[1px] w-12 bg-primary-container"></span>
-<span class="font-['Inter'] text-[10px] tracking-[0.4em] uppercase opacity-60">EST. 2026 / NORDIC CORE</span>
-</div>
-<h1 class="text-7xl md:text-9xl font-bold headline-font tracking-tight text-on-surface mb-8 leading-[0.9]">
-                PRESERVING <br/> <span class="text-primary-container">IDENTITY</span>
-</h1>
-<p class="max-w-xl text-lg md:text-xl font-light leading-relaxed text-on-surface/80 font-['Inter']">
-                Crafting the future of digital expression by granting access to generative AI to Europe's creatives, hosted in the Nordics.
-            </p>
-<div class="mt-12 flex gap-8 items-center">
-<span class="material-symbols-outlined text-primary-container text-4xl animate-bounce">south</span>
-<span class="font-['Inter'] text-[10px] tracking-[0.3em] uppercase opacity-40">Scroll to Explore</span>
-</div>
-</div>
-</header>
-<!-- Main Content -->
-<main class="section-layer">
-<!-- 01 / VISION -->
-<section class="min-h-screen py-32 px-12 bg-surface-container-lowest border-t border-outline-variant/10" id="vision">
-<div class="container mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-end mb-24">
-<div class="md:col-span-8">
-<span class="font-['Inter'] text-xs tracking-[0.5em] text-primary-container mb-4 block">01 / VISION</span>
-<h2 class="text-5xl md:text-7xl headline-font font-bold tracking-tighter">THE SOVEREIGN <br/>CREATIVE ENGINE.</h2>
-</div>
-<div class="md:col-span-4 pb-4">
-<p class="text-on-surface/60 font-light leading-relaxed">
-                            We believe that AI is the most powerful mirror of human identity. Our mission is to ensure that European creatives possess the keys to their own reflections.
-                        </p>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-1 px-0 overflow-hidden">
-<div class="aspect-[4/5] bg-surface-container-low group relative overflow-hidden">
-<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" data-alt="abstract 3d sculpture of flowing liquid amber and obsidian in high contrast studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCExqlxvl0-RjQjfbxtCKKMLjtjFza784Sdcu3fTQophR1nE2EGssiKnaqnexj6MlSI0-qOMKLf3M40x4vsN-NNegbzurc6l4khYXH6s5YogaW95OfxrvoXPZNOeENLXzjmtR-tbZk-4dgy2Up_L9HmSnAIAYqtBKKcxctfI1w1Rh8IQbcQjJxId7uFYphGAPzXkPHvooJY-8uMVsOXpeV6HzZAxSVn_W39thksKaIPu3zdBFxPZiRVO-VadQN4NcKsv4tDAu-Tg00"/>
-<div class="absolute bottom-8 left-8">
-<h3 class="headline-font text-xl font-bold uppercase tracking-widest">Synthetic Ethos</h3>
-</div>
-</div>
-<div class="aspect-[4/5] bg-surface-container-high group relative overflow-hidden">
-<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" data-alt="cinematic macro shot of glowing orange glass filaments inside a dark architectural void" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj3FrWp00PD33O1MSHkmiFK6QhBLj97wDYiOttSqjjfR-aaVfcaAwRA7dqZiA4l8AAucRFj00myeIvlbnkv6460uoIhbHyJhVfFCjLWGuJ_tVs7Lc_h7boJhMB_ZU2ancvROzXS5HXfjJdvqlC-p4Ay2_G4QZNIUmXMrpPp6fkElUld0NU0bKANQp3_kYVpcAN-51107nGhrZXoo-wbeHjIyI8LJZLuVfSbSRX7cBj2XbQMxZ_RZVzig6fj8WtaxJne1cR9pfnIHs"/>
-<div class="absolute bottom-8 left-8">
-<h3 class="headline-font text-xl font-bold uppercase tracking-widest">Neural Precision</h3>
-</div>
-</div>
-<div class="aspect-[4/5] bg-surface-container-low group relative overflow-hidden">
-<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" data-alt="minimalist architectural perspective of a brutalist building facade at dusk with warm internal glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi_YPohyRWe94CKkh_W98tpw0egupIcYFePdnnSDGTz3hAptJaCNh205SHbRBb4QzVIr5PqlHZvBPnhr56Kl7RqkZO7EcAJxu56T3v8Qm277duNlWlBerFd5FbUSdCcfSUmW_tJqNdMvYrEk-E8mrJQKhsnyuKsNgKE0h5Bu_g8Z7FcGY1eYd6ZTo7KMGQmQSByMccQzt969AYiSqsfthtMn1BMiAkT73BRdkNkohhi7-Zg_6h1NRyGZobuZih3Djh6ZJSWjcFFgk"/>
-<div class="absolute bottom-8 left-8">
-<h3 class="headline-font text-xl font-bold uppercase tracking-widest">Nordic Hosting</h3>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- 02 / REGIONAL IMPACT -->
-<section class="min-h-screen py-32 px-12 bg-surface" id="impact">
-<div class="container mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-start mb-32 gap-12">
-<div class="max-w-2xl">
-<span class="font-['Inter'] text-xs tracking-[0.5em] text-primary-container mb-4 block">02 / REGIONAL IMPACT</span>
-<h2 class="text-5xl md:text-7xl headline-font font-bold tracking-tighter mb-12">FUELING THE <br/>EUROPEAN RENAISSANCE.</h2>
-</div>
-<div class="flex flex-col gap-8 md:text-right items-end">
-<div class="text-6xl headline-font font-bold text-primary-container">40%</div>
-<p class="text-xs uppercase tracking-widest opacity-40 font-bold">Latency Reduction <br/> for Stockholm Creative Nodes</p>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-24">
-<div class="bg-surface-container-low p-16 flex flex-col justify-between aspect-square">
-<div class="flex justify-between items-start">
-<span class="material-symbols-outlined text-4xl text-primary-container">shield_with_heart</span>
-<span class="font-['Inter'] text-[10px] tracking-widest opacity-30">CULTURAL PROTECTORATE</span>
-</div>
-<div>
-<h4 class="headline-font text-3xl font-bold mb-6">GDPR-NATIVE ARCHITECTURE</h4>
-<p class="text-on-surface/60 leading-relaxed">Data isn't just processed; it's protected under the strictest sovereignty laws on the planet, ensuring your creative DNA remains yours.</p>
-</div>
-</div>
-<div class="bg-surface-container-highest p-16 flex flex-col justify-between aspect-square">
-<div class="flex justify-between items-start">
-<span class="material-symbols-outlined text-4xl text-primary-container">speed</span>
-<span class="font-['Inter'] text-[10px] tracking-widest opacity-30">ELITE PERFORMANCE</span>
-</div>
-<div>
-<h4 class="headline-font text-3xl font-bold mb-6">PETAFLOPS OF PURE ART</h4>
-<p class="text-on-surface/60 leading-relaxed">High-performance computing clusters dedicated specifically to image, video, and immersive environmental generation for the luxury sector.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- 03 / AUTHORITY -->
-<section class="py-32 bg-surface-container-lowest">
-<div class="px-12 mb-24">
-<span class="font-['Inter'] text-xs tracking-[0.5em] text-primary-container mb-4 block">03 / AUTHORITY</span>
-<h2 class="text-4xl md:text-6xl headline-font font-bold tracking-tighter">TRUSTED BY THE <br/>GARDIANS OF CULTURE.</h2>
-</div>
-<!-- Logo ticker style marquee (Simplified for UI) -->
-<div class="flex flex-wrap gap-12 md:gap-24 px-12 opacity-30 items-center justify-between grayscale">
-<div class="text-2xl font-black headline-font tracking-[0.3em]">LVMH</div>
-<div class="text-2xl font-black headline-font tracking-[0.3em]">ASTON MARTIN</div>
-<div class="text-2xl font-black headline-font tracking-[0.3em]">SOTHEBY'S</div>
-<div class="text-2xl font-black headline-font tracking-[0.3em]">VOGUE</div>
-<div class="text-2xl font-black headline-font tracking-[0.3em]">BALENCIAGA</div>
-</div>
-</section>
-<!-- 04 / THE CORE -->
-<section class="min-h-screen flex items-center bg-surface relative overflow-hidden">
-<!-- Decorative Light Leak -->
-<div class="absolute -right-1/4 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-container/5 rounded-full blur-[120px]"></div>
-<div class="container mx-auto px-12 grid grid-cols-1 md:grid-cols-2 gap-24 items-center z-10">
-<div>
-<span class="font-['Inter'] text-xs tracking-[0.5em] text-primary-container mb-8 block">04 / THE CORE</span>
-<h2 class="text-6xl md:text-8xl headline-font font-bold tracking-tighter mb-8">SECURE YOUR <br/>LEGACY.</h2>
-<p class="text-xl text-on-surface/70 mb-12 font-light">Join the private beta for AMBER LAB v2. Regional access is strictly limited to 50 curated studios per quarter.</p>
-<form class="space-y-8 max-w-md">
-<div class="relative">
-<input class="w-full bg-transparent border-b border-outline-variant py-4 focus:outline-none focus:border-primary-container transition-colors font-['Space_Grotesk'] tracking-[0.2em] text-sm uppercase" placeholder="ENTER WORK EMAIL" type="email"/>
-</div>
-<button class="w-full bg-primary-container text-on-primary-container py-5 headline-font font-bold uppercase tracking-widest text-sm hover:brightness-110 active:scale-95 transition-all">
-                            Apply for Access
-                        </button>
-</form>
-</div>
-<div class="hidden md:block">
-<div class="aspect-square bg-surface-container-high border border-outline-variant/10 p-1">
-<div class="w-full h-full relative group cursor-crosshair">
-<img class="w-full h-full object-cover" data-alt="dramatic architectural shot of a narrow light corridor between black basalt walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYeiTscFzps1S2N1pvpYZJL_8h_eo33XlvaSw9FA_aNCO-7OAglWlYthIqTkAPO1DlWanMMJTu-0Wrgcw9pWRi9xa0FSRqvfZe-dv_cnyljU9ufass2lJVVvglHjx-SSd_xFErpy1uE27ReE_-jnRuwEyNU-cXnx4053Mzo7KG5yP-1SLQSn60OOKGHSBVi35lqKDgXY52x2bgZck6wehZWfHsGvuZ5-byTnod_K5VVVIWTxcRBWyck4C_uxrYkgHvdK6GcVfhjDU"/>
-<div class="absolute inset-0 bg-primary-container/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="material-symbols-outlined text-6xl text-on-primary-fixed">lock_open</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-[#0e0e0e] flex flex-col md:flex-row justify-between items-center w-full px-12 py-12 gap-8 border-t border-outline-variant/10">
-<div class="font-['Inter'] text-[10px] tracking-widest uppercase opacity-40">
-            © 2024 AMBER LAB. EST. 2024
+<div class="text-2xl font-bold tracking-[0.2em] text-[#e2e2e2] font-headline uppercase">
+            AMBER LAB
         </div>
-<div class="flex gap-12 font-['Inter'] text-[10px] tracking-widest uppercase opacity-40">
-<a class="hover:opacity-100 hover:text-[#ffbc00] transition-opacity" href="#">Privacy</a>
-<a class="hover:opacity-100 hover:text-[#ffbc00] transition-opacity" href="#">Terms</a>
-<a class="hover:opacity-100 hover:text-[#ffbc00] transition-opacity" href="#">Legal</a>
+<nav class="flex gap-8">
+<a class="text-[#e2e2e2] font-headline tracking-tighter uppercase hover:text-[#ffbc00] transition-colors duration-500 ease-in-out" href="#contact">Contact</a>
+</nav>
+</header>
+<!-- Section 1: Cinematic Hero -->
+<section class="relative bg-surface-container-lowest" id="hero">
+<video autoplay="" class="w-full h-full object-cover opacity-60" loop="" muted="" playsinline="">
+<source src="BG_VIDEO.mp4" type="video/mp4"/>
+</video>
+<div class="absolute inset-0 obsidian-gradient pointer-events-none"></div>
+</section>
+<!-- Section 2: Vision Reveal -->
+<section class="bg-surface-container-lowest flex items-center justify-center p-24" id="vision">
+<div class="relative w-full h-full flex items-center justify-center group">
+<!-- Massive typography placeholder for the interactive effect described -->
+<h2 class="font-headline text-[25vw] font-black italic tracking-tighter text-[#1b1b1b] transition-all duration-1000 group-hover:text-[#ffbc00] cursor-crosshair select-none leading-none">
+                VISION
+            </h2>
+<!-- Absolute overlay for mission text that appears on "explosion" -->
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-active:opacity-100 transition-opacity duration-700 bg-surface-container-lowest/90 px-12 text-center pointer-events-none group-active:pointer-events-auto">
+<p class="max-w-4xl text-4xl md:text-6xl font-headline font-bold leading-tight tracking-tighter text-on-surface">
+                    Empowering Europe’s <span class="text-primary-container">creatives</span>, providing generative AI, to give a voice to the unheard. A Hub for cultural exchange powered by creativity and accelerated by AI.
+                </p>
 </div>
-<div class="flex gap-6 items-center">
-<span class="font-['Inter'] text-[10px] tracking-widest uppercase opacity-20">NORDIC SOVEREIGNTY</span>
 </div>
+</section>
+<!-- Section 3: Podcast -->
+<section class="bg-surface-container-low flex flex-col justify-center px-12 md:px-24" id="podcast">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
+<div class="md:col-span-8">
+<span class="font-label text-xs tracking-[0.3em] text-primary-container uppercase mb-6 block">Featured Episode</span>
+<h2 class="font-headline text-6xl md:text-8xl font-black italic tracking-tighter text-on-surface mb-12">
+                    SUSTAINABILITY OF THE AMBER LAB
+                </h2>
+<!-- Minimalist Audio Player -->
+<div class="bg-surface-container-highest p-8 flex flex-col md:flex-row items-center gap-8 border-l-4 border-primary-container">
+<button class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-4xl" data-icon="play_arrow">play_arrow</span>
+</button>
+<div class="flex-1 w-full">
+<div class="h-1 bg-surface-variant w-full relative">
+<div class="absolute h-full bg-primary-container w-1/3"></div>
+</div>
+<div class="flex justify-between mt-2 font-label text-[10px] text-on-surface-variant uppercase tracking-widest">
+<span>12:45</span>
+<span>45:00</span>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary-container cursor-pointer" data-icon="volume_up">volume_up</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary-container cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 hidden md:block">
+<div class="aspect-square bg-surface-container-high overflow-hidden">
+<img alt="Minimalist abstract representation of sound waves in amber and charcoal colors" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A cinematic close-up of amber fluid swirling in dark water with micro-bubbles and dramatic golden lighting, abstract and premium" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5mdUy0lTn-FQws30l4pPlFV_OUcmg3dqgP0p7uscHv8HfGPEI0JNwclBFFtXqAylXPL-iIgRVWu25av6P5e3eYn4bGGy0oqLctwDX_oUnpndPsWnyeqlrZxoaFzgE78qnqud3nRZIccb8CBSsLcVIllzVt73W3DXe7BPi_6FLaEPPexKeM8qkhHbG68Hv73rMPScIKt4ukslKDgGTXgr5e6_imOMOMOQfewb93fzP397mEKoIh427bAwiferroOu_LHNnqULbX30"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Contact -->
+<section class="bg-surface-container-lowest flex items-center justify-center text-center p-12" id="contact">
+<div class="space-y-12">
+<h2 class="font-headline text-8xl md:text-[12rem] font-black italic tracking-tighter text-on-surface hover:text-primary-container transition-colors duration-700 cursor-pointer">
+                GET IN TOUCH
+            </h2>
+<div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
+<div class="text-left space-y-2">
+<p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">General Inquiries</p>
+<p class="font-headline text-2xl text-on-surface">hello@amberlab.ai</p>
+</div>
+<div class="text-left space-y-2">
+<p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Creative Hub</p>
+<p class="font-headline text-2xl text-on-surface">studio@amberlab.ai</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="fixed bottom-0 w-full flex justify-center items-center px-12 py-10 bg-transparent text-center z-50">
+<div class="font-label text-[10px] uppercase tracking-widest leading-loose text-[#e2e2e2]/40 max-w-lg">
+            AMBER LAB, providing generative AI to Europe's creatives, hosted by the Nordics.
+        </div>
 </footer>
+<!-- Side Navigation Placeholder (Hidden initially, part of JSON logic) -->
+<div class="hidden fixed inset-0 z-[60] bg-[#0e0e0e]/95 backdrop-blur-2xl flex flex-col justify-center items-start px-24 w-full h-full" id="side-nav">
+<div class="space-y-4">
+<div class="text-3xl font-bold text-[#ffbc00] mb-12 font-headline uppercase">AMBER LAB</div>
+<a class="font-headline text-6xl font-black italic tracking-tighter text-[#353535] hover:text-[#ffbc00] hover:translate-x-4 transition-all duration-500 uppercase" href="#hero">VISION</a>
+<a class="font-headline text-6xl font-black italic tracking-tighter text-[#353535] hover:text-[#ffbc00] hover:translate-x-4 transition-all duration-500 uppercase" href="#podcast">PURPOSE</a>
+<a class="font-headline text-6xl font-black italic tracking-tighter text-[#353535] hover:text-[#ffbc00] hover:translate-x-4 transition-all duration-500 uppercase" href="#contact">ABOUT</a>
+</div>
+<div class="mt-24">
+<button class="bg-primary-container text-on-primary px-12 py-6 font-headline font-bold uppercase tracking-widest">GET IN TOUCH</button>
+</div>
+</div>
+<!-- Script for interaction requirements -->
 <script>
-        // Scroll lock logic
-        setTimeout(() => {
-            document.body.classList.remove('scroll-lock');
-        }, 7000);
+        // 8-second scroll lock
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.getElementById('main-body');
+            body.classList.add('overflow-hidden');
+            
+            setTimeout(() => {
+                body.classList.remove('overflow-hidden');
+                body.classList.add('overflow-y-auto');
+            }, 8000);
+        });
 
-        // Smooth scroll for nav links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+        // Toggle side nav on '+' click
+        const plusButton = document.querySelector('header button');
+        const sideNav = document.getElementById('side-nav');
+        plusButton.addEventListener('click', () => {
+            sideNav.classList.toggle('hidden');
+        });
+
+        // Close nav on link click
+        document.querySelectorAll('#side-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                sideNav.classList.add('hidden');
             });
         });
     </script>
