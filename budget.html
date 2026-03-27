@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Budget Allocation | AMBER LAB</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#353535",
+                        "surface-tint": "#fbbc00",
+                        "primary-container": "#ffbf00",
+                        "on-surface-variant": "#d4c5ab",
+                        "surface-container": "#1f1f1f",
+                        "outline-variant": "#504532",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-fixed": "#ffdad4",
+                        "inverse-primary": "#795900",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface": "#131313",
+                        "primary-fixed-dim": "#fbbc00",
+                        "on-secondary-container": "#5c0000",
+                        "error-container": "#93000a",
+                        "tertiary": "#e5e5e5",
+                        "on-primary": "#402d00",
+                        "secondary-container": "#ff5540",
+                        "on-surface": "#e2e2e2",
+                        "on-primary-fixed-variant": "#5c4300",
+                        "inverse-surface": "#e2e2e2",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#e2e2e2",
+                        "secondary-fixed-dim": "#ffb4a8",
+                        "primary": "#ffe2ab",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-background": "#e2e2e2",
+                        "on-secondary-fixed": "#410000",
+                        "background": "#131313",
+                        "surface-container-low": "#1b1b1b",
+                        "surface-container-highest": "#353535",
+                        "secondary": "#ffb4a8",
+                        "on-secondary": "#690100",
+                        "on-secondary-fixed-variant": "#930100",
+                        "error": "#ffb4ab",
+                        "on-tertiary-container": "#535455",
+                        "outline": "#9c8f78",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-primary-fixed": "#261a00",
+                        "on-primary-container": "#6d5000",
+                        "surface-bright": "#393939",
+                        "tertiary-container": "#c9c9c9",
+                        "on-tertiary": "#2f3131",
+                        "on-error": "#690005",
+                        "surface-dim": "#131313",
+                        "primary-fixed": "#ffdfa0",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "inverse-on-surface": "#303030"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            background-color: #131313;
+            color: #e2e2e2;
+            -webkit-font-smoothing: antialiased;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-8 bg-transparent">
+<div class="text-2xl font-bold tracking-tighter text-[#e2e2e2] dark:text-[#e2e2e2] font-['Space_Grotesk'] uppercase tracking-widest">
+            AMBER LAB
+        </div>
+<div class="flex items-center gap-12">
+<a class="text-[#e2e2e2] font-['Space_Grotesk'] uppercase tracking-widest text-sm hover:text-[#ffbc00] transition-colors duration-500 ease-in-out" href="#">Mission</a>
+<a class="text-[#ffbc00] font-bold font-['Space_Grotesk'] uppercase tracking-widest text-sm hover:text-[#ffbc00] transition-colors duration-500 ease-in-out" href="#">Budget</a>
+<a class="text-[#e2e2e2] font-['Space_Grotesk'] uppercase tracking-widest text-sm hover:text-[#ffbc00] transition-colors duration-500 ease-in-out" href="#">Creators</a>
+<button class="bg-transparent border border-outline-variant px-6 py-2 text-[#ffbc00] font-['Space_Grotesk'] uppercase tracking-widest text-xs hover:bg-[#ffbc00] hover:text-[#131313] transition-all duration-500">
+                Contact
+            </button>
+</div>
+</nav>
+<main class="pt-40 pb-24 px-12 max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="mb-32">
+<span class="font-label text-primary text-xs tracking-[0.3em] uppercase block mb-4">Financial Architecture</span>
+<h1 class="font-headline text-8xl md:text-9xl font-bold leading-none tracking-tighter text-on-surface mb-12">
+                BUDGET ALLOCATION
+            </h1>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-end">
+<p class="font-body text-xl text-on-surface-variant leading-relaxed max-w-xl">
+                    This project transforms <span class="text-primary">€1.8 Million</span> into a physical and digital sanctuary for underrepresented storytellers, fostering a new era of cinematic equity.
+                </p>
+<div class="flex flex-col items-end gap-2">
+<span class="font-label text-xs opacity-40 uppercase tracking-widest">Fiscal Cycle</span>
+<span class="font-headline text-4xl font-light">2024 / 2025</span>
+</div>
+</div>
+</header>
+<!-- Vision Section -->
+<section class="mb-48 relative">
+<div class="absolute -left-12 top-0 w-[1px] h-full bg-outline-variant opacity-20"></div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="md:col-span-8 bg-surface-container-low p-12 relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-headline text-4xl mb-8 tracking-tight">Vision &amp; Core Philosophy</h2>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed mb-6">
+                            We believe that financial transparency is the first step toward true creative sovereignty. Our allocation strategy prioritizes the dismantling of systemic barriers by investing directly in human potential and sustainable infrastructure.
+                        </p>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed">
+                            By centering accessibility and IP ownership, we ensure that every Euro spent generates lasting impact for Europe’s creative fringe.
+                        </p>
+</div>
+<div class="absolute right-0 bottom-0 w-64 h-64 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[12rem] text-primary" data-icon="lightbulb">lightbulb</span>
+</div>
+</div>
+<div class="md:col-span-4 bg-surface-container-highest p-12 flex flex-col justify-between">
+<span class="font-label text-primary text-xs uppercase tracking-widest">The "Obsidian" Standard</span>
+<p class="font-headline text-2xl leading-tight">Zero Borders. Zero Compromise. Maximum Impact.</p>
+</div>
+</div>
+</section>
+<!-- Budget Breakdown: Bento Grid -->
+<section class="mb-48">
+<div class="flex justify-between items-baseline mb-12 border-b border-outline-variant border-opacity-10 pb-4">
+<h2 class="font-headline text-5xl tracking-tighter">€1.8M CAPITAL DISTRIBUTION</h2>
+<span class="font-label text-on-surface-variant text-xs uppercase tracking-widest">Total Grant Value</span>
+</div>
+<div class="bento-grid">
+<!-- Green Computing -->
+<div class="col-span-12 md:col-span-7 bg-surface-container-low p-12 group hover:bg-surface-container-high transition-colors duration-700">
+<div class="flex justify-between items-start mb-8">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="cloud_done">cloud_done</span>
+<h3 class="font-headline text-3xl mb-2">Green Computing</h3>
+</div>
+<span class="font-headline text-3xl text-primary">€750,000</span>
+</div>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                        High-GPU local workstations to reduce cloud energy dependency; integrated carbon-offsetting protocols for all generative AI processing pipelines.
+                    </p>
+</div>
+<!-- Direct Creator Support -->
+<div class="col-span-12 md:col-span-5 bg-surface-container-low p-12 group hover:bg-surface-container-high transition-colors duration-700">
+<div class="flex justify-between items-start mb-8">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="diversity_3">diversity_3</span>
+<h3 class="font-headline text-2xl mb-2">Direct Creator Support</h3>
+</div>
+</div>
+<div class="mb-4">
+<span class="font-headline text-4xl text-primary">€450,000</span>
+</div>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                        €15k stipends for 30 creators, effectively removing the “poverty barrier” to digital literacy and long-form storytelling.
+                    </p>
+</div>
+<!-- Guest Artist Residency -->
+<div class="col-span-12 md:col-span-4 bg-surface-container-low p-12 group hover:bg-surface-container-high transition-colors duration-700">
+<span class="material-symbols-outlined text-primary text-3xl mb-6" data-icon="school">school</span>
+<h3 class="font-headline text-2xl mb-2">Guest Artist Residency</h3>
+<div class="font-headline text-3xl text-primary mb-6">€400,000</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                        40+ global experts who share the demographic backgrounds of the participants, fostering a localized mentorship ecosystem.
+                    </p>
+</div>
+<!-- Community Outreach -->
+<div class="col-span-12 md:col-span-4 bg-surface-container-low p-12 group hover:bg-surface-container-high transition-colors duration-700">
+<span class="material-symbols-outlined text-primary text-3xl mb-6" data-icon="hub">hub</span>
+<h3 class="font-headline text-2xl mb-2">Community Outreach</h3>
+<div class="font-headline text-3xl text-primary mb-6">€150,000</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                        Physical “Green Lab Portals” in community spaces; screen-reader and multi-lang compatibility for all digital outputs.
+                    </p>
+</div>
+<!-- Data Sovereignty -->
+<div class="col-span-12 md:col-span-4 bg-surface-container-low p-12 group hover:bg-surface-container-high transition-colors duration-700">
+<span class="material-symbols-outlined text-primary text-3xl mb-6" data-icon="policy">policy</span>
+<h3 class="font-headline text-2xl mb-2">Data Sovereignty</h3>
+<div class="font-headline text-3xl text-primary mb-6">€50,000</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                        Legal frameworks and IP protection ensuring creators own 100% of their AI-augmented assets and stories.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Underrepresented Demographics Section -->
+<section class="mb-48 grid grid-cols-1 md:grid-cols-2 gap-24">
+<div>
+<h2 class="font-headline text-5xl font-bold tracking-tighter mb-12">AGENCY AS ARCHITECTS</h2>
+<div class="space-y-16">
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 text-primary font-headline text-xl">01</div>
+<h4 class="font-headline text-2xl mb-4">The Power of Choice</h4>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                            Our participants aren't just users; they are curators of the algorithms. Budget is dedicated to refining training sets that respect cultural nuance.
+                        </p>
+</div>
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 text-primary font-headline text-xl">02</div>
+<h4 class="font-headline text-2xl mb-4">Linguistic Sovereignty</h4>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                            Developing LLM interfaces that support dialects and languages often ignored by mainstream silicon-valley giants.
+                        </p>
+</div>
+</div>
+</div>
+<div class="relative min-h-[400px] bg-surface-container-lowest overflow-hidden">
+<img alt="Cinematic abstract representation of digital networks" class="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-40 hover:scale-105 transition-transform duration-[2000ms]" data-alt="abstract close up of fiber optic cables glowing with soft amber light in a dark void atmosphere cinematic minimalism" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJircYRLYlx-mcshQLcBxKgaurq7CP5UgAII7ocqKAyU6NTApk09AY_g4VrTXJh1j8wz-SoTqrrUhImYYC1RPhnkISoI_M_P0DSq-IgcIb8DzsghIPBsykYeGIR6EnWOZyqMePNZ-SAdZnU6SYkxPQNSr_gwZk52CR6PU3E8osQK4zgQTzNzh1kzYutGdRVaJN7gUGV5vyD2sJK3zxPcjTN7OnpqDBhp6Vx3SO2t6FR1GCnzYPHQg7bg1uoRs4UCN3HTA4T2oBJh4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+</section>
+<!-- Sustainability Legacy -->
+<section class="bg-[#ffbc00] text-[#131313] p-16 flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="max-w-xl">
+<h2 class="font-headline text-5xl font-bold tracking-tight mb-6">Sustainability Legacy</h2>
+<p class="font-body text-lg font-medium">
+                    At the end of the grant period, all hardware is donated to local community centers and all proprietary tech is open-sourced to the creative commons.
+                </p>
+</div>
+<div class="flex-shrink-0">
+<button class="bg-[#131313] text-on-surface px-10 py-5 font-headline font-bold uppercase tracking-widest hover:translate-y-[-4px] transition-transform duration-300">
+                    Read the Manifesto
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full flex justify-center items-center py-12 px-8 bg-[#131313]">
+<div class="font-['Inter'] text-[10px] uppercase tracking-[0.2em] opacity-60 text-[#ffbc00] text-center max-w-2xl">
+            AMBER LAB, PROVIDING GENERATIVE AI TO EUROPE’S CREATIVES, HOSTED BY THE NORDICS. © 2024 ALL RIGHTS RESERVED.
+        </div>
+</footer>
+</body></html>
