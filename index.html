@@ -78,7 +78,6 @@
         html { scroll-behavior: smooth; scroll-snap-type: y mandatory; }
         section { scroll-snap-align: start; height: 100vh; position: relative; overflow: hidden; width: 100%; }
         
-        /* Push-up effect simulation */
         body { margin: 0; background: #131313; }
         
         .obsidian-gradient {
@@ -88,7 +87,6 @@
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
 
-        /* Diagonal Menu Animation */
         #side-nav {
             clip-path: circle(0% at 3rem 3rem);
             transition: clip-path 1.2s cubic-bezier(0.85, 0, 0.15, 1);
@@ -97,7 +95,6 @@
             clip-path: circle(150% at 3rem 3rem);
         }
 
-        /* Noise Background */
         .noise-bg {
             background-color: #0e0e0e;
             position: relative;
@@ -128,7 +125,6 @@
             100% { transform: translate(5%,0); }
         }
 
-        /* Custom Mermaid Styling */
         .mermaid {
             width: 100%;
             max-width: 500px;
@@ -146,7 +142,6 @@
             opacity: 0.8;
         }
 
-        /* Initial scroll lock */
         .locked { overflow: hidden !important; touch-action: none; }
     </style>
 </head>
@@ -170,13 +165,13 @@
 </div>
 </header>
 <!-- Full Screen Overlay Menu -->
-<div class="fixed inset-0 z-[100] noise-bg flex flex-col justify-center items-start px-6 md:px-24" id="side-nav">
-<div class="flex flex-col gap-6 relative z-10 text-left">
-<a class="font-headline text-7xl md:text-[12vw] font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none" href="#vision">VISION</a>
-<a class="font-headline text-7xl md:text-[12vw] font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none" href="#podcast">PURPOSE</a>
-<a class="font-headline text-7xl md:text-[12vw] font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none" href="#contact">ABOUT</a>
+<div class="fixed inset-0 z-[100] noise-bg flex flex-col justify-center items-start px-6 md:px-12 lg:px-24" id="side-nav">
+<div class="flex flex-col gap-6 relative z-10 text-left items-start w-full">
+<a class="font-headline text-7xl md:text-[12vw] font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none text-left" href="#vision">VISION</a>
+<a class="font-headline text-7xl md:text-[12vw] font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none text-left" href="#podcast">PURPOSE</a>
+<a class="font-headline text-7xl md:text-[12vw] font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none text-left" href="#contact">ABOUT</a>
 </div>
-<div class="mt-16 flex flex-col md:flex-row gap-12 text-sm font-label tracking-widest text-on-surface-variant uppercase relative z-10">
+<div class="mt-16 flex flex-col md:flex-row gap-12 text-sm font-label tracking-widest text-on-surface-variant uppercase relative z-10 text-left w-full">
 <div>
 <p class="mb-2 opacity-50">General</p>
 <p>hello@amberlab.ai</p>
@@ -200,7 +195,9 @@
 <!-- Section 2: Vision -->
 <section class="bg-black relative flex items-start pt-32 md:pt-48" id="vision">
 <div class="absolute inset-0 z-0">
-<img alt="Europe Background" class="w-full h-full object-cover opacity-20 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0mNN_GcxsfK8972UddkpCmhvwc2i21BqfqzS2QKn0DQaHwdWEeMUSrWXgSQsTqJ4YHPzmfQuAeaCrieb1Vo1iVI-SH2EAWJcmJKk7hL9RYC_0CqlTWLUdBwaCNi0I6cou1yeX_1oTmiWb2mZYSRnp9RX723hIwiPpSx-b5jFU5WimUrNPV0G5cZW1lQnFveoDXtYo9fDK13FaiMx3NE8b87Z9D6_5oweobYb4ix9-kFuAr3htHXvnnf7ti5q1fhiXOoWbiMSB-fw"/>
+<video autoplay="" class="w-full h-full object-cover opacity-20 grayscale" loop="" muted="" playsinline="">
+<source src="BG_Video2.mp4" type="video/mp4"/>
+</video>
 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black"></div>
 </div>
 <div class="relative z-10 px-6 md:px-24 max-w-full">
@@ -317,7 +314,6 @@
     </div>
 </footer>
 <script>
-    // Initialize Mermaid with custom colors
     mermaid.initialize({
         startOnLoad: true,
         theme: 'base',
@@ -348,12 +344,10 @@
             "Data Sovereignty": "€50,000"
         };
 
-        // Strict 8-second scroll lock
         setTimeout(() => {
             body.classList.remove('locked');
         }, 8000);
 
-        // Chart Interaction Observer
         const checkChart = setInterval(() => {
             const svg = document.querySelector('#budget-chart svg');
             if (svg) {
@@ -402,7 +396,6 @@
             });
         }
 
-        // Navigation Menu Toggle
         const menuToggle = document.getElementById('menu-toggle');
         const menuIcon = document.getElementById('menu-icon');
         const sideNav = document.getElementById('side-nav');
@@ -417,7 +410,6 @@
             } else {
                 sideNav.classList.remove('active');
                 menuIcon.textContent = 'add';
-                // Only unlock if the initial 8s period has passed
                 if(performance.now() > 8000) body.classList.remove('locked');
             }
         }
@@ -429,7 +421,6 @@
                 isMenuOpen = false;
                 sideNav.classList.remove('active');
                 menuIcon.textContent = 'add';
-                // Only unlock if the initial 8s period has passed
                 if(performance.now() > 8000) body.classList.remove('locked');
             });
         });
