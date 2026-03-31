@@ -90,9 +90,11 @@
         #side-nav {
             clip-path: circle(0% at 3rem 3rem);
             transition: clip-path 1.2s cubic-bezier(0.85, 0, 0.15, 1);
+            pointer-events: none;
         }
         #side-nav.active {
             clip-path: circle(150% at 3rem 3rem);
+            pointer-events: auto;
         }
 
         .noise-bg {
@@ -155,8 +157,8 @@
 </div>
 <div class="flex justify-center">
 <div class="text-2xl md:text-4xl font-black tracking-[0.3em] text-white font-headline uppercase whitespace-nowrap">
-            AMBER LAB
-        </div>
+                AMBER LAB
+            </div>
 </div>
 <div class="flex justify-end">
 <nav>
@@ -165,7 +167,7 @@
 </div>
 </header>
 <!-- Full Screen Overlay Menu -->
-<div class="fixed inset-0 z-[100] noise-bg flex flex-col items-start px-6 md:px-12 lg:px-24 pt-[35vh]" id="side-nav">
+<div class="fixed inset-0 z-[100] noise-bg flex flex-col items-start px-6 md:px-12 lg:px-24 pt-[20vh]" id="side-nav">
 <div class="flex flex-col gap-8 relative z-10 text-left items-start w-full">
 <a class="font-headline font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none text-left text-4xl md:text-[5vw]" href="#vision">VISION</a>
 <a class="font-headline font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none text-left text-4xl md:text-[5vw]" href="#podcast">PURPOSE</a>
@@ -199,19 +201,19 @@
 <video autoplay="" class="w-full h-full object-cover" loop="" muted="" playsinline="">
 <source src="BG_Video2.mp4" type="video/mp4"/>
 </video>
-<!-- 25% black overlay over the entire background video -->
-<div class="absolute inset-0 bg-black/25"></div>
+<!-- 50% black overlay over the entire background video -->
+<div class="absolute inset-0 bg-black/50"></div>
 </div>
 <!-- Content -->
 <div class="relative z-10 px-6 md:px-24 max-w-full">
 <h2 class="font-headline text-7xl md:text-[10rem] font-black italic tracking-tighter text-white leading-none uppercase mb-8 inline-block drop-shadow-2xl" id="vision-title">
-            VISION
-        </h2>
-<!-- Added 25% black background behind the mission text block -->
+                VISION
+            </h2>
+<!-- 25% black background behind the mission text block -->
 <div class="max-w-[100%] md:max-w-prose mt-4 bg-black/25 p-6 md:p-8">
 <p class="font-body text-base md:text-xl font-light leading-relaxed text-white drop-shadow-lg">
-                Empowering Europe’s creatives through access to generative AI, virtual production, and XR. We bridge the gap between Nordic cultural heritage and the future of expression. The lab is a cultural hub for artists, ensuring technology serves as a vital bridge for memory and innovation.
-            </p>
+                    Empowering Europe’s creatives through access to generative AI, virtual production, and XR. We bridge the gap between Nordic cultural heritage and the future of expression. The lab is a cultural hub for artists, ensuring technology serves as a vital bridge for memory and innovation.
+                </p>
 </div>
 </div>
 </section>
@@ -221,8 +223,8 @@
 <div class="md:col-span-8">
 <span class="font-label text-xs tracking-[0.3em] text-primary-container uppercase mb-6 block">Featured Episode</span>
 <h2 class="font-headline text-5xl md:text-8xl font-black italic tracking-tighter text-on-surface mb-8 md:mb-12 uppercase leading-tight">
-                SUSTAINABILITY OF THE AMBER LAB
-            </h2>
+                    SUSTAINABILITY OF THE AMBER LAB
+                </h2>
 <div class="bg-surface-container-highest p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 md:gap-8 border-l-4 border-primary-container">
 <button class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center hover:scale-105 transition-transform flex-shrink-0">
 <span class="material-symbols-outlined text-4xl">play_arrow</span>
@@ -256,13 +258,13 @@
 <div class="flex flex-col items-center">
 <h3 class="font-headline text-4xl md:text-5xl font-black italic tracking-tighter text-on-surface mb-8 md:mb-12 self-start uppercase">Budget Allocation</h3>
 <div class="mermaid" id="budget-chart">
-                pie showData
-                    "Green Computing" : 750000
-                    "Direct Creator Support" : 450000
-                    "Guest Artist Residency" : 400000
-                    "Community Outreach" : 150000
-                    "Data Sovereignty" : 50000
-            </div>
+                    pie showData
+                        "Green Computing" : 750000
+                        "Direct Creator Support" : 450000
+                        "Guest Artist Residency" : 400000
+                        "Community Outreach" : 150000
+                        "Data Sovereignty" : 50000
+                </div>
 <div class="mt-8 text-center h-12" id="chart-info">
 <p class="font-mono text-primary text-2xl tracking-[0.2em] opacity-0 transition-opacity duration-300" id="hover-value"></p>
 </div>
@@ -275,20 +277,20 @@
 <div>
 <h4 class="font-headline text-lg font-bold text-primary mb-3 uppercase tracking-widest">Vision &amp; Philosophy</h4>
 <p class="text-on-surface-variant font-light leading-relaxed text-sm md:text-base">
-                    Our financial architecture reflects our commitment to ethical innovation. We prioritize the <span class="text-on-surface font-semibold">decentralization of creative power</span>.
-                </p>
+                        Our financial architecture reflects our commitment to ethical innovation. We prioritize the <span class="text-on-surface font-semibold">decentralization of creative power</span>.
+                    </p>
 </div>
 <div>
 <h4 class="font-headline text-lg font-bold text-primary mb-3 uppercase tracking-widest">Inclusive Outreach</h4>
 <p class="text-on-surface-variant font-light leading-relaxed text-sm md:text-base">
-                    AMBER LAB targets <span class="bg-primary/20 text-primary px-1">Nordic indigenous voices</span> and <span class="bg-primary/20 text-primary px-1">emerging digital artists</span> who lack access to virtual production tools.
-                </p>
+                        AMBER LAB targets <span class="bg-primary/20 text-primary px-1">Nordic indigenous voices</span> and <span class="bg-primary/20 text-primary px-1">emerging digital artists</span> who lack access to virtual production tools.
+                    </p>
 </div>
 <div>
 <h4 class="font-headline text-lg font-bold text-primary mb-3 uppercase tracking-widest">Sustainability</h4>
 <p class="text-on-surface-variant font-light leading-relaxed text-sm md:text-base">
-                    The €750k for Green Computing represents our pledge to carbon-neutral rendering. We are establishing a <span class="text-on-surface font-semibold">circular creative economy</span>.
-                </p>
+                        The €750k for Green Computing represents our pledge to carbon-neutral rendering. We are establishing a <span class="text-on-surface font-semibold">circular creative economy</span>.
+                    </p>
 </div>
 </div>
 </div>
@@ -297,8 +299,8 @@
 <section class="bg-surface-container-lowest flex items-center justify-center text-center p-6 md:p-12" id="contact">
 <div class="space-y-12 w-full">
 <h2 class="font-headline text-5xl md:text-8xl font-light italic tracking-[0.2em] text-on-surface/20 hover:text-primary-container transition-all duration-1000 cursor-pointer uppercase">
-            Get in touch
-        </h2>
+                Get in touch
+            </h2>
 <div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
 <div class="text-left space-y-2">
 <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/40">General Inquiries</p>
@@ -314,517 +316,122 @@
 <!-- Footer -->
 <footer class="fixed bottom-0 w-full flex justify-center items-center px-6 md:px-12 py-8 bg-transparent text-center z-[110] pointer-events-none">
 <div class="font-label text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-white/30 whitespace-nowrap pointer-events-auto bg-black/20 backdrop-blur-sm px-4 py-1">
-        AMBER LAB, providing generative AI to Europe's creatives, hosted by the Nordics.
-    </div>
-</footer>
-<script>
-    mermaid.initialize({
-        startOnLoad: true,
-        theme: 'base',
-        securityLevel: 'loose',
-        themeVariables: {
-            pie1: '#ffffff',
-            pie2: '#888888',
-            pie3: '#FF4D4D',
-            pie4: '#FFD700',
-            pie5: '#3B82F6',
-            pieTitleTextSize: '16px',
-            pieTitleTextColor: '#e2e2e2',
-            pieSectionTextColor: '#131313',
-            pieSectionTextSize: '14px',
-            pieLegendTextSize: '12px',
-            pieLegendTextColor: '#d4c5ab',
-            backgroundColor: 'transparent'
-        }
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const body = document.getElementById('main-body');
-        const budgetData = {
-            "Green Computing": "€750,000",
-            "Direct Creator Support": "€450,000",
-            "Guest Artist Residency": "€400,000",
-            "Community Outreach": "€150,000",
-            "Data Sovereignty": "€50,000"
-        };
-
-        // Maintain 8-second scroll lock
-        setTimeout(() => {
-            body.classList.remove('locked');
-        }, 8000);
-
-        const checkChart = setInterval(() => {
-            const svg = document.querySelector('#budget-chart svg');
-            if (svg) {
-                clearInterval(checkChart);
-                setupChartInteractions(svg);
-            }
-        }, 200);
-
-        function setupChartInteractions(svg) {
-            const slices = svg.querySelectorAll('.pie-slice');
-            const legendItems = svg.querySelectorAll('.legendItem');
-            const displayField = document.getElementById('hover-value');
-
-            function showValue(label) {
-                const cleanLabel = label.split(' (')[0].split(':')[0].trim();
-                const val = budgetData[cleanLabel];
-                if (val) {
-                    displayField.textContent = val;
-                    displayField.classList.remove('opacity-0');
-                    displayField.classList.add('opacity-100');
-                }
-            }
-
-            function hideValue() {
-                displayField.classList.remove('opacity-100');
-                displayField.classList.add('opacity-0');
-            }
-
-            const dataKeys = Object.keys(budgetData);
-            slices.forEach((slice, index) => {
-                slice.addEventListener('mouseenter', () => showValue(dataKeys[index]));
-                slice.addEventListener('mouseleave', hideValue);
-                slice.addEventListener('touchstart', (e) => {
-                    e.preventDefault();
-                    showValue(dataKeys[index]);
-                });
-            });
-
-            legendItems.forEach(item => {
-                const textEl = item.querySelector('text');
-                if (textEl) {
-                    const text = textEl.textContent;
-                    item.addEventListener('mouseenter', () => showValue(text));
-                    item.addEventListener('mouseleave', hideValue);
-                }
-            });
-        }
-
-        const menuToggle = document.getElementById('menu-toggle');
-        const menuIcon = document.getElementById('menu-icon');
-        const sideNav = document.getElementById('side-nav');
-        let isMenuOpen = false;
-
-        function toggleMenu() {
-            isMenuOpen = !isMenuOpen;
-            if (isMenuOpen) {
-                sideNav.classList.add('active');
-                menuIcon.textContent = 'close';
-                body.classList.add('locked');
-            } else {
-                sideNav.classList.remove('active');
-                menuIcon.textContent = 'add';
-                // Only unlock if the initial timer has passed or if we aren't in initial boot
-                if(performance.now() > 8000) body.classList.remove('locked');
-            }
-        }
-
-        menuToggle.addEventListener('click', toggleMenu);
-
-        document.querySelectorAll('#side-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                isMenuOpen = false;
-                sideNav.classList.remove('active');
-                menuIcon.textContent = 'add';
-                if(performance.now() > 8000) body.classList.remove('locked');
-            });
-        });
-    });
-</script>
-</body></html>                        "on-tertiary-fixed": "#1a1c1c",
-                        "on-secondary": "#690100",
-                        "surface-dim": "#131313",
-                        "on-primary-fixed": "#261a00",
-                        "primary-fixed": "#ffdfa0",
-                        "primary-container": "#ffbf00",
-                        "outline": "#9c8f78",
-                        "on-error": "#690005",
-                        "surface-container-highest": "#353535",
-                        "inverse-primary": "#795900",
-                        "on-error-container": "#ffdad6",
-                        "outline-variant": "#504532",
-                        "secondary-fixed": "#ffdad4",
-                        "primary": "#ffe2ab",
-                        "secondary-container": "#ff5540",
-                        "inverse-surface": "#e2e2e2",
-                        "surface-container": "#1f1f1f",
-                        "on-primary": "#402d00",
-                        "on-primary-container": "#6d5000",
-                        "error-container": "#93000a",
-                        "surface-container-high": "#2a2a2a",
-                        "on-tertiary-container": "#535455",
-                        "on-surface": "#e2e2e2",
-                        "on-secondary-container": "#5c0000",
-                        "tertiary": "#e5e5e5",
-                        "on-secondary-fixed-variant": "#930100",
-                        "on-background": "#e2e2e2"
-                    },
-                    fontFamily: {
-                        "headline": ["Space Grotesk"],
-                        "body": ["Inter"],
-                        "label": ["Inter"],
-                        "mono": ["JetBrains Mono"]
-                    },
-                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
-                },
-            },
-        }
-    </script>
-<style>
-        ::-webkit-scrollbar { width: 0px; }
-        html { scroll-behavior: smooth; scroll-snap-type: y mandatory; }
-        section { scroll-snap-align: start; height: 100vh; position: relative; overflow: hidden; width: 100%; }
-        
-        body { margin: 0; background: #131313; }
-        
-        .obsidian-gradient {
-            background: linear-gradient(180deg, rgba(14,14,14,0) 0%, rgba(14,14,14,1) 100%);
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
-
-        #side-nav {
-            clip-path: circle(0% at 3rem 3rem);
-            transition: clip-path 1.2s cubic-bezier(0.85, 0, 0.15, 1);
-        }
-        #side-nav.active {
-            clip-path: circle(150% at 3rem 3rem);
-        }
-
-        .noise-bg {
-            background-color: #0e0e0e;
-            position: relative;
-        }
-        .noise-bg::before {
-            content: "";
-            position: absolute;
-            top: -100%;
-            left: -100%;
-            width: 300%;
-            height: 300%;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            opacity: 0.04;
-            pointer-events: none;
-            animation: noise-move 8s steps(10) infinite;
-        }
-        @keyframes noise-move {
-            0% { transform: translate(0,0); }
-            10% { transform: translate(-5%,-5%); }
-            20% { transform: translate(-10%,5%); }
-            30% { transform: translate(5%,-10%); }
-            40% { transform: translate(-5%,15%); }
-            50% { transform: translate(-10%,5%); }
-            60% { transform: translate(15%,0); }
-            70% { transform: translate(0,10%); }
-            80% { transform: translate(-15%,0); }
-            90% { transform: translate(10%,5%); }
-            100% { transform: translate(5%,0); }
-        }
-
-        .mermaid {
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .mermaid svg {
-            max-width: 100% !important;
-            height: auto !important;
-        }
-        .mermaid .pie-slice {
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-        .mermaid .pie-slice:hover {
-            opacity: 0.8;
-        }
-
-        .locked { overflow: hidden !important; touch-action: none; }
-    </style>
-</head>
-<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container locked" id="main-body">
-<!-- Header -->
-<header class="fixed top-0 w-full z-[110] grid grid-cols-3 items-center px-6 md:px-12 py-8 bg-transparent">
-<div class="flex justify-start">
-<button class="text-on-surface hover:text-[#ffbc00] transition-colors z-[120]" id="menu-toggle">
-<span class="material-symbols-outlined !text-4xl md:!text-5xl" id="menu-icon">add</span>
-</button>
-</div>
-<div class="flex justify-center">
-<div class="text-2xl md:text-4xl font-black tracking-[0.3em] text-white font-headline uppercase whitespace-nowrap">
-            AMBER LAB
+            AMBER LAB, providing generative AI to Europe's creatives, hosted by the Nordics.
         </div>
-</div>
-<div class="flex justify-end">
-<nav>
-<a class="text-white font-headline text-sm md:text-base tracking-widest uppercase hover:text-[#ffbc00] transition-all duration-300" href="#contact">Contact</a>
-</nav>
-</div>
-</header>
-<!-- Full Screen Overlay Menu -->
-<div class="fixed inset-0 z-[100] noise-bg flex flex-col items-start px-6 md:px-12 lg:px-24 pt-[35vh]" id="side-nav">
-<div class="flex flex-col gap-8 relative z-10 text-left items-start w-full">
-<a class="font-headline font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none text-left text-4xl md:text-[5vw]" href="#vision">VISION</a>
-<a class="font-headline font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none text-left text-4xl md:text-[5vw]" href="#podcast">PURPOSE</a>
-<a class="font-headline font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none text-left text-4xl md:text-[5vw]" href="#contact">ABOUT</a>
-</div>
-<div class="mt-16 flex flex-col md:flex-row gap-12 text-sm font-label tracking-widest text-on-surface-variant uppercase relative z-10 text-left w-full">
-<div>
-<p class="mb-2 opacity-50 text-[10px]">General</p>
-<p>hello@amberlab.ai</p>
-</div>
-<div>
-<p class="mb-2 opacity-50 text-[10px]">Studio</p>
-<p>studio@amberlab.ai</p>
-</div>
-</div>
-</div>
-<!-- Section 1: Hero Video -->
-<section class="relative bg-surface-container-lowest" id="hero">
-<video autoplay="" class="absolute inset-0 w-full h-full object-cover opacity-60" loop="" muted="" playsinline="">
-<source src="BG_VIDEO.mp4" type="video/mp4"/>
-</video>
-<div class="absolute inset-0 obsidian-gradient pointer-events-none"></div>
-<div class="absolute bottom-24 left-1/2 -translate-x-1/2 md:hidden">
-<span class="material-symbols-outlined animate-bounce text-white/40">expand_more</span>
-</div>
-</section>
-<!-- Section 2: Vision -->
-<section class="bg-black relative flex items-start pt-32 md:pt-48" id="vision">
-<!-- Video Background: Filters Removed -->
-<div class="absolute inset-0 z-0">
-<video autoplay="" class="w-full h-full object-cover" loop="" muted="" playsinline="">
-<source src="BG_Video2.mp4" type="video/mp4"/>
-</video>
-</div>
-<!-- Content: Background Boxes Removed -->
-<div class="relative z-10 px-6 md:px-24 max-w-full">
-<h2 class="font-headline text-7xl md:text-[10rem] font-black italic tracking-tighter text-white leading-none uppercase mb-8 inline-block drop-shadow-2xl" id="vision-title">
-            VISION
-        </h2>
-<div class="max-w-[100%] md:max-w-prose mt-4">
-<p class="font-body text-base md:text-xl font-light leading-relaxed text-white drop-shadow-lg">
-                Empowering Europe’s creatives through access to generative AI, virtual production, and XR. We bridge the gap between Nordic cultural heritage and the future of expression. The lab is a cultural hub for artists, ensuring technology serves as a vital bridge for memory and innovation.
-            </p>
-</div>
-</div>
-</section>
-<!-- Section 3: Podcast (Purpose) -->
-<section class="bg-surface-container-low flex flex-col justify-center px-6 md:px-24" id="podcast">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-end">
-<div class="md:col-span-8">
-<span class="font-label text-xs tracking-[0.3em] text-primary-container uppercase mb-6 block">Featured Episode</span>
-<h2 class="font-headline text-5xl md:text-8xl font-black italic tracking-tighter text-on-surface mb-8 md:mb-12 uppercase leading-tight">
-                SUSTAINABILITY OF THE AMBER LAB
-            </h2>
-<div class="bg-surface-container-highest p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 md:gap-8 border-l-4 border-primary-container">
-<button class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center hover:scale-105 transition-transform flex-shrink-0">
-<span class="material-symbols-outlined text-4xl">play_arrow</span>
-</button>
-<div class="flex-1 w-full">
-<div class="h-1 bg-surface-variant w-full relative">
-<div class="absolute h-full bg-primary-container w-1/3"></div>
-</div>
-<div class="flex justify-between mt-2 font-label text-[10px] text-on-surface-variant uppercase tracking-widest">
-<span>12:45</span>
-<span>45:00</span>
-</div>
-</div>
-<div class="flex gap-4">
-<span class="material-symbols-outlined text-on-surface-variant hover:text-primary-container cursor-pointer">volume_up</span>
-<span class="material-symbols-outlined text-on-surface-variant hover:text-primary-container cursor-pointer">more_vert</span>
-</div>
-</div>
-</div>
-<div class="md:col-span-4 hidden md:block">
-<div class="aspect-square bg-surface-container-high overflow-hidden">
-<img alt="Abstract audio visual" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5mdUy0lTn-FQws30l4pPlFV_OUcmg3dqgP0p7uscHv8HfGPEI0JNwclBFFtXqAylXPL-iIgRVWu25av6P5e3eYn4bGGy0oqLctwDX_oUnpndPsWnyeqlrZxoaFzgE78qnqud3nRZIccb8CBSsLcVIllzVt73W3DXe7BPi_6FLaEPPexKeM8qkhHbG68Hv73rMPScIKt4ukslKDgGTXgr5e6_imOMOMOQfewb93fzP397mEKoIh427bAwiferroOu_LHNnqULbX30"/>
-</div>
-</div>
-</div>
-</section>
-<!-- Section 4: Budget Allocation -->
-<section class="bg-background flex flex-col justify-center px-6 md:px-24" id="budget">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-<!-- Left Column: Pie Chart -->
-<div class="flex flex-col items-center">
-<h3 class="font-headline text-4xl md:text-5xl font-black italic tracking-tighter text-on-surface mb-8 md:mb-12 self-start uppercase">Budget Allocation</h3>
-<div class="mermaid" id="budget-chart">
-                pie showData
-                    "Green Computing" : 750000
-                    "Direct Creator Support" : 450000
-                    "Guest Artist Residency" : 400000
-                    "Community Outreach" : 150000
-                    "Data Sovereignty" : 50000
-            </div>
-<div class="mt-8 text-center h-12" id="chart-info">
-<p class="font-mono text-primary text-2xl tracking-[0.2em] opacity-0 transition-opacity duration-300" id="hover-value"></p>
-</div>
-<div class="mt-6">
-<a class="font-headline text-xs tracking-[0.4em] text-on-surface/60 hover:text-primary border-b border-on-surface/20 hover:border-primary pb-2 uppercase transition-all duration-500" href="budget.html">Full Budget Breakdown</a>
-</div>
-</div>
-<!-- Right Column: Text Content -->
-<div class="space-y-8 md:space-y-12">
-<div>
-<h4 class="font-headline text-lg font-bold text-primary mb-3 uppercase tracking-widest">Vision &amp; Philosophy</h4>
-<p class="text-on-surface-variant font-light leading-relaxed text-sm md:text-base">
-                    Our financial architecture reflects our commitment to ethical innovation. We prioritize the <span class="text-on-surface font-semibold">decentralization of creative power</span>.
-                </p>
-</div>
-<div>
-<h4 class="font-headline text-lg font-bold text-primary mb-3 uppercase tracking-widest">Inclusive Outreach</h4>
-<p class="text-on-surface-variant font-light leading-relaxed text-sm md:text-base">
-                    AMBER LAB targets <span class="bg-primary/20 text-primary px-1">Nordic indigenous voices</span> and <span class="bg-primary/20 text-primary px-1">emerging digital artists</span> who lack access to virtual production tools.
-                </p>
-</div>
-<div>
-<h4 class="font-headline text-lg font-bold text-primary mb-3 uppercase tracking-widest">Sustainability</h4>
-<p class="text-on-surface-variant font-light leading-relaxed text-sm md:text-base">
-                    The €750k for Green Computing represents our pledge to carbon-neutral rendering. We are establishing a <span class="text-on-surface font-semibold">circular creative economy</span>.
-                </p>
-</div>
-</div>
-</div>
-</section>
-<!-- Section 5: Contact -->
-<section class="bg-surface-container-lowest flex items-center justify-center text-center p-6 md:p-12" id="contact">
-<div class="space-y-12 w-full">
-<h2 class="font-headline text-5xl md:text-8xl font-light italic tracking-[0.2em] text-on-surface/20 hover:text-primary-container transition-all duration-1000 cursor-pointer uppercase">
-            Get in touch
-        </h2>
-<div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
-<div class="text-left space-y-2">
-<p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/40">General Inquiries</p>
-<p class="font-headline text-lg font-light text-on-surface/60">hello@amberlab.ai</p>
-</div>
-<div class="text-left space-y-2">
-<p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/40">Creative Hub</p>
-<p class="font-headline text-lg font-light text-on-surface/60">studio@amberlab.ai</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<footer class="fixed bottom-0 w-full flex justify-center items-center px-6 md:px-12 py-8 bg-transparent text-center z-[110] pointer-events-none">
-<div class="font-label text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-white/30 whitespace-nowrap pointer-events-auto bg-black/20 backdrop-blur-sm px-4 py-1">
-        AMBER LAB, providing generative AI to Europe's creatives, hosted by the Nordics.
-    </div>
 </footer>
 <script>
-    mermaid.initialize({
-        startOnLoad: true,
-        theme: 'base',
-        securityLevel: 'loose',
-        themeVariables: {
-            pie1: '#ffffff',
-            pie2: '#888888',
-            pie3: '#FF4D4D',
-            pie4: '#FFD700',
-            pie5: '#3B82F6',
-            pieTitleTextSize: '16px',
-            pieTitleTextColor: '#e2e2e2',
-            pieSectionTextColor: '#131313',
-            pieSectionTextSize: '14px',
-            pieLegendTextSize: '12px',
-            pieLegendTextColor: '#d4c5ab',
-            backgroundColor: 'transparent'
-        }
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const body = document.getElementById('main-body');
-        const budgetData = {
-            "Green Computing": "€750,000",
-            "Direct Creator Support": "€450,000",
-            "Guest Artist Residency": "€400,000",
-            "Community Outreach": "€150,000",
-            "Data Sovereignty": "€50,000"
-        };
-
-        // Maintain 8-second scroll lock
-        setTimeout(() => {
-            body.classList.remove('locked');
-        }, 8000);
-
-        const checkChart = setInterval(() => {
-            const svg = document.querySelector('#budget-chart svg');
-            if (svg) {
-                clearInterval(checkChart);
-                setupChartInteractions(svg);
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            securityLevel: 'loose',
+            themeVariables: {
+                pie1: '#ffffff',
+                pie2: '#888888',
+                pie3: '#FF4D4D',
+                pie4: '#FFD700',
+                pie5: '#3B82F6',
+                pieTitleTextSize: '16px',
+                pieTitleTextColor: '#e2e2e2',
+                pieSectionTextColor: '#131313',
+                pieSectionTextSize: '14px',
+                pieLegendTextSize: '12px',
+                pieLegendTextColor: '#d4c5ab',
+                backgroundColor: 'transparent'
             }
-        }, 200);
+        });
 
-        function setupChartInteractions(svg) {
-            const slices = svg.querySelectorAll('.pie-slice');
-            const legendItems = svg.querySelectorAll('.legendItem');
-            const displayField = document.getElementById('hover-value');
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.getElementById('main-body');
+            const budgetData = {
+                "Green Computing": "€750,000",
+                "Direct Creator Support": "€450,000",
+                "Guest Artist Residency": "€400,000",
+                "Community Outreach": "€150,000",
+                "Data Sovereignty": "€50,000"
+            };
 
-            function showValue(label) {
-                const cleanLabel = label.split(' (')[0].split(':')[0].trim();
-                const val = budgetData[cleanLabel];
-                if (val) {
-                    displayField.textContent = val;
-                    displayField.classList.remove('opacity-0');
-                    displayField.classList.add('opacity-100');
+            // Maintain 8-second scroll lock
+            setTimeout(() => {
+                body.classList.remove('locked');
+            }, 8000);
+
+            const checkChart = setInterval(() => {
+                const svg = document.querySelector('#budget-chart svg');
+                if (svg) {
+                    clearInterval(checkChart);
+                    setupChartInteractions(svg);
+                }
+            }, 200);
+
+            function setupChartInteractions(svg) {
+                const slices = svg.querySelectorAll('.pie-slice');
+                const legendItems = svg.querySelectorAll('.legendItem');
+                const displayField = document.getElementById('hover-value');
+
+                function showValue(label) {
+                    const cleanLabel = label.split(' (')[0].split(':')[0].trim();
+                    const val = budgetData[cleanLabel];
+                    if (val) {
+                        displayField.textContent = val;
+                        displayField.classList.remove('opacity-0');
+                        displayField.classList.add('opacity-100');
+                    }
+                }
+
+                function hideValue() {
+                    displayField.classList.remove('opacity-100');
+                    displayField.classList.add('opacity-0');
+                }
+
+                const dataKeys = Object.keys(budgetData);
+                slices.forEach((slice, index) => {
+                    slice.addEventListener('mouseenter', () => showValue(dataKeys[index]));
+                    slice.addEventListener('mouseleave', hideValue);
+                    slice.addEventListener('touchstart', (e) => {
+                        e.preventDefault();
+                        showValue(dataKeys[index]);
+                    });
+                });
+
+                legendItems.forEach(item => {
+                    const textEl = item.querySelector('text');
+                    if (textEl) {
+                        const text = textEl.textContent;
+                        item.addEventListener('mouseenter', () => showValue(text));
+                        item.addEventListener('mouseleave', hideValue);
+                    }
+                });
+            }
+
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuIcon = document.getElementById('menu-icon');
+            const sideNav = document.getElementById('side-nav');
+            let isMenuOpen = false;
+
+            function toggleMenu() {
+                isMenuOpen = !isMenuOpen;
+                if (isMenuOpen) {
+                    sideNav.classList.add('active');
+                    menuIcon.textContent = 'close';
+                    body.classList.add('locked');
+                } else {
+                    sideNav.classList.remove('active');
+                    menuIcon.textContent = 'add';
+                    // Only unlock if the initial timer has passed or if we aren't in initial boot
+                    if(performance.now() > 8000) body.classList.remove('locked');
                 }
             }
 
-            function hideValue() {
-                displayField.classList.remove('opacity-100');
-                displayField.classList.add('opacity-0');
-            }
+            menuToggle.addEventListener('click', toggleMenu);
 
-            const dataKeys = Object.keys(budgetData);
-            slices.forEach((slice, index) => {
-                slice.addEventListener('mouseenter', () => showValue(dataKeys[index]));
-                slice.addEventListener('mouseleave', hideValue);
-                slice.addEventListener('touchstart', (e) => {
-                    e.preventDefault();
-                    showValue(dataKeys[index]);
+            document.querySelectorAll('#side-nav a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    isMenuOpen = false;
+                    sideNav.classList.remove('active');
+                    menuIcon.textContent = 'add';
+                    if(performance.now() > 8000) body.classList.remove('locked');
                 });
             });
-
-            legendItems.forEach(item => {
-                const textEl = item.querySelector('text');
-                if (textEl) {
-                    const text = textEl.textContent;
-                    item.addEventListener('mouseenter', () => showValue(text));
-                    item.addEventListener('mouseleave', hideValue);
-                }
-            });
-        }
-
-        const menuToggle = document.getElementById('menu-toggle');
-        const menuIcon = document.getElementById('menu-icon');
-        const sideNav = document.getElementById('side-nav');
-        let isMenuOpen = false;
-
-        function toggleMenu() {
-            isMenuOpen = !isMenuOpen;
-            if (isMenuOpen) {
-                sideNav.classList.add('active');
-                menuIcon.textContent = 'close';
-                body.classList.add('locked');
-            } else {
-                sideNav.classList.remove('active');
-                menuIcon.textContent = 'add';
-                // Only unlock if the initial timer has passed or if we aren't in initial boot
-                if(performance.now() > 8000) body.classList.remove('locked');
-            }
-        }
-
-        menuToggle.addEventListener('click', toggleMenu);
-
-        document.querySelectorAll('#side-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                isMenuOpen = false;
-                sideNav.classList.remove('active');
-                menuIcon.textContent = 'add';
-                if(performance.now() > 8000) body.classList.remove('locked');
-            });
         });
-    });
-</script>
+    </script>
 </body></html>
