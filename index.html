@@ -65,7 +65,6 @@
             clip-path: circle(0% at 0% 0%);
             transition: clip-path 1.2s cubic-bezier(0.85, 0, 0.15, 1);
             pointer-events: none;
-            background-color: rgba(10, 10, 10, 0.95);
         }
         #side-nav.active {
             clip-path: circle(200% at 0% 0%);
@@ -79,7 +78,7 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
             opacity: 0.05;
             pointer-events: none;
-            z-index: 1;
+            z-index: 2;
         }
 
         /* Video Sizing */
@@ -146,17 +145,22 @@
 </header>
 <!-- Dropdown Menu -->
 <div class="fixed inset-0 z-[110] noise-overlay flex flex-col justify-end px-8 md:px-24 pb-32 md:pb-48" id="side-nav">
-<div class="flex flex-col gap-6 md:gap-10 relative z-10 text-left items-start">
-<a class="font-headline font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none text-4xl md:text-[4vw]" href="#vision">VISION</a>
-<a class="font-headline font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none text-4xl md:text-[4vw]" href="#podcast">PURPOSE</a>
-<a class="font-headline font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none text-4xl md:text-[4vw]" href="#contact">ABOUT</a>
+<div class="absolute inset-0 bg-gradient-to-br from-black via-[#0a0a0a] to-[#1a1a1a] opacity-98"></div>
+<div class="flex flex-col gap-8 md:gap-12 relative z-10 text-left items-start">
+<a class="font-headline font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none text-5xl md:text-[6vw]" href="#hero">HOME</a>
+<a class="font-headline font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none text-5xl md:text-[6vw]" href="#vision">VISION</a>
+<a class="font-headline font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none text-5xl md:text-[6vw]" href="#podcast">PURPOSE</a>
+<a class="font-headline font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none text-5xl md:text-[6vw]" href="#budget">ALLOCATION</a>
+<a class="font-headline font-black italic tracking-tighter text-on-surface hover:text-[#ffbc00] transition-colors uppercase leading-none text-5xl md:text-[6vw]" href="#contact">ABOUT</a>
 </div>
-<div class="mt-20 flex flex-col md:flex-row gap-8 text-[10px] font-label tracking-[0.3em] text-on-surface/40 uppercase relative z-10">
+<div class="mt-24 flex flex-col md:flex-row gap-12 text-[10px] font-label tracking-[0.4em] text-on-surface/30 uppercase relative z-10">
 <div>
-<p>hello@amberlab.ai</p>
+<p class="mb-2 opacity-50">General</p>
+<p class="text-on-surface/60">hello@amberlab.ai</p>
 </div>
 <div>
-<p>studio@amberlab.ai</p>
+<p class="mb-2 opacity-50">Studio</p>
+<p class="text-on-surface/60">studio@amberlab.ai</p>
 </div>
 </div>
 </div>
