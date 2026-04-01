@@ -7,63 +7,70 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&amp;family=Inter:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">let isLocked = true;
-document.body.style.overflow = 'hidden';
-
-setTimeout(() => {
-isLocked = false;
-document.body.style.overflow = 'auto';
-}, 8000);
-
-window.addEventListener('wheel', (e) => {
-if (isLocked && window.scrollY < 100) {
-e.preventDefault();
-}
-}, { passive: false });
-
-const menuToggle = document.getElementById('menu-toggle');
-const diagonalMenu = document.getElementById('diagonal-menu');
-const menuIcon = document.getElementById('menu-icon');
-let menuOpen = false;
-
-menuToggle.addEventListener('click', () => {
-menuOpen = !menuOpen;
-diagonalMenu.classList.toggle('active');
-menuIcon.innerText = menuOpen ? 'close' : 'add';
-document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
-});
-
-diagonalMenu.querySelectorAll('a').forEach(link => {
-link.addEventListener('click', () => {
-menuOpen = false;
-diagonalMenu.classList.remove('active');
-menuIcon.innerText = 'add';
-document.body.style.overflow = 'auto';
-});
-});
-
-const slices = document.querySelectorAll('svg circle[id^="slice-"]');
-const detailLabel = document.getElementById('detail-label');
-const detailValue = document.getElementById('detail-value');
-
-slices.forEach(slice => {
-slice.addEventListener('mouseenter', () => {
-detailLabel.innerText = slice.getAttribute('data-label');
-detailValue.innerText = slice.getAttribute('data-value');
-slice.style.strokeWidth = "24px";
-});
-slice.addEventListener('mouseleave', () => {
-detailLabel.innerText = "Hover a segment";
-detailValue.innerText = "--";
-slice.style.strokeWidth = "20px";
-});
-});
-
-document.documentElement.style.scrollSnapType = "y mandatory";
-document.querySelectorAll('.scroll-section').forEach(section => {
-section.style.scrollSnapAlign = "start";
-section.style.scrollSnapStop = "always";
-});</script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#ffdad4",
+              "on-error-container": "#ffdad6",
+              "secondary-fixed-dim": "#ffb4a8",
+              "primary-fixed-dim": "#fbbc00",
+              "surface-container-lowest": "#0e0e0e",
+              "error-container": "#93000a",
+              "surface-dim": "#131313",
+              "on-secondary": "#690100",
+              "on-background": "#e2e2e2",
+              "on-secondary-fixed": "#410000",
+              "on-tertiary": "#2f3131",
+              "on-primary-container": "#6d5000",
+              "on-error": "#690005",
+              "on-primary-fixed-variant": "#5c4300",
+              "on-surface": "#e2e2e2",
+              "secondary-container": "#ff5540",
+              "on-tertiary-container": "#535455",
+              "surface-container-high": "#2a2a2a",
+              "surface": "#131313",
+              "on-primary-fixed": "#261a00",
+              "surface-container-low": "#1b1b1b",
+              "surface-tint": "#fbbc00",
+              "primary-fixed": "#ffdfa0",
+              "on-tertiary-fixed-variant": "#454747",
+              "error": "#ffb4ab",
+              "surface-container": "#1f1f1f",
+              "primary": "#ffe2ab",
+              "background": "#131313",
+              "outline-variant": "#504532",
+              "primary-container": "#ffbf00",
+              "tertiary-fixed": "#e2e2e2",
+              "tertiary": "#e5e5e5",
+              "tertiary-fixed-dim": "#c6c6c7",
+              "on-tertiary-fixed": "#1a1c1c",
+              "secondary": "#ffb4a8",
+              "inverse-primary": "#795900",
+              "tertiary-container": "#c9c9c9",
+              "surface-bright": "#393939",
+              "inverse-surface": "#e2e2e2",
+              "surface-variant": "#353535",
+              "outline": "#9c8f78",
+              "on-surface-variant": "#d4c5ab",
+              "on-secondary-fixed-variant": "#930100",
+              "on-secondary-container": "#5c0000",
+              "surface-container-highest": "#353535",
+              "inverse-on-surface": "#303030",
+              "on-primary": "#402d00"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
 <style>
         body { 
             background-color: #131313;
@@ -77,6 +84,7 @@ section.style.scrollSnapStop = "always";
             display: inline-block;
         }
 
+        /* Diagonal Menu Animation Prep */
         #diagonal-menu {
             clip-path: polygon(0 0, 0 0, 0 0, 0 0);
             transition: clip-path 0.8s cubic-bezier(0.85, 0, 0.15, 1);
@@ -102,14 +110,6 @@ section.style.scrollSnapStop = "always";
             min-height: 100vh;
             min-width: 177.77vh;
             transform: translate(-50%, -50%);
-        }
-
-        .chart-label {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 4px;
-            font-weight: bold;
-            fill: #000;
-            pointer-events: none;
         }
     </style>
 </head>
@@ -200,7 +200,7 @@ section.style.scrollSnapStop = "always";
 </section>
 <!-- Section 4: Budget Allocation -->
 <section class="scroll-section bg-surface flex flex-col justify-center px-24 pt-32" id="budget" style="scroll-snap-align: start; scroll-snap-stop: always;">
-<div class="mb-12 grid grid-cols-12 gap-12">
+<div class="mb-16 grid grid-cols-12 gap-12">
 <div class="col-span-6">
 <h2 class="text-6xl font-bold font-headline">Allocation</h2>
 <div class="mt-6 border-l-4 border-[#ffbc00] pl-6">
@@ -219,77 +219,36 @@ section.style.scrollSnapStop = "always";
 </div>
 </div>
 </div>
-<div class="grid grid-cols-12 items-start gap-12">
-<div class="col-span-5 flex items-center justify-center p-8 bg-surface-container-lowest relative aspect-square">
-<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<div class="grid grid-cols-12 items-center gap-24">
+<div class="col-span-6 flex items-center justify-center p-12 bg-surface-container-lowest relative">
+<svg class="w-96 h-96 transform -rotate-90" viewbox="0 0 100 100">
 <circle cx="50" cy="50" fill="transparent" r="40" stroke="#2a2a2a" stroke-width="20"></circle>
+<!-- Total 1.8M. 251.2 is full circle circumference (2*pi*40) -->
 <!-- Green Computing: 750k (41.6%) -> 104.5 dasharray -->
-<circle class="cursor-pointer transition-all duration-500" cx="50" cy="50" data-label="Green Computing" data-value="€750,000" fill="transparent" id="slice-1" r="40" stroke="#ffbc00" stroke-dasharray="104.5 251.2" stroke-dashoffset="0" stroke-width="20"></circle>
-<!-- Direct Creator Support: 450k (25%) -> 62.8 dasharray -->
-<circle class="cursor-pointer transition-all duration-500" cx="50" cy="50" data-label="Direct Creator Support" data-value="€450,000" fill="transparent" id="slice-2" r="40" stroke="#ffb4a8" stroke-dasharray="62.8 251.2" stroke-dashoffset="-104.5" stroke-width="20"></circle>
+<circle class="cursor-pointer transition-all duration-500 hover:stroke-[#ffe2ab]" cx="50" cy="50" data-label="Green Computing" data-value="€750k" fill="transparent" id="slice-1" r="40" stroke="#ffbc00" stroke-dasharray="104.5 251.2" stroke-dashoffset="0" stroke-width="20"></circle>
+<!-- Creator Support: 450k (25%) -> 62.8 dasharray -->
+<circle class="cursor-pointer transition-all duration-500 hover:stroke-[#ffdad4]" cx="50" cy="50" data-label="Direct Creator Support" data-value="€450k" fill="transparent" id="slice-2" r="40" stroke="#ffb4a8" stroke-dasharray="62.8 251.2" stroke-dashoffset="-104.5" stroke-width="20"></circle>
 <!-- Artist Residency: 400k (22.2%) -> 55.8 dasharray -->
-<circle class="cursor-pointer transition-all duration-500" cx="50" cy="50" data-label="Guest Artist Residency" data-value="€400,000" fill="transparent" id="slice-3" r="40" stroke="#e2e2e2" stroke-dasharray="55.8 251.2" stroke-dashoffset="-167.3" stroke-width="20"></circle>
+<circle class="cursor-pointer transition-all duration-500 hover:stroke-white" cx="50" cy="50" data-label="Guest Artist Residency" data-value="€400k" fill="transparent" id="slice-3" r="40" stroke="#e2e2e2" stroke-dasharray="55.8 251.2" stroke-dashoffset="-167.3" stroke-width="20"></circle>
 <!-- Community Outreach: 150k (8.3%) -> 20.8 dasharray -->
-<circle class="cursor-pointer transition-all duration-500" cx="50" cy="50" data-label="Community Outreach" data-value="€150,000" fill="transparent" id="slice-4" r="40" stroke="#795900" stroke-dasharray="20.8 251.2" stroke-dashoffset="-223.1" stroke-width="20"></circle>
+<circle class="cursor-pointer transition-all duration-500 hover:stroke-[#ffbf00]" cx="50" cy="50" data-label="Community Outreach" data-value="€150k" fill="transparent" id="slice-4" r="40" stroke="#795900" stroke-dasharray="20.8 251.2" stroke-dashoffset="-223.1" stroke-width="20"></circle>
 <!-- Data Sovereignty: 50k (2.8%) -> 7.1 dasharray -->
-<circle class="cursor-pointer transition-all duration-500" cx="50" cy="50" data-label="Data Sovereignty" data-value="€50,000" fill="transparent" id="slice-5" r="40" stroke="#353535" stroke-dasharray="7.1 251.2" stroke-dashoffset="-243.9" stroke-width="20"></circle>
-<!-- Percentage Labels (Simplified Polar to Cartesian for static placement) -->
-<text class="chart-label" transform="rotate(90 74 38)" x="74" y="38">41.6%</text>
-<text class="chart-label" style="fill:white" transform="rotate(90 62 76)" x="62" y="76">25%</text>
-<text class="chart-label" style="fill:white" transform="rotate(90 30 72)" x="30" y="72">22.2%</text>
-<text class="chart-label" transform="rotate(90 14 44)" x="14" y="44">8.3%</text>
-<text class="chart-label" style="fill:white" transform="rotate(90 18 32)" x="18" y="32">2.8%</text>
+<circle class="cursor-pointer transition-all duration-500 hover:stroke-gray-400" cx="50" cy="50" data-label="Data Sovereignty" data-value="€50k" fill="transparent" id="slice-5" r="40" stroke="#353535" stroke-dasharray="7.1 251.2" stroke-dashoffset="-243.9" stroke-width="20"></circle>
 </svg>
 <div class="absolute flex flex-col items-center pointer-events-none">
 <span class="text-xs font-mono text-[#ffbc00]">TOTAL</span>
 <span class="text-2xl font-bold font-headline">€1.8M</span>
 </div>
 </div>
-<div class="col-span-7 flex flex-col justify-center space-y-4 pr-12">
-<div class="space-y-6"><div class="flex gap-4">
-<div class="w-1.5 h-auto bg-[#ffbc00] flex-shrink-0"></div>
-<div class="py-1">
-<h4 class="text-sm font-bold font-headline tracking-wider text-[#ffbc00]">Green Computing - €750,000</h4>
-<p class="text-sm text-on-surface/70 mt-1">High-GPU local workstations to reduce cloud energy; carbon-offsetting for all AI processing.</p>
-</div>
-</div>
-<div class="flex gap-4">
-<div class="w-1.5 h-auto bg-[#ffb4a8] flex-shrink-0"></div>
-<div class="py-1">
-<h4 class="text-sm font-bold font-headline tracking-wider text-[#ffb4a8]">Direct Creator Support - €450,000</h4>
-<p class="text-sm text-on-surface/70 mt-1">€15k stipends for 30 creators, removing the “poverty barrier” to digital literacy.</p>
-</div>
-</div>
-<div class="flex gap-4">
-<div class="w-1.5 h-auto bg-[#e2e2e2] flex-shrink-0"></div>
-<div class="py-1">
-<h4 class="text-sm font-bold font-headline tracking-wider text-[#e2e2e2]">Guest Artist Residency - €400,000</h4>
-<p class="text-sm text-on-surface/70 mt-1">40+ global experts who share the demographic backgrounds of the participants.</p>
-</div>
-</div>
-<div class="flex gap-4">
-<div class="w-1.5 h-auto bg-[#795900] flex-shrink-0"></div>
-<div class="py-1">
-<h4 class="text-sm font-bold font-headline tracking-wider text-[#795900]">Community Outreach - €150,000</h4>
-<p class="text-sm text-on-surface/70 mt-1">Physical “Green Lab Portals” in community spaces; screen-reader and multi-lang compatibility.</p>
-</div>
-</div>
-<div class="flex gap-4">
-<div class="w-1.5 h-auto bg-[#353535] flex-shrink-0"></div>
-<div class="py-1">
-<h4 class="text-sm font-bold font-headline tracking-wider text-[#353535]">Data Sovereignty - €50,000</h4>
-<p class="text-sm text-on-surface/70 mt-1">IP protection ensures creators own 100% of their AI-augmented assets and stories.</p>
-</div>
-</div></div>
-<div class="pt-8">
-<div class="h-32 border-l-2 border-outline-variant pl-8 flex flex-col justify-center mb-8" id="chart-detail">
+<div class="col-span-6 space-y-8">
+<div class="h-32 border-l-2 border-outline-variant pl-8 flex flex-col justify-center" id="chart-detail">
 <h3 class="text-sm font-headline tracking-widest text-on-surface/40 uppercase" id="detail-label">Hover a segment</h3>
 <p class="text-5xl font-bold font-headline text-[#ffbc00] mt-2" id="detail-value">--</p>
-</div><a class="inline-flex items-center gap-4 group" href="budget.html">
+</div>
+<a class="inline-flex items-center gap-4 group" href="budget.html">
 <span class="text-sm font-headline tracking-widest">FULL BUDGET BREAKDOWN</span>
 <span class="material-symbols-outlined text-[#ffbc00] group-hover:translate-x-2 transition-transform">arrow_forward</span>
 </a>
-</div>
 </div>
 </div>
 </section>
@@ -312,61 +271,63 @@ section.style.scrollSnapStop = "always";
             </p>
 </footer>
 </section>
-<script>let isLocked = true;
-document.body.style.overflow = 'hidden';
+<script>
+        let isLocked = true;
+        document.body.style.overflow = 'hidden';
+        
+        setTimeout(() => {
+            isLocked = false;
+            document.body.style.overflow = 'auto';
+        }, 8000);
 
-setTimeout(() => {
-isLocked = false;
-document.body.style.overflow = 'auto';
-}, 8000);
+        window.addEventListener('wheel', (e) => {
+            if (isLocked && window.scrollY < 100) {
+                e.preventDefault();
+            }
+        }, { passive: false });
 
-window.addEventListener('wheel', (e) => {
-if (isLocked && window.scrollY < 100) {
-e.preventDefault();
-}
-}, { passive: false });
+        const menuToggle = document.getElementById('menu-toggle');
+        const diagonalMenu = document.getElementById('diagonal-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        let menuOpen = false;
 
-const menuToggle = document.getElementById('menu-toggle');
-const diagonalMenu = document.getElementById('diagonal-menu');
-const menuIcon = document.getElementById('menu-icon');
-let menuOpen = false;
+        menuToggle.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            diagonalMenu.classList.toggle('active');
+            menuIcon.innerText = menuOpen ? 'close' : 'add';
+            document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
+        });
 
-menuToggle.addEventListener('click', () => {
-menuOpen = !menuOpen;
-diagonalMenu.classList.toggle('active');
-menuIcon.innerText = menuOpen ? 'close' : 'add';
-document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
-});
+        diagonalMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                diagonalMenu.classList.remove('active');
+                menuIcon.innerText = 'add';
+                document.body.style.overflow = 'auto';
+            });
+        });
 
-diagonalMenu.querySelectorAll('a').forEach(link => {
-link.addEventListener('click', () => {
-menuOpen = false;
-diagonalMenu.classList.remove('active');
-menuIcon.innerText = 'add';
-document.body.style.overflow = 'auto';
-});
-});
+        const slices = document.querySelectorAll('svg circle[id^="slice-"]');
+        const detailLabel = document.getElementById('detail-label');
+        const detailValue = document.getElementById('detail-value');
 
-const slices = document.querySelectorAll('svg circle[id^="slice-"]');
-const detailLabel = document.getElementById('detail-label');
-const detailValue = document.getElementById('detail-value');
+        slices.forEach(slice => {
+            slice.addEventListener('mouseenter', () => {
+                detailLabel.innerText = slice.getAttribute('data-label');
+                detailValue.innerText = slice.getAttribute('data-value');
+                slice.style.strokeWidth = "24px";
+            });
+            slice.addEventListener('mouseleave', () => {
+                detailLabel.innerText = "Hover a segment";
+                detailValue.innerText = "--";
+                slice.style.strokeWidth = "20px";
+            });
+        });
 
-slices.forEach(slice => {
-slice.addEventListener('mouseenter', () => {
-detailLabel.innerText = slice.getAttribute('data-label');
-detailValue.innerText = slice.getAttribute('data-value');
-slice.style.strokeWidth = "24px";
-});
-slice.addEventListener('mouseleave', () => {
-detailLabel.innerText = "Hover a segment";
-detailValue.innerText = "--";
-slice.style.strokeWidth = "20px";
-});
-});
-
-document.documentElement.style.scrollSnapType = "y mandatory";
-document.querySelectorAll('.scroll-section').forEach(section => {
-section.style.scrollSnapAlign = "start";
-section.style.scrollSnapStop = "always";
-});</script>
+        document.documentElement.style.scrollSnapType = "y mandatory";
+        document.querySelectorAll('.scroll-section').forEach(section => {
+            section.style.scrollSnapAlign = "start";
+            section.style.scrollSnapStop = "always";
+        });
+    </script>
 </body></html>
