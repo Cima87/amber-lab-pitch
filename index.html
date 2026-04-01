@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
+<html class="dark" lang="en" style="scroll-snap-type: y mandatory;"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>AMBER LAB | Generative AI for Creatives</title>
@@ -101,28 +101,27 @@
             overflow: hidden;
         }
 
-        /* Iframe overlaying for pure cinematic feel */
         .vimeo-wrapper {
             position: absolute;
             top: 50%;
             left: 50%;
             width: 100vw;
-            height: 56.25vw; /* 16:9 Aspect Ratio */
+            height: 56.25vw;
             min-height: 100vh;
-            min-width: 177.77vh; /* 16:9 Aspect Ratio */
+            min-width: 177.77vh;
             transform: translate(-50%, -50%);
         }
     </style>
 </head>
-<body class="font-body text-on-surface select-none">
+<body class="font-body text-on-surface select-none" data-mode="connect" style="overflow: auto;">
 <!-- Navigation Shell: TopNavBar -->
 <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-12 py-8 bg-[#131313] border-none font-headline tracking-widest uppercase">
 <button class="flex items-center group" id="menu-toggle">
 <span class="material-symbols-outlined text-[#ffbc00] text-3xl transition-transform duration-700 ease-in-out group-active:scale-95" id="menu-icon">add</span>
 </button>
 <div class="absolute left-1/2 -translate-x-1/2 text-xl font-bold tracking-[0.2em] text-[#ffbc00]">
-        AMBER LAB
-    </div>
+            AMBER LAB
+        </div>
 <div class="flex gap-8 items-center">
 <a class="text-[#e2e2e2] hover:text-[#ffbc00] transition-colors duration-500" href="#">Contact</a>
 </div>
@@ -144,17 +143,17 @@
 </div>
 <div class="h-full flex items-center justify-center p-12 relative overflow-hidden">
 <div class="absolute inset-0 bg-primary opacity-20 mix-blend-color z-10 pointer-events-none"></div>
-<img alt="Abstract Nordic Map" class="max-h-[80vh] w-auto object-contain opacity-60 mix-blend-screen grayscale contrast-125" src="https://lh3.googleusercontent.com/aida/ADBb0ujTFgjwqw3WXsQQR_fI-OXiuowTKVaf224VZH0qV58keTBuwmJHKWJOOEJTirQXfgZbp0pzTxH_lv3uOSYn2SuUjio1f6K62q7fPaee42sokTVUXGMDgS9SVed6m2iIfX_6Avbyk2XubFxT5HvM7hoKk6A9wucRSe9X6hDEhcdbQFmbe4i127mJXi81KsqY6M92dr2nksAvtpQmadvllLPz_GlNZ6A3m8dE26oAr5GBgmxGzuX9WSfeU_9Czpzx-WmAtXHtTbWdaQ"/>
+<img alt="Abstract Nordic Map" class="max-h-[819px] w-auto object-contain opacity-60 mix-blend-screen grayscale contrast-125" src="https://lh3.googleusercontent.com/aida/ADBb0ujTFgjwqw3WXsQQR_fI-OXiuowTKVaf224VZH0qV58keTBuwmJHKWJOOEJTirQXfgZbp0pzTxH_lv3uOSYn2SuUjio1f6K62q7fPaee42sokTVUXGMDgS9SVed6m2iIfX_6Avbyk2XubFxT5HvM7hoKk6A9wucRSe9X6hDEhcdbQFmbe4i127mJXi81KsqY6M92dr2nksAvtpQmadvllLPz_GlNZ6A3m8dE26oAr5GBgmxGzuX9WSfeU_9Czpzx-WmAtXHtTbWdaQ"/>
 </div>
 </div>
 <!-- Section 1: Landing (Cinematic Hero) -->
-<section class="scroll-section bg-surface-container-lowest" id="hero">
+<section class="scroll-section bg-surface-container-lowest" id="hero" style="scroll-snap-align: start; scroll-snap-stop: always;">
 <div class="vimeo-wrapper">
 <iframe allow="autoplay; fullscreen" class="w-full h-full" frameborder="0" src="https://player.vimeo.com/video/1179142545?background=1&amp;autoplay=1&amp;loop=1&amp;byline=0&amp;title=0&amp;muted=1"></iframe>
 </div>
 </section>
 <!-- Section 2: Vision Page -->
-<section class="scroll-section bg-surface-container-lowest" id="vision">
+<section class="scroll-section bg-surface-container-lowest" id="vision" style="scroll-snap-align: start; scroll-snap-stop: always;">
 <div class="absolute inset-0 z-0">
 <img alt="Vision Background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaWaYjrtvqnUyKXetxboIaRTIcA7GuSQVx_8Jz2LG58ElT8ZC30xaUe0mpBBSO-cC6wOHBPzo2eL1YAFgumM8AyqvIX230Du6F9432TN4iRncfGn4zKPh2toQfSP3tXwSY47AUakj6VaLNcacMyr0j2V2ZNI-WeN7qWx1tgDB1EBP3LEgVMG74kU6Q-lB4b9X51ePJ99K-sjMkluo9eQxWkvPMDWl2BX8qf8yhfBn8HsZWtEU9TkGbmaVy6vb9Sg-84sO5KnHcr_I"/>
 <div class="absolute inset-0 bg-black/50"></div>
@@ -163,13 +162,13 @@
 <h2 class="text-8xl font-bold font-headline text-on-surface mb-12">VISION</h2>
 <div class="max-w-xl bg-black/25 p-8 backdrop-blur-sm border-l-4 border-[#ffbc00]">
 <p class="text-xl font-light leading-relaxed text-on-surface/90">
-                We bridge the chasm between raw human intuition and generative precision. Our laboratory is dedicated to the synthesis of obsidian-dark aesthetics with liquid light, creating tools for the next generation of European digital architects.
-            </p>
+                    We envision a future where creativity is defined by the diversity of us as humans. In a world where gen AI is unavoidable AMBER LAB is providing a creative platform with access to gen AI for all. AMBER LAB thereby gives birth to the next global miracle, from neighborhoods that other institutions overlook.
+                </p>
 </div>
 </div>
 </section>
-<!-- Section 3: Sustainability (Podcast Player) -->
-<section class="scroll-section bg-surface-container-low flex items-center" id="purpose">
+<!-- Section 3: Sustainability -->
+<section class="scroll-section bg-surface-container-low flex items-center" id="purpose" style="scroll-snap-align: start; scroll-snap-stop: always;">
 <div class="grid grid-cols-12 w-full px-24 gap-12">
 <div class="col-span-5">
 <h3 class="text-sm font-headline tracking-[0.4em] text-[#ffbc00] mb-4">PURPOSE</h3>
@@ -199,24 +198,46 @@
 </div>
 </div>
 </section>
-<!-- Section 4: Budget Allocation (Interactive Simulation) -->
-<section class="scroll-section bg-surface flex flex-col justify-center px-24 pt-32" id="budget">
-<div class="mb-16">
-<h2 class="text-6xl font-bold font-headline">Budget Allocation</h2>
-<p class="text-on-surface/50 mt-4 max-w-lg">Transparency is the bedrock of AMBER LAB. Explore our generative resource distribution for the 2024 fiscal year.</p>
+<!-- Section 4: Budget Allocation -->
+<section class="scroll-section bg-surface flex flex-col justify-center px-24 pt-32" id="budget" style="scroll-snap-align: start; scroll-snap-stop: always;">
+<div class="mb-16 grid grid-cols-12 gap-12">
+<div class="col-span-6">
+<h2 class="text-6xl font-bold font-headline">Allocation</h2>
+<div class="mt-6 border-l-4 border-[#ffbc00] pl-6">
+<h3 class="text-xs font-headline tracking-widest text-[#ffbc00] uppercase mb-2">Vision &amp; Core Philosophy</h3>
+<p class="text-on-surface text-xl font-light leading-relaxed">
+                        Transforming €1.8M into a sanctuary for underrepresented storytellers, setting a global standard for ethical AI.
+                    </p>
 </div>
-<div class="grid grid-cols-12 items-end gap-24">
-<div class="col-span-6 flex items-center justify-center p-12 bg-surface-container-lowest">
-<!-- SVG "Mermaid-like" Chart Placeholder -->
+</div>
+<div class="col-span-6 flex flex-col justify-end pb-2">
+<h3 class="text-xs font-headline tracking-widest text-on-surface/40 uppercase mb-4">Highlighting Underrepresented Demographics</h3>
+<div class="flex gap-8 text-[10px] font-mono tracking-widest text-[#ffbc00]">
+<span class="px-3 py-1 border border-[#ffbc00]/30">AGENCY AS ARCHITECTS</span>
+<span class="px-3 py-1 border border-[#ffbc00]/30">POWER OF CHOICE</span>
+<span class="px-3 py-1 border border-[#ffbc00]/30">LINGUISTIC SOVEREIGNTY</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-12 items-center gap-24">
+<div class="col-span-6 flex items-center justify-center p-12 bg-surface-container-lowest relative">
 <svg class="w-96 h-96 transform -rotate-90" viewbox="0 0 100 100">
 <circle cx="50" cy="50" fill="transparent" r="40" stroke="#2a2a2a" stroke-width="20"></circle>
-<circle class="cursor-pointer transition-all duration-500 hover:stroke-[#ffe2ab]" cx="50" cy="50" data-label="Research &amp; Dev" data-value="€4.2M" fill="transparent" id="slice-1" r="40" stroke="#ffbc00" stroke-dasharray="251.2" stroke-dashoffset="100.48" stroke-width="20"></circle>
-<circle class="cursor-pointer transition-all duration-500 hover:stroke-[#ffdad4]" cx="50" cy="50" data-label="Hardware Infrastructure" data-value="€2.1M" fill="transparent" id="slice-2" r="40" stroke="#ffb4a8" stroke-dasharray="251.2" stroke-dashoffset="200.96" stroke-width="20"></circle>
-<circle class="cursor-pointer transition-all duration-500 hover:stroke-white" cx="50" cy="50" data-label="Creative Grants" data-value="€0.8M" fill="transparent" id="slice-3" r="40" stroke="#e2e2e2" stroke-dasharray="251.2" stroke-dashoffset="226.08" stroke-width="20"></circle>
+<!-- Total 1.8M. 251.2 is full circle circumference (2*pi*40) -->
+<!-- Green Computing: 750k (41.6%) -> 104.5 dasharray -->
+<circle class="cursor-pointer transition-all duration-500 hover:stroke-[#ffe2ab]" cx="50" cy="50" data-label="Green Computing" data-value="€750k" fill="transparent" id="slice-1" r="40" stroke="#ffbc00" stroke-dasharray="104.5 251.2" stroke-dashoffset="0" stroke-width="20"></circle>
+<!-- Creator Support: 450k (25%) -> 62.8 dasharray -->
+<circle class="cursor-pointer transition-all duration-500 hover:stroke-[#ffdad4]" cx="50" cy="50" data-label="Direct Creator Support" data-value="€450k" fill="transparent" id="slice-2" r="40" stroke="#ffb4a8" stroke-dasharray="62.8 251.2" stroke-dashoffset="-104.5" stroke-width="20"></circle>
+<!-- Artist Residency: 400k (22.2%) -> 55.8 dasharray -->
+<circle class="cursor-pointer transition-all duration-500 hover:stroke-white" cx="50" cy="50" data-label="Guest Artist Residency" data-value="€400k" fill="transparent" id="slice-3" r="40" stroke="#e2e2e2" stroke-dasharray="55.8 251.2" stroke-dashoffset="-167.3" stroke-width="20"></circle>
+<!-- Community Outreach: 150k (8.3%) -> 20.8 dasharray -->
+<circle class="cursor-pointer transition-all duration-500 hover:stroke-[#ffbf00]" cx="50" cy="50" data-label="Community Outreach" data-value="€150k" fill="transparent" id="slice-4" r="40" stroke="#795900" stroke-dasharray="20.8 251.2" stroke-dashoffset="-223.1" stroke-width="20"></circle>
+<!-- Data Sovereignty: 50k (2.8%) -> 7.1 dasharray -->
+<circle class="cursor-pointer transition-all duration-500 hover:stroke-gray-400" cx="50" cy="50" data-label="Data Sovereignty" data-value="€50k" fill="transparent" id="slice-5" r="40" stroke="#353535" stroke-dasharray="7.1 251.2" stroke-dashoffset="-243.9" stroke-width="20"></circle>
 </svg>
 <div class="absolute flex flex-col items-center pointer-events-none">
 <span class="text-xs font-mono text-[#ffbc00]">TOTAL</span>
-<span class="text-2xl font-bold font-headline">€7.1M</span>
+<span class="text-2xl font-bold font-headline">€1.8M</span>
 </div>
 </div>
 <div class="col-span-6 space-y-8">
@@ -232,87 +253,81 @@
 </div>
 </section>
 <!-- Section 5: Get in Touch & Footer -->
-<section class="scroll-section bg-surface-container-lowest flex flex-col justify-between" id="about">
+<section class="scroll-section bg-surface-container-lowest flex flex-col justify-between" id="about" style="scroll-snap-align: start; scroll-snap-stop: always;">
 <div class="flex-1 flex flex-col items-center justify-center px-12 text-center">
 <h2 class="text-5xl md:text-7xl font-bold font-headline tracking-widest text-[#ffbc00] mb-12">GET IN TOUCH!</h2>
 <a class="text-2xl md:text-3xl font-light font-headline hover:text-[#ffbc00] transition-colors duration-700 opacity-60" href="mailto:hello@amberlab.ai">
-            LAB@AMBER.STUDIO
-        </a>
+                LAB@AMBER.STUDIO
+            </a>
 <div class="mt-24 flex gap-12 text-[10px] font-mono tracking-widest text-on-surface/30">
 <span class="hover:text-on-surface cursor-pointer">INSTAGRAM</span>
 <span class="hover:text-on-surface cursor-pointer">X.COM</span>
 <span class="hover:text-on-surface cursor-pointer">LINKEDIN</span>
 </div>
 </div>
-<!-- Footer -->
 <footer class="w-full py-12 px-12 flex justify-center text-center bg-[#131313]">
 <p class="text-[10px] font-mono tracking-tighter text-[#e2e2e2] uppercase">
-            AMBER LAB, providing generative AI to Europe's creatives, hosted by the Nordics.
-        </p>
+                AMBER LAB, providing generative AI to Europe's creatives, hosted by the Nordics.
+            </p>
 </footer>
 </section>
 <script>
-    // Scroll Lock Logic (8 seconds for the first section)
-    let isLocked = true;
-    document.body.style.overflow = 'hidden';
-    
-    setTimeout(() => {
-        isLocked = false;
-        document.body.style.overflow = 'auto';
-    }, 8000);
-
-    window.addEventListener('wheel', (e) => {
-        if (isLocked && window.scrollY < 100) {
-            e.preventDefault();
-        }
-    }, { passive: false });
-
-    // Diagonal Menu Toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const diagonalMenu = document.getElementById('diagonal-menu');
-    const menuIcon = document.getElementById('menu-icon');
-    let menuOpen = false;
-
-    menuToggle.addEventListener('click', () => {
-        menuOpen = !menuOpen;
-        diagonalMenu.classList.toggle('active');
-        menuIcon.innerText = menuOpen ? 'close' : 'add';
-        document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
-    });
-
-    // Close menu on link click
-    diagonalMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            menuOpen = false;
-            diagonalMenu.classList.remove('active');
-            menuIcon.innerText = 'add';
+        let isLocked = true;
+        document.body.style.overflow = 'hidden';
+        
+        setTimeout(() => {
+            isLocked = false;
             document.body.style.overflow = 'auto';
-        });
-    });
+        }, 8000);
 
-    // Budget Chart Interaction
-    const slices = document.querySelectorAll('svg circle[id^="slice-"]');
-    const detailLabel = document.getElementById('detail-label');
-    const detailValue = document.getElementById('detail-value');
+        window.addEventListener('wheel', (e) => {
+            if (isLocked && window.scrollY < 100) {
+                e.preventDefault();
+            }
+        }, { passive: false });
 
-    slices.forEach(slice => {
-        slice.addEventListener('mouseenter', () => {
-            detailLabel.innerText = slice.getAttribute('data-label');
-            detailValue.innerText = slice.getAttribute('data-value');
-            slice.style.strokeWidth = "24px";
-        });
-        slice.addEventListener('mouseleave', () => {
-            detailLabel.innerText = "Hover a segment";
-            detailValue.innerText = "--";
-            slice.style.strokeWidth = "20px";
-        });
-    });
+        const menuToggle = document.getElementById('menu-toggle');
+        const diagonalMenu = document.getElementById('diagonal-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        let menuOpen = false;
 
-    // Snap scrolling simulation (Tactical "Push-up")
-    document.documentElement.style.scrollSnapType = "y mandatory";
-    document.querySelectorAll('.scroll-section').forEach(section => {
-        section.style.scrollSnapAlign = "start";
-        section.style.scrollSnapStop = "always";
-    });
-</script>
+        menuToggle.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            diagonalMenu.classList.toggle('active');
+            menuIcon.innerText = menuOpen ? 'close' : 'add';
+            document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
+        });
+
+        diagonalMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                diagonalMenu.classList.remove('active');
+                menuIcon.innerText = 'add';
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        const slices = document.querySelectorAll('svg circle[id^="slice-"]');
+        const detailLabel = document.getElementById('detail-label');
+        const detailValue = document.getElementById('detail-value');
+
+        slices.forEach(slice => {
+            slice.addEventListener('mouseenter', () => {
+                detailLabel.innerText = slice.getAttribute('data-label');
+                detailValue.innerText = slice.getAttribute('data-value');
+                slice.style.strokeWidth = "24px";
+            });
+            slice.addEventListener('mouseleave', () => {
+                detailLabel.innerText = "Hover a segment";
+                detailValue.innerText = "--";
+                slice.style.strokeWidth = "20px";
+            });
+        });
+
+        document.documentElement.style.scrollSnapType = "y mandatory";
+        document.querySelectorAll('.scroll-section').forEach(section => {
+            section.style.scrollSnapAlign = "start";
+            section.style.scrollSnapStop = "always";
+        });
+    </script>
 </body></html>
