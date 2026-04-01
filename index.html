@@ -2,10 +2,232 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>AMBER LAB | Cinematic AI Hub</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries">
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'base',
+        securityLevel: 'loose',
+        themeVariables: {
+            pie1: '#ffe2ab',
+            pie2: '#ffbf00',
+            pie3: '#333333',
+            pie4: '#555555',
+            pie5: '#111111',
+            pieTitleTextSize: '0px',
+            pieSectionTextColor: '#131313',
+            pieSectionTextSize: '12px',
+            pieLegendTextSize: '11px',
+            pieLegendTextColor: '#d4c5ab',
+            backgroundColor: 'transparent'
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const body = document.getElementById('main-body');
+        const visionVideo = document.getElementById('vision-bg-video');
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuIcon = document.getElementById('menu-icon');
+        const sideNav = document.getElementById('side-nav');
+        
+        let isInitialLockActive = true;
+        let isMenuOpen = false;
+
+        // 8-second initial scroll lock
+        setTimeout(() => {
+            isInitialLockActive = false;
+            if (!isMenuOpen) {
+                body.classList.remove('locked');
+            }
+        }, 8000);
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                sideNav.classList.add('active');
+                menuIcon.textContent = 'close';
+                body.classList.add('locked');
+            } else {
+                sideNav.classList.remove('active');
+                menuIcon.textContent = 'add';
+                // Only unlock scroll if the initial 8s lock has expired
+                if (!isInitialLockActive) {
+                    body.classList.remove('locked');
+                }
+            }
+        }
+
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('#side-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) toggleMenu();
+            });
+        });
+
+        // Budget chart interactions
+        const budgetData = {
+            "Green Computing": "€750,000",
+            "Direct Creator Support": "€450,000",
+            "Guest Artist Residency": "€400,000",
+            "Community Outreach": "€150,000",
+            "Data Sovereignty": "€50,000"
+        };
+
+        const checkChart = setInterval(() => {
+            const svg = document.querySelector('#budget-chart svg');
+            if (svg) {
+                clearInterval(checkChart);
+                setupChartInteractions(svg);
+            }
+        }, 200);
+
+        function setupChartInteractions(svg) {
+            const slices = svg.querySelectorAll('.pie-slice');
+            const displayField = document.getElementById('hover-value');
+            const dataKeys = Object.keys(budgetData);
+            
+            slices.forEach((slice, index) => {
+                slice.addEventListener('mouseenter', () => {
+                    displayField.textContent = budgetData[dataKeys[index]];
+                    displayField.classList.replace('opacity-0', 'opacity-100');
+                });
+                slice.addEventListener('mouseleave', () => {
+                    displayField.classList.replace('opacity-100', 'opacity-0');
+                });
+            });
+        }
+
+        // Intersection Observer for Vision Video
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && visionVideo) {
+                    visionVideo.play().catch(e => console.log('Video play interrupted or blocked'));
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (visionVideo) observer.observe(visionVideo);
+    });
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&amp;family=Inter:wght@300;400;700&amp;family=JetBrains+Mono:wght@300&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js">
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'base',
+        securityLevel: 'loose',
+        themeVariables: {
+            pie1: '#ffe2ab',
+            pie2: '#ffbf00',
+            pie3: '#333333',
+            pie4: '#555555',
+            pie5: '#111111',
+            pieTitleTextSize: '0px',
+            pieSectionTextColor: '#131313',
+            pieSectionTextSize: '12px',
+            pieLegendTextSize: '11px',
+            pieLegendTextColor: '#d4c5ab',
+            backgroundColor: 'transparent'
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const body = document.getElementById('main-body');
+        const visionVideo = document.getElementById('vision-bg-video');
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuIcon = document.getElementById('menu-icon');
+        const sideNav = document.getElementById('side-nav');
+        
+        let isInitialLockActive = true;
+        let isMenuOpen = false;
+
+        // 8-second initial scroll lock
+        setTimeout(() => {
+            isInitialLockActive = false;
+            if (!isMenuOpen) {
+                body.classList.remove('locked');
+            }
+        }, 8000);
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                sideNav.classList.add('active');
+                menuIcon.textContent = 'close';
+                body.classList.add('locked');
+            } else {
+                sideNav.classList.remove('active');
+                menuIcon.textContent = 'add';
+                // Only unlock scroll if the initial 8s lock has expired
+                if (!isInitialLockActive) {
+                    body.classList.remove('locked');
+                }
+            }
+        }
+
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('#side-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) toggleMenu();
+            });
+        });
+
+        // Budget chart interactions
+        const budgetData = {
+            "Green Computing": "€750,000",
+            "Direct Creator Support": "€450,000",
+            "Guest Artist Residency": "€400,000",
+            "Community Outreach": "€150,000",
+            "Data Sovereignty": "€50,000"
+        };
+
+        const checkChart = setInterval(() => {
+            const svg = document.querySelector('#budget-chart svg');
+            if (svg) {
+                clearInterval(checkChart);
+                setupChartInteractions(svg);
+            }
+        }, 200);
+
+        function setupChartInteractions(svg) {
+            const slices = svg.querySelectorAll('.pie-slice');
+            const displayField = document.getElementById('hover-value');
+            const dataKeys = Object.keys(budgetData);
+            
+            slices.forEach((slice, index) => {
+                slice.addEventListener('mouseenter', () => {
+                    displayField.textContent = budgetData[dataKeys[index]];
+                    displayField.classList.replace('opacity-0', 'opacity-100');
+                });
+                slice.addEventListener('mouseleave', () => {
+                    displayField.classList.replace('opacity-100', 'opacity-0');
+                });
+            });
+        }
+
+        // Intersection Observer for Vision Video
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && visionVideo) {
+                    visionVideo.play().catch(e => console.log('Video play interrupted or blocked'));
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (visionVideo) observer.observe(visionVideo);
+    });
+</script>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -310,13 +532,50 @@
     document.addEventListener('DOMContentLoaded', () => {
         const body = document.getElementById('main-body');
         const visionVideo = document.getElementById('vision-bg-video');
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuIcon = document.getElementById('menu-icon');
+        const sideNav = document.getElementById('side-nav');
         
-        // 8-second scroll lock
+        let isInitialLockActive = true;
+        let isMenuOpen = false;
+
+        // 8-second initial scroll lock
         setTimeout(() => {
-            body.classList.remove('locked');
+            isInitialLockActive = false;
+            if (!isMenuOpen) {
+                body.classList.remove('locked');
+            }
         }, 8000);
 
-        // Budget data
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                sideNav.classList.add('active');
+                menuIcon.textContent = 'close';
+                body.classList.add('locked');
+            } else {
+                sideNav.classList.remove('active');
+                menuIcon.textContent = 'add';
+                // Only unlock scroll if the initial 8s lock has expired
+                if (!isInitialLockActive) {
+                    body.classList.remove('locked');
+                }
+            }
+        }
+
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('#side-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) toggleMenu();
+            });
+        });
+
+        // Budget chart interactions
         const budgetData = {
             "Green Computing": "€750,000",
             "Direct Creator Support": "€450,000",
@@ -353,44 +612,13 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && visionVideo) {
-                    visionVideo.play();
-                    observer.unobserve(entry.target); // Play only once
+                    visionVideo.play().catch(e => console.log('Video play interrupted or blocked'));
+                    observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.5 });
 
         if (visionVideo) observer.observe(visionVideo);
-
-        // Menu Toggle Logic
-        const menuToggle = document.getElementById('menu-toggle');
-        const menuIcon = document.getElementById('menu-icon');
-        const sideNav = document.getElementById('side-nav');
-        let isMenuOpen = false;
-
-        function toggleMenu() {
-            isMenuOpen = !isMenuOpen;
-            if (isMenuOpen) {
-                sideNav.classList.add('active');
-                menuIcon.textContent = 'close';
-                body.classList.add('locked');
-            } else {
-                sideNav.classList.remove('active');
-                menuIcon.textContent = 'add';
-                // Only unlock if the initial 8s lock has passed
-                if(performance.now() > 8000) body.classList.remove('locked');
-            }
-        }
-
-        menuToggle.addEventListener('click', toggleMenu);
-
-        document.querySelectorAll('#side-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                isMenuOpen = false;
-                sideNav.classList.remove('active');
-                menuIcon.textContent = 'add';
-                if(performance.now() > 8000) body.classList.remove('locked');
-            });
-        });
     });
 </script>
 </body></html>
