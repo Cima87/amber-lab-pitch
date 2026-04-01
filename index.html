@@ -110,6 +110,18 @@
             min-width: 177.77vh;
             transform: translate(-50%, -50%);
         }
+
+        .bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
     </style>
 </head>
 <body class="font-body text-on-surface select-none" data-mode="connect" style="overflow: auto;">
@@ -152,18 +164,20 @@
 </div>
 </section>
 <!-- Section 2: Vision Page (Lighter, Minimalistic) -->
-<section class="scroll-section bg-surface-container-lowest" id="vision" style="scroll-snap-align: start; scroll-snap-stop: always;">
+<section class="scroll-section bg-surface-container-lowest relative" id="vision" style="scroll-snap-align: start; scroll-snap-stop: always;">
 <div class="absolute inset-0 z-0">
-<img alt="Vision Background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaWaYjrtvqnUyKXetxboIaRTIcA7GuSQVx_8Jz2LG58ElT8ZC30xaUe0mpBBSO-cC6wOHBPzo2eL1YAFgumM8AyqvIX230Du6F9432TN4iRncfGn4zKPh2toQfSP3tXwSY47AUakj6VaLNcacMyr0j2V2ZNI-WeN7qWx1tgDB1EBP3LEgVMG74kU6Q-lB4b9X51ePJ99K-sjMkluo9eQxWkvPMDWl2BX8qf8yhfBn8HsZWtEU9TkGbmaVy6vb9Sg-84sO5KnHcr_I"/>
-<div class="absolute inset-0 bg-black/30"></div> <!-- Reduced overlay intensity for a lighter feel -->
+<video autoplay="" class="bg-video" loop="" muted="" playsinline="">
+<source src="noise.mp4" type="video/mp4"/>
+</video>
+<div class="absolute inset-0 bg-black/40"></div>
 </div>
-<div class="relative z-10 p-24 md:p-32 h-full flex flex-col justify-center items-start">
-<h2 class="text-[7rem] md:text-[10rem] font-light font-headline text-on-surface mb-16 tracking-tight leading-none opacity-90">VISION</h2>
-<div class="max-w-2xl bg-black/10 p-12 backdrop-blur-sm border-l border-[#ffbc00]/30"> <!-- Minimalistic styling with thinner borders and lighter background -->
-<p class="text-2xl font-light leading-relaxed text-on-surface tracking-wide">
+<div class="relative z-10 p-24 md:p-32 h-full flex flex-col justify-end items-start pb-48">
+<h2 class="text-[6rem] md:text-[8.5rem] font-light font-headline text-on-surface mb-8 tracking-tight leading-none opacity-90">VISION</h2>
+<div class="max-w-2xl bg-black/10 p-12 backdrop-blur-sm border-l border-[#ffbc00]/30 -mt-6">
+<p class="text-xl md:text-[1.35rem] font-light leading-relaxed text-on-surface tracking-wide">
                 We envision a future where creativity is defined by the diversity of us as humans. In a world where gen AI is unavoidable AMBER LAB is providing a creative platform with access to gen AI for all. 
             </p>
-<p class="text-2xl font-light leading-relaxed text-on-surface/80 mt-6 tracking-wide">
+<p class="text-xl md:text-[1.35rem] font-light leading-relaxed text-on-surface/80 mt-6 tracking-wide">
                 AMBER LAB thereby gives birth to the next global miracle, from neighborhoods that other institutions overlook.
             </p>
 <div class="mt-12">
