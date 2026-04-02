@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#393939",
+              "on-primary": "#402d00",
+              "primary-container": "#ffbf00",
+              "inverse-on-surface": "#303030",
+              "outline-variant": "#504532",
+              "on-tertiary": "#2f3131",
+              "on-tertiary-container": "#535455",
+              "on-secondary-fixed": "#410000",
+              "on-error-container": "#ffdad6",
+              "surface": "#131313",
+              "on-secondary-fixed-variant": "#930100",
+              "on-secondary-container": "#5c0000",
+              "on-background": "#e2e2e2",
+              "on-primary-container": "#6d5000",
+              "on-error": "#690005",
+              "surface-container-highest": "#353535",
+              "error-container": "#93000a",
+              "primary": "#ffe2ab",
+              "on-primary-fixed": "#261a00",
+              "secondary": "#ffb4a8",
+              "surface-container-high": "#2a2a2a",
+              "background": "#131313",
+              "tertiary-container": "#c9c9c9",
+              "surface-variant": "#353535",
+              "primary-fixed-dim": "#fbbc00",
+              "on-secondary": "#690100",
+              "secondary-fixed-dim": "#ffb4a8",
+              "secondary-container": "#ff5540",
+              "tertiary": "#e5e5e5",
+              "surface-tint": "#fbbc00",
+              "on-primary-fixed-variant": "#5c4300",
+              "primary-fixed": "#ffdfa0",
+              "surface-container-low": "#1b1b1b",
+              "on-tertiary-fixed": "#1a1c1c",
+              "outline": "#9c8f78",
+              "on-tertiary-fixed-variant": "#454747",
+              "secondary-fixed": "#ffdad4",
+              "inverse-surface": "#e2e2e2",
+              "tertiary-fixed-dim": "#c6c6c7",
+              "on-surface-variant": "#d4c5ab",
+              "error": "#ffb4ab",
+              "surface-dim": "#131313",
+              "surface-container": "#1f1f1f",
+              "tertiary-fixed": "#e2e2e2",
+              "surface-container-lowest": "#0e0e0e",
+              "on-surface": "#e2e2e2",
+              "inverse-primary": "#795900"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .amber-glow {
+            box-shadow: 0 0 40px -10px rgba(255, 188, 0, 0.15);
+        }
+        .text-vertical {
+            writing-mode: vertical-rl;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-8 bg-transparent backdrop-blur-xl">
+<div class="text-2xl font-bold tracking-tighter text-[#ffbc00] font-headline">AMBER LAB</div>
+<div class="hidden md:flex gap-12 items-center">
+<a class="font-headline tracking-widest uppercase text-xs text-[#e2e2e2] opacity-60 hover:text-[#ffbc00] hover:opacity-100 transition-all duration-500 ease-in-out" href="#">VISION</a>
+<a class="font-headline tracking-widest uppercase text-xs text-[#e2e2e2] opacity-60 hover:text-[#ffbc00] hover:opacity-100 transition-all duration-500 ease-in-out" href="#">PURPOSE</a>
+<a class="font-headline tracking-widest uppercase text-xs text-[#ffbc00] font-bold border-b-0 transition-all duration-500 ease-in-out" href="#">ABOUT</a>
+</div>
+<button class="text-[#ffbc00] transition-transform duration-700 active:scale-95">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</nav>
+<main class="relative">
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col justify-end px-12 pb-24 pt-48 bg-surface-container-lowest">
+<div class="grid grid-cols-12 gap-6 items-end">
+<div class="col-span-12 md:col-span-8">
+<span class="font-label text-[10px] tracking-[0.4em] uppercase text-primary mb-6 block">EST. 2024 — STOCKHOLM</span>
+<h1 class="font-headline text-6xl md:text-8xl lg:text-9xl font-bold text-on-background leading-none tracking-tighter mb-12">
+                        Amber Lab: <br/>The Next <span class="text-[#ffbc00]">Swedish Miracle</span>.
+                    </h1>
+</div>
+<div class="col-span-12 md:col-span-4 pb-4">
+<p class="font-body text-sm md:text-base text-on-surface-variant max-w-sm leading-relaxed border-l border-outline-variant/30 pl-8 italic">
+                        "The Swedish Music Miracle proved that when you give people access, they create culture. Amber Lab provides the ‘digital amber’—the space and the tools—to ensure the next generation of unheard voices can turn their dreams into our next global miracle."
+                    </p>
+</div>
+</div>
+<div class="mt-24 w-full h-[614px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 ease-in-out">
+<img class="w-full h-full object-cover" data-alt="cinematic wide shot of a futuristic amber-lit creative studio with timber walls and floor-to-ceiling glass windows at twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2Ucjowncp7MInk8OMPrK0bN4SK1uo10o67n2Gw13o27mumOkEn3FaMDqticf9jVqo0nSqAn_BtuFvOfxlCFXnfTnLwOaVBmj8Y0qSn51K-LwoLfOjasMC98nsiLlKTOJ4zh64V19V5YaHuZYZ9RdK5Iv0TN4eLeTBAT0rzxSEp-hbbj0nzODUZlGGN_mmevMC2ywH7bNJG2w6tpLQnh4KbP9GWWB-lm5qXJOOQJc0vMXXU1IazLD2F0ejrIztyXv2trShhqLxRck"/>
+</div>
+</section>
+<!-- Section 1: Access is the Key -->
+<section class="py-32 px-12 bg-surface">
+<div class="grid grid-cols-12 gap-12">
+<div class="col-span-12 lg:col-span-5">
+<h2 class="font-headline text-4xl md:text-5xl font-bold uppercase tracking-tight text-on-background mb-8">Access is <br/>the Key.</h2>
+<div class="space-y-6 text-on-surface-variant font-body leading-relaxed text-lg">
+<p>Sweden's leadership in global culture—from the harmonies of ABBA to the electronic pulse of Avicii—wasn't an accident. It was the result of radical accessibility to musical education and instruments.</p>
+<p>Amber Lab democratizes the next frontier. We provide that same institutional access for AI, XR, and Virtual Production, turning the tools of tomorrow into the creative standard of today.</p>
+</div>
+<div class="mt-12 flex gap-4">
+<button class="bg-[#ffbc00] text-on-primary px-8 py-4 font-headline text-xs font-bold tracking-widest uppercase hover:bg-primary-container transition-colors duration-500">
+                            VIEW OUR TOOLS
+                        </button>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-7 grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-1 aspect-square">
+<img class="w-full h-full object-cover" data-alt="abstract visualization of flowing golden digital data particles forming a human silhouette in a dark void" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDYoXjcK5miwe8CyjIPry9Vj5d3Ftmas8--OA7cPd4WFsWl0hBCG51XaOqng3bIWSXKDNxFnHkObVvQPN4AavuXbR_YFJ6_LIQSFljkqxEYZt45iDwsJzJlN9YbgcLWBlDyZDqGn7R9tOgYgMLMfZ5qZNAQN94s9wm92sNpPnmEccVQfqp5V3PG-0Nesgxr4NI25uU3Nqz0jEJRHO1htrKi1YyOGWN4BKhzLf0uhmkAjqAkke34wTCVfjwZOxQJeLIijp6NyNVS-U"/>
+</div>
+<div class="bg-surface-container-low p-1 aspect-[3/4] mt-12">
+<img class="w-full h-full object-cover" data-alt="minimalist high-tech laboratory setting with sleek black equipment and soft amber glowing accents on hardware" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeQHW6YsFjBpy725IjhjftIR61qk1fRrd3eQnWREGqLeCVohGiY2OhLyBGw1rttSYCJDq54yjJmppgrCWPqkAecqMNa_LDYkR_6eZHOZeWhvnR-lW_9P8aoC01cWdis0bC8eNejkFSEfU90Bjm91-3oDz89zFBIOe6Noh2b1pFgmzmIu4Bo_ebB__w_gaWoKNPjXrDDprWV1swZYlt1oXk9RlyXXy1ikvxRX8p5CssGasTIv7BwfmoraDOxw_UIZAIIrCCQbzVsGc"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Why Amber? (Pillars) -->
+<section class="py-32 px-12 bg-surface-container-lowest border-y border-outline-variant/10">
+<div class="mb-24 flex justify-between items-end">
+<h2 class="font-headline text-5xl font-bold uppercase tracking-tighter">Why <span class="text-[#ffbc00]">“Amber”</span>?</h2>
+<span class="font-label text-[10px] tracking-[0.4em] text-outline">CORE PHILOSOPHY / 01-03</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-l border-outline-variant/20">
+<!-- Pillar 1 -->
+<div class="group p-12 border-r border-b md:border-b-0 border-outline-variant/20 hover:bg-surface-container-low transition-all duration-700">
+<span class="text-4xl font-headline font-bold text-outline-variant group-hover:text-[#ffbc00] transition-colors duration-500">01</span>
+<h3 class="font-headline text-2xl font-bold mt-8 mb-4 uppercase">The Preservative</h3>
+<p class="text-on-surface-variant leading-relaxed">Protecting unheard stories from the erosion of time. We use digital technology to fossilize and share cultural narratives that are often lost in the mainstream.</p>
+</div>
+<!-- Pillar 2 -->
+<div class="group p-12 border-r border-b md:border-b-0 border-outline-variant/20 hover:bg-surface-container-low transition-all duration-700">
+<span class="text-4xl font-headline font-bold text-outline-variant group-hover:text-[#ffbc00] transition-colors duration-500">02</span>
+<h3 class="font-headline text-2xl font-bold mt-8 mb-4 uppercase">The Sanctuary</h3>
+<p class="text-on-surface-variant leading-relaxed">A physical embodiment of warmth. Our architecture combines organic timber with precision glass, creating an environment where humans feel at home with machines.</p>
+</div>
+<!-- Pillar 3 -->
+<div class="group p-12 border-r border-outline-variant/20 hover:bg-surface-container-low transition-all duration-700">
+<span class="text-4xl font-headline font-bold text-outline-variant group-hover:text-[#ffbc00] transition-colors duration-500">03</span>
+<h3 class="font-headline text-2xl font-bold mt-8 mb-4 uppercase">The Refinement</h3>
+<p class="text-on-surface-variant leading-relaxed">Like amber forming under immense tectonic pressure, we turn the challenges of the unheard into exquisite, high-end art and digital experiences.</p>
+</div>
+</div>
+</section>
+<!-- Section 3: Our Physical Sanctuary -->
+<section class="py-32 px-12 bg-surface">
+<div class="grid grid-cols-12 gap-12 items-center">
+<div class="col-span-12 lg:col-span-6 relative">
+<div class="aspect-video bg-surface-container-lowest amber-glow overflow-hidden">
+<img class="w-full h-full object-cover opacity-80" data-alt="circular high-tech studio room with immersive LED walls displaying nebula-like golden lights and silhouette of a creative worker" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtnWgFNiK3eQ2WFp7C-ibCb8sHysCzkcJynIi_VznMQ9sW5hlhAkQ33XCwTN9KRXbiwJkBEr2lvW_W3iLSv1Drc9CyULZYZZYGI5XnMZFwF6rnM5YacDqTt7y_MOOFkTyl4fWYzCAOUm6V7cP1etlmqUD8DBduX_4wIFeKAs1rFgr9o7Zs2xyPJxrBZuCK9uCD_xGntSr6hxUx_n3wjKwk-BJpoQ7wH57FAhHZSnm7VBywypt2OW0dIttKTmvaO8BXy5lCuUeGyts"/>
+</div>
+<div class="absolute -bottom-12 -right-12 bg-surface-container-highest p-8 max-w-xs hidden md:block">
+<p class="font-label text-[10px] tracking-widest text-[#ffbc00] mb-2 uppercase">Facility Spec</p>
+<p class="text-xs text-on-surface leading-loose uppercase tracking-tighter">The Chamber of Miracles: A 360-degree circular Holodeck for real-time XR collaboration.</p>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-6 lg:pl-12">
+<h2 class="font-headline text-4xl md:text-5xl font-bold uppercase tracking-tight mb-12 leading-none">Our Physical <br/>Sanctuary.</h2>
+<ul class="space-y-12">
+<li class="flex gap-8 group">
+<span class="material-symbols-outlined text-[#ffbc00] text-3xl shrink-0" data-icon="flare">flare</span>
+<div>
+<h4 class="font-headline text-xl font-bold mb-2 uppercase tracking-wide">Green Computing</h4>
+<p class="text-on-surface-variant text-sm">A €750k investment in carbon-neutral processing power, ensuring that tomorrow's miracles don't cost the planet's future.</p>
+</div>
+</li>
+<li class="flex gap-8 group">
+<span class="material-symbols-outlined text-[#ffbc00] text-3xl shrink-0" data-icon="visibility">visibility</span>
+<div>
+<h4 class="font-headline text-xl font-bold mb-2 uppercase tracking-wide">Mirrors of Success</h4>
+<p class="text-on-surface-variant text-sm">Our diverse residency program where the most talented creators from global margins find the resources to scale their vision.</p>
+</div>
+</li>
+<li class="flex gap-8 group">
+<span class="material-symbols-outlined text-[#ffbc00] text-3xl shrink-0" data-icon="info">info</span>
+<div>
+<h4 class="font-headline text-xl font-bold mb-2 uppercase tracking-wide">The Lab Collective</h4>
+<p class="text-on-surface-variant text-sm">Access to our global network of mentors from Spotify, DICE, and Teenage Engineering.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Final CTA / Contact -->
+<section class="py-48 px-12 text-center bg-surface-container-lowest">
+<h2 class="font-headline text-5xl md:text-7xl font-bold uppercase mb-12 tracking-tighter">Ready to enter <br/>the <span class="text-[#ffbc00]">Amber</span>?</h2>
+<div class="flex flex-col md:flex-row justify-center gap-6">
+<button class="bg-[#ffbc00] text-on-primary px-12 py-5 font-headline text-sm font-bold tracking-[0.2em] uppercase hover:bg-primary-container transition-all duration-500">
+                    APPLY FOR RESIDENCY
+                </button>
+<button class="border border-outline-variant/30 text-on-surface px-12 py-5 font-headline text-sm font-bold tracking-[0.2em] uppercase hover:bg-on-surface hover:text-surface transition-all duration-500">
+                    PARTNER WITH US
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-6 px-12 flex flex-col md:flex-row justify-between items-center border-t border-[#504532]/10 bg-[#0e0e0e] gap-4">
+<div class="font-['Inter'] text-[10px] tracking-[0.2em] uppercase text-[#e2e2e2] opacity-40">
+            © 2024 AMBER LAB. ALL RIGHTS RESERVED.
+        </div>
+<div class="flex gap-8">
+<a class="font-['Inter'] text-[10px] tracking-[0.2em] uppercase text-[#e2e2e2] opacity-40 hover:opacity-100 hover:text-[#ffbc00] transition-all" href="#">PRIVACY</a>
+<a class="font-['Inter'] text-[10px] tracking-[0.2em] uppercase text-[#e2e2e2] opacity-40 hover:opacity-100 hover:text-[#ffbc00] transition-all" href="#">TERMS</a>
+</div>
+</footer>
+</body></html>
