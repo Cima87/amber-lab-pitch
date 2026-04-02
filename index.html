@@ -90,13 +90,14 @@
         #diagonal-menu {
             clip-path: polygon(0 0, 0 0, 0 0, 0 0);
             transition: clip-path 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+            z-index: 1000;
         }
         #diagonal-menu.active {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
 
         .scroll-section {
-            height: 100vh;
+            height: 100dvh;
             width: 100%;
             position: relative;
             overflow: hidden;
@@ -108,7 +109,7 @@
             left: 50%;
             width: 100vw;
             height: 56.25vw;
-            min-height: 100vh;
+            min-height: 100dvh;
             min-width: 177.77vh;
             transform: translate(-50%, -50%);
         }
@@ -134,31 +135,31 @@
         }
     </style>
 </head>
-<body class="font-body text-on-surface select-none" data-mode="connect" style="overflow: auto;">
+<body class="font-body text-on-surface select-none" data-mode="connect" style="overflow: hidden;">
 <!-- Navigation Shell: TopNavBar -->
 <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-12 py-8 bg-transparent border-none font-headline tracking-widest uppercase">
-<button class="flex items-center group" id="menu-toggle">
+<button aria-expanded="false" class="flex items-center group relative z-[1001]" id="menu-toggle">
 <span class="material-symbols-outlined text-[#ffbc00] text-3xl transition-transform duration-700 ease-in-out group-active:scale-95" id="menu-icon">add</span>
 </button>
 <a class="absolute left-1/2 -translate-x-1/2 text-xl font-bold tracking-[0.2em] text-[#ffbc00] hover:opacity-80 transition-opacity" href="#hero">
         AMBER LAB
     </a>
 <div class="flex gap-8 items-center">
-<a class="text-[#e2e2e2] hover:text-[#ffbc00] transition-colors duration-500" href="#about-contact">Contact</a>
+<a class="text-[#e2e2e2] hover:text-[#ffbc00] transition-colors duration-500 nav-link" href="#about-contact">Contact</a>
 </div>
 </nav>
 <!-- SideNavBar (Diagonal Menu) -->
-<div class="fixed inset-0 z-[60] bg-[#0e0e0e]/95 backdrop-blur-xl flex justify-center px-24 w-full h-full grid grid-cols-2" id="diagonal-menu">
+<div class="fixed inset-0 bg-[#0e0e0e]/95 backdrop-blur-xl flex justify-center px-24 w-full h-full grid grid-cols-2" id="diagonal-menu">
 <div class="flex flex-col justify-center">
 <div class="space-y-6">
 <div class="overflow-hidden">
-<a class="block text-[5.25rem] font-bold font-headline leading-none text-[#e2e2e2] hover:text-[#ffbc00] hover:translate-x-4 transition-all duration-500 underline decoration-4 decoration-transparent hover:decoration-[#ffbc00]" href="#vision">VISION</a>
+<a class="block text-[5.25rem] font-bold font-headline leading-none text-[#e2e2e2] hover:text-[#ffbc00] hover:translate-x-4 transition-all duration-500 underline decoration-4 decoration-transparent hover:decoration-[#ffbc00] nav-link" href="#vision">VISION</a>
 </div>
 <div class="overflow-hidden">
-<a class="block text-[5.25rem] font-bold font-headline leading-none text-[#e2e2e2] hover:text-[#ffbc00] hover:translate-x-4 transition-all duration-500 underline decoration-4 decoration-transparent hover:decoration-[#ffbc00]" href="#purpose">PURPOSE</a>
+<a class="block text-[5.25rem] font-bold font-headline leading-none text-[#e2e2e2] hover:text-[#ffbc00] hover:translate-x-4 transition-all duration-500 underline decoration-4 decoration-transparent hover:decoration-[#ffbc00] nav-link" href="#purpose">PURPOSE</a>
 </div>
 <div class="overflow-hidden">
-<a class="block text-[5.25rem] font-bold font-headline leading-none text-[#e2e2e2] hover:text-[#ffbc00] hover:translate-x-4 transition-all duration-500 underline decoration-4 decoration-transparent hover:decoration-[#ffbc00]" href="#about">ABOUT</a>
+<a class="block text-[5.25rem] font-bold font-headline leading-none text-[#e2e2e2] hover:text-[#ffbc00] hover:translate-x-4 transition-all duration-500 underline decoration-4 decoration-transparent hover:decoration-[#ffbc00] nav-link" href="#about">ABOUT</a>
 </div>
 </div>
 </div>
@@ -176,7 +177,7 @@
 <!-- Section 2: Vision Page (Fixed Video) -->
 <section class="scroll-section bg-surface-container-lowest relative" id="vision" style="scroll-snap-align: start; scroll-snap-stop: always;">
 <div class="absolute inset-0 z-0 overflow-hidden">
-<video autoplay="" class="bg-video opacity-100" loop="" muted="" playsinline="">
+<video class="bg-video opacity-100" id="vision-video" muted="" playsinline="">
 <source src="https://storage.googleapis.com/a1aa/video/noise.mp4" type="video/mp4"/>
 </video>
 <div class="absolute inset-0 bg-black/50"></div>
@@ -191,7 +192,7 @@
                 AMBER LAB thereby gives birth to the next global miracle, from neighborhoods that other institutions overlook.
             </p>
 <div class="mt-12">
-<a class="inline-flex items-center gap-6 group text-[#ffbc00] hover:text-white transition-all duration-500" href="vision.html">
+<a class="inline-flex items-center gap-6 group text-[#ffbc00] hover:text-white transition-all duration-500" data-nav-external="true" href="vision.html">
 <span class="text-sm font-headline tracking-[0.3em] font-medium uppercase">Read more about our Vision...</span>
 <span class="material-symbols-outlined text-2xl group-hover:translate-x-3 transition-transform duration-500">arrow_forward</span>
 </a>
@@ -277,32 +278,52 @@
 <section class="scroll-section bg-surface-container-lowest relative" id="about" style="scroll-snap-align: start; scroll-snap-stop: always;">
 <div class="absolute inset-0 bg-black z-0"></div>
 <div class="relative z-10 px-24 md:px-32 h-full grid grid-cols-12 gap-12 items-center">
-<div class="col-span-12 lg:col-span-5 flex flex-col gap-6">
-<div class="w-full aspect-square bg-surface-container-highest overflow-hidden border border-[#ffbc00]/20">
-<img alt="Authentic music rehearsal room in Stockholm" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQq5QIM6xGTOnkFs-rSouo3Xrf84yvxzZRcN4eCedHpOtJICeMoSizlXy1mUHeFgoaehzzexfbSssGiYLNRnVCPyYOSd0rr3PusFUnNetTz75H7_ynbUMJ27uN5xR11EW8x2KydYQg0xEgvJN2szwqfSg1BuJJOahFWRvLtLz4a2XbjbxO2S6KhMr9eRufw4N_mNG3HdN6Tzee0Ewj72NB0QzRJf7G790y2aiaKnVYhQDXtS2qczH5nxeUsivHKbBQcaVhDLvoiSo"/>
+<div class="col-span-12 lg:col-span-5 flex flex-col gap-4">
+<!-- First Image: The Key Metaphor -->
+<div class="w-full aspect-[4/3] bg-surface-container-highest overflow-hidden border border-[#ffbc00]/20">
+<img alt="The glowing key metaphor for Swedish Miracle" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQq5QIM6xGTOnkFs-rSouo3Xrf84yvxzZRcN4eCedHpOtJICeMoSizlXy1mUHeFgoaehzzexfbSssGiYLNRnVCPyYOSd0rr3PusFUnNetTz75H7_ynbUMJ27uN5xR11EW8x2KydYQg0xEgvJN2szwqfSg1BuJJOahFWRvLtLz4a2XbjbxO2S6KhMr9eRufw4N_mNG3HdN6Tzee0Ewj72NB0QzRJf7G790y2aiaKnVYhQDXtS2qczH5nxeUsivHKbBQcaVhDLvoiSo"/>
 </div>
-<div class="w-full aspect-[16/9] bg-surface-container-highest overflow-hidden border border-[#ffbc00]/20">
-<img alt="Access to practice key metaphor" class="w-full h-full object-cover mix-blend-screen opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUHv-fAwShO0Yaubsz8M9MrTwEKzwiGSiif4qtTPrOhhZ5gzR88MfYaPtiIHCP6lchPg3nEb0mb0kbUbGvdjIVaGTcvoXpH7KSNc9tnIqybN_92e2srznDNEBlm20ImSrXIjbnKLiFcJrbUKvXJKt3S45P-x2gRIo7lVJ2jeo7CeM9M9REfRjFet7WkDXDYGHcIVEOFftpO9JaPulty0HdBp9RVPbZ17HKYYZQ9AMmtHh_XeuRvXdZDukTarxQ39b_ONmdVhE0PPE"/>
+<!-- Second Image: Rehearsal Studio (IMAGE_92) -->
+<div class="w-full aspect-square bg-surface-container-highest overflow-hidden border border-[#ffbc00]/20">
+<img alt="Cozy high-end rehearsal studio in Stockholm" class="w-full h-full object-cover opacity-90 transition-all duration-1000 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDCoA5jfGDmqFQc565WIofbpMvKeWV1akqEkeviuXQ4BH44dEG2gN4fURk9cwCqAbgZAbD66Kaas9OF0uCucrH20uXvjQWbegy_VpYSg7aOY1eXiYU_L0GWXuEAojQk4RuYdzEg2M4DTCj9ZjsP5ZYJ_asKC-j6cwTj4M9zbH2T25tbfWr41pIlXF0UwdHYgdk6UTVZ_0ZIJaJmXzlTCb7brGHwXsg-fkeJWMHBUodH4rduQAdTxNfO5I0fWTQDA-h94QvqZuT8jo"/>
 </div>
 </div>
 <div class="col-span-12 lg:col-span-7 flex flex-col justify-center">
 <h2 class="text-[5rem] md:text-[7rem] font-light font-headline text-on-surface mb-6 tracking-tight leading-none opacity-90 uppercase">ABOUT</h2>
-<div class="max-w-2xl bg-black/40 p-10 backdrop-blur-sm border-l border-[#ffbc00]/30">
-<h3 class="text-2xl font-headline font-bold text-[#ffbc00] mb-4 tracking-tight uppercase">THE AMBER LABORATORY</h3>
-<p class="text-lg font-light leading-relaxed text-on-surface/90 tracking-wide mb-6">
-                    AMBER LAB is more than an incubator; it is a sanctuary. We have built a physical and digital environment designed to foster the next wave of global breakthroughs from the voices that have historically been excluded from the tech narrative.
-                </p>
-<div class="grid grid-cols-2 gap-8 mt-8">
+<div class="max-w-2xl bg-black/40 p-10 backdrop-blur-sm border-l border-[#ffbc00]/30 space-y-8">
 <div>
-<h4 class="text-xs font-headline font-bold text-white mb-2 uppercase tracking-widest border-b border-[#ffbc00]/30 pb-2">Location</h4>
-<p class="text-sm text-on-surface/60 font-light">Stockholm, Sweden. A hub of innovation fueled by Nordic heritage and global diversity.</p>
+<h3 class="text-2xl font-headline font-bold text-[#ffbc00] mb-4 tracking-tight uppercase">THE NEXT SWEDISH MIRACLE</h3>
+<p class="text-lg font-light leading-relaxed text-on-surface/90 tracking-wide">
+                        AMBER LAB is more than an incubator; it is a sanctuary. We have built a physical and digital environment designed to foster the next wave of global breakthroughs from the voices that have historically been excluded from the tech narrative.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Mirrors of Success Card -->
+<div class="bg-surface-container p-6 border border-outline-variant/30 group hover:border-[#ffbc00]/50 transition-colors">
+<h4 class="text-xs font-headline font-bold text-[#ffbc00] mb-2 uppercase tracking-widest">MIRRORS OF SUCCESS</h4>
+<p class="text-[13px] text-on-surface/70 font-light leading-relaxed">
+                            Access is the key. We reflect the heritage of Sweden's musical evolution into the digital AI frontier.
+                        </p>
+</div>
+<!-- Chamber of Miracles Card -->
+<div class="bg-surface-container p-6 border border-outline-variant/30 group hover:border-[#ffbc00]/50 transition-colors">
+<h4 class="text-xs font-headline font-bold text-[#ffbc00] mb-2 uppercase tracking-widest">CHAMBER OF MIRACLES</h4>
+<p class="text-[13px] text-on-surface/70 font-light leading-relaxed">
+                            A high-end sanctuary where technology meets artisan creativity, enabling the 'unheard' to lead.
+                        </p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8 pt-4">
+<div>
+<h4 class="text-[10px] font-headline font-bold text-white mb-2 uppercase tracking-widest border-b border-[#ffbc00]/30 pb-2">LOCATION</h4>
+<p class="text-xs text-on-surface/60 font-light">Stockholm, Sweden. A hub of innovation fueled by Nordic heritage and global diversity.</p>
 </div>
 <div>
-<h4 class="text-xs font-headline font-bold text-white mb-2 uppercase tracking-widest border-b border-[#ffbc00]/30 pb-2">Impact</h4>
-<p class="text-sm text-on-surface/60 font-light">Removing financial and technical barriers for over 30+ international creators annually.</p>
+<h4 class="text-[10px] font-headline font-bold text-white mb-2 uppercase tracking-widest border-b border-[#ffbc00]/30 pb-2">IMPACT</h4>
+<p class="text-xs text-on-surface/60 font-light">Removing financial and technical barriers for over 30+ international creators annually.</p>
 </div>
 </div>
-<div class="mt-10">
+<div class="pt-6">
 <a class="text-[#ffbc00] font-headline text-sm tracking-[0.2em] uppercase font-bold hover:text-white transition-colors flex items-center gap-4 group" href="#">
                         OUR CORE TEAM 
                         <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
@@ -318,8 +339,8 @@
 <div class="text-[5rem] font-light font-headline leading-none text-white opacity-90">PILOT</div>
 <h2 class="text-xs font-headline tracking-[0.5em] text-[#ffbc00] uppercase font-bold mt-2 mb-6">The Pilot Program</h2>
 <p class="text-sm font-light leading-relaxed text-on-surface/70 tracking-wide border-l border-[#ffbc00]/30 pl-4">
-        We at Amber Lab have launched a Pilot project, with stunning results proving that there is a need to give creatives AI tools to enhance their output.
-    </p>
+            We at Amber Lab have launched a Pilot project, with stunning results proving that there is a need to give creatives AI tools to enhance their output.
+        </p>
 </div>
 <div class="h-full w-full flex items-center overflow-x-auto pilot-carousel snap-x snap-mandatory" id="pilot-scroller">
 <!-- Mikaela -->
@@ -507,7 +528,7 @@
 </div>
 </div>
 <div class="pt-12 flex justify-end">
-<a class="inline-flex items-center gap-4 group" href="#">
+<a class="inline-flex items-center gap-4 group" data-nav-external="true" href="#">
 <span class="text-sm font-headline tracking-widest">FULL BUDGET BREAKDOWN</span>
 <span class="material-symbols-outlined text-[#ffbc00] group-hover:translate-x-2 transition-transform">arrow_forward</span>
 </a>
@@ -536,46 +557,103 @@
 </section>
 <script>
     let isLocked = true;
-    document.body.style.overflow = 'hidden';
+    let lockTimer;
+
+    const forceUnlock = () => {
+        if (isLocked) {
+            clearTimeout(lockTimer);
+            isLocked = false;
+            document.body.style.overflow = 'auto';
+        }
+    };
     
-    // Initial 8-second cinematic lock
-    setTimeout(() => {
+    // Initial cinematic lock
+    lockTimer = setTimeout(() => {
         isLocked = false;
         document.body.style.overflow = 'auto';
     }, 8000);
 
-    // Only prevent scroll when locked and at top. 
+    // Prevent scroll when locked
     window.addEventListener('wheel', (e) => {
         if (isLocked) {
             e.preventDefault();
         }
     }, { passive: false });
 
-    // Menu logic
+    // Robust Menu logic
     const menuToggle = document.getElementById('menu-toggle');
     const diagonalMenu = document.getElementById('diagonal-menu');
     const menuIcon = document.getElementById('menu-icon');
     let menuOpen = false;
 
-    menuToggle.addEventListener('click', () => {
+    const navToggle = () => {
         menuOpen = !menuOpen;
+        menuToggle.setAttribute('aria-expanded', menuOpen);
+        
         if (menuOpen) {
             diagonalMenu.classList.add('active');
             menuIcon.innerText = 'close';
             document.body.style.overflow = 'hidden';
+            // Force z-index was handled in CSS but ensuring here
+            diagonalMenu.style.zIndex = "1000";
         } else {
             diagonalMenu.classList.remove('active');
             menuIcon.innerText = 'add';
             if (!isLocked) document.body.style.overflow = 'auto';
         }
+    };
+
+    menuToggle.addEventListener('click', navToggle);
+
+    // Vision Video IntersectionObserver
+    const visionVideo = document.getElementById('vision-video');
+    const visionSection = document.getElementById('vision');
+    let videoPlayed = false;
+
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !videoPlayed) {
+                visionVideo.play().catch(e => console.log("Autoplay prevented or failed", e));
+                videoPlayed = true; // Play only once
+                videoObserver.unobserve(visionSection);
+            }
+        });
+    }, {
+        threshold: 0.5 // 50% visible
     });
 
-    diagonalMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            menuOpen = false;
-            diagonalMenu.classList.remove('active');
-            menuIcon.innerText = 'add';
-            if (!isLocked) document.body.style.overflow = 'auto';
+    if (visionSection && visionVideo) {
+        videoObserver.observe(visionSection);
+    }
+
+    // Nav Links handling (Internal vs External)
+    document.querySelectorAll('a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            const isExternal = this.getAttribute('data-nav-external') === 'true' || (href && !href.startsWith('#'));
+            
+            // Force unlock if it's a navigation link
+            if (this.classList.contains('nav-link') || (href && href.startsWith('#'))) {
+                forceUnlock();
+            }
+
+            if (isExternal) {
+                // Let browser handle normally, or prevent if we had a complex router
+                return;
+            }
+
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    // Close menu if open
+                    if (menuOpen) navToggle();
+                    
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            }
         });
     });
 
@@ -621,22 +699,6 @@
                 left: index * pilotScroller.clientWidth,
                 behavior: 'smooth'
             });
-        });
-    });
-
-    // Explicit smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId.startsWith('#')) {
-                const target = document.querySelector(targetId);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            }
         });
     });
 </script>
