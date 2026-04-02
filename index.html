@@ -165,10 +165,9 @@
 <iframe allow="autoplay; fullscreen" class="w-full h-full" frameborder="0" src="https://player.vimeo.com/video/1179142545?background=1&amp;autoplay=1&amp;loop=1&amp;byline=0&amp;title=0&amp;muted=1"></iframe>
 </div>
 </section>
-<!-- Section 2: Vision Page (Lighter, Minimalistic) -->
+<!-- Section 2: Vision Page -->
 <section class="scroll-section bg-surface-container-lowest relative" id="vision" style="scroll-snap-align: start; scroll-snap-stop: always;">
 <div class="absolute inset-0 z-0">
-<!-- Replaced noise placeholder with a visual style if video fails, but keeping structure -->
 <div class="absolute inset-0 bg-black/40"></div>
 </div>
 <div class="relative z-10 p-24 md:p-32 h-full flex flex-col justify-end items-start pb-48">
@@ -189,8 +188,44 @@
 </div>
 </div>
 </section>
-<!-- Section 3: Sustainability -->
-<section class="scroll-section bg-surface-container-low flex items-center" id="purpose" style="scroll-snap-align: start; scroll-snap-stop: always;">
+<!-- NEW Section 3: Purpose Detail -->
+<section class="scroll-section bg-surface-container-lowest relative" id="purpose" style="scroll-snap-align: start; scroll-snap-stop: always;">
+<div class="absolute inset-0 bg-black z-0"></div>
+<div class="relative z-10 p-24 md:p-32 h-full flex flex-col justify-end items-start pb-48">
+<h2 class="text-[6rem] md:text-[8.5rem] font-light font-headline text-on-surface mb-8 tracking-tight leading-none opacity-90">PURPOSE</h2>
+<div class="max-w-3xl bg-black/40 p-12 backdrop-blur-sm border-l border-[#ffbc00]/30 -mt-6">
+<h3 class="text-3xl md:text-4xl font-headline font-bold text-[#ffbc00] mb-6 tracking-tight uppercase">UNLOCKING THE NEXT MIRACLE</h3>
+<p class="text-xl md:text-[1.35rem] font-light italic leading-relaxed text-on-surface/90 tracking-wide mb-10">
+                "From ABBA to Avicii, access was the key that unlocked Sweden’s musical heart. We are providing that same key for the digital future—dismantling the barriers so that the ‘unheard’ can lead the global conversation."
+            </p>
+<div class="space-y-8 font-body">
+<div class="flex gap-6 items-start">
+<div class="w-1 h-12 bg-[#ffbc00] shrink-0 mt-1"></div>
+<div>
+<h4 class="font-bold text-lg text-white mb-1 uppercase tracking-wider">Breaking the Poverty Barrier</h4>
+<p class="text-on-surface/70 leading-relaxed">Through €450k in direct support and €15k stipends, we remove the “entry fee” to the digital future. We make creative time a right, not a luxury.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="w-1 h-12 bg-[#ffbc00] shrink-0 mt-1"></div>
+<div>
+<h4 class="font-bold text-lg text-white mb-1 uppercase tracking-wider">Linguistic Sovereignty</h4>
+<p class="text-on-surface/70 leading-relaxed">We fine-tune AI models to honor the specific dialects and folklore of diaspora communities, preventing cultural erasure.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="w-1 h-12 bg-[#ffbc00] shrink-0 mt-1"></div>
+<div>
+<h4 class="font-bold text-lg text-white mb-1 uppercase tracking-wider">The Amber Promise</h4>
+<p class="text-on-surface/70 leading-relaxed">We don’t “save” voices; we provide the high-end sanctuary where they lead the conversation.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Sustainability (Now Section 4) -->
+<section class="scroll-section bg-surface-container-low flex items-center" id="sustainability" style="scroll-snap-align: start; scroll-snap-stop: always;">
 <div class="grid grid-cols-12 w-full px-24 gap-12">
 <div class="col-span-5">
 <h3 class="text-sm font-headline tracking-[0.4em] text-[#ffbc00] mb-4">PURPOSE</h3>
@@ -220,7 +255,7 @@
 </div>
 </div>
 </section>
-<!-- Section 4: Budget Allocation -->
+<!-- Section 5: Budget Allocation -->
 <section class="scroll-section bg-surface flex flex-col justify-start px-24 pt-48 pb-12" id="budget" style="scroll-snap-align: start; scroll-snap-stop: always;">
 <div class="grid grid-cols-12 gap-12 mb-8">
 <div class="col-span-6">
@@ -303,7 +338,7 @@
 </div>
 </div>
 </section>
-<!-- Section 5: Get in Touch & Footer -->
+<!-- Section 6: Get in Touch & Footer -->
 <section class="scroll-section bg-surface-container-lowest flex flex-col justify-between" id="about" style="scroll-snap-align: start; scroll-snap-stop: always;">
 <div class="flex-1 flex flex-col items-center justify-center px-12 text-center">
 <h2 class="text-5xl md:text-7xl font-bold font-headline tracking-widest text-[#ffbc00] mb-12">GET IN TOUCH!</h2>
@@ -333,7 +368,6 @@
     }, 8000);
 
     // Only prevent scroll when locked and at top. 
-    // Once unlocked, user can scroll bidirectionally.
     window.addEventListener('wheel', (e) => {
         if (isLocked) {
             e.preventDefault();
@@ -392,7 +426,5 @@
             }
         });
     });
-
-    // Scroll snap setup (already on html/sections via style/classes)
 </script>
 </body></html>
