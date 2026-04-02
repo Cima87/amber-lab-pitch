@@ -241,15 +241,22 @@
 <!-- Right Column: Image and Compact Podcast Player -->
 <div class="col-span-12 lg:col-span-5 flex flex-col gap-6 justify-center">
 <div class="w-full aspect-video bg-surface-container-highest overflow-hidden relative">
-<img alt="Abstract Nordic Concept" class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCixHjaZymUfFL2C9fQPYoSnr_TosVjNraiY3xk-HdATnHm3surpeFTKZwiHb-wKS1RanmEIKnvd4rsx6LysjqckmcwWgnjfyHSZDhrZsctV9zH5gwwEXy-NrAxqTdymJbbQDQiJya_kx2GKiKlIsP6EY-vsTbdaC1F9quVvxw_5-NTgiSkoekq29rN97PRZT9qBASJN1qnH2tLQrHzfaG7sS5HU9M1ygMYfyYE-bHwTgt_ESWXrWol3art2jmpLtgb38k1lrsLCZI"/>
+<img alt="Professional podcast recording session" class="w-full h-full object-cover grayscale brightness-90 hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3KMkRPzdspf_jlNz12it0wkSq_72R_nUwiRzMrAswPTEbYVfFRGTH8UNm2v22aeTRlGMzDE2mVv1ZcVJkPsC4ldnP-Wnhwmhk0Xw0vM0c0BwzHau9LWXzJWL1FgrzJgCl_BsKU5uUkMn1xsitZ0mcfwaosRIu_3pSx5vRhiUG8iJ1NFH-LWV1yrci4M6iWAnA7HtZhLJvcK6hKk7NOzRTuw1ycRep9cL4UVkkeHhjpkRCmjFmilpYK_TWEaj8qAV8s-_7CqyMHOE"/>
 <div class="absolute bottom-4 left-4 bg-black/60 px-3 py-1 backdrop-blur-md">
-<span class="text-[10px] font-mono tracking-widest text-[#ffbc00] uppercase">Nordic Genesis 01</span>
+<span class="text-[10px] font-mono tracking-widest text-[#ffbc00] uppercase">Podcast In-Session 04</span>
 </div>
 </div>
 <div class="bg-surface-container-highest p-6 relative">
+<audio id="podcast-audio" preload="metadata" src="podcast.mp4"></audio>
 <div class="flex items-center gap-6">
-<div class="w-20 h-20 bg-surface-container-lowest flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-[#ffbc00] scale-[1.8]">graphic_eq</span>
+<div class="w-20 h-20 bg-surface-container-lowest flex items-center justify-center shrink-0 overflow-hidden relative">
+<span class="material-symbols-outlined text-[#ffbc00] scale-[1.8] absolute z-0" id="audio-visualizer-icon">graphic_eq</span>
+<div class="absolute inset-0 bg-[#ffbc00]/10 flex items-end justify-center gap-1 p-2" id="audio-bars">
+<div class="w-1 bg-[#ffbc00]/40 h-2 transition-all duration-300"></div>
+<div class="w-1 bg-[#ffbc00]/40 h-4 transition-all duration-300"></div>
+<div class="w-1 bg-[#ffbc00]/40 h-3 transition-all duration-300"></div>
+<div class="w-1 bg-[#ffbc00]/40 h-5 transition-all duration-300"></div>
+</div>
 </div>
 <div class="flex-1 min-w-0">
 <div class="flex items-center gap-2 mb-1">
@@ -257,16 +264,16 @@
 <span class="text-[9px] font-mono text-on-surface/40">EP 04</span>
 </div>
 <h4 class="text-lg font-bold font-headline mb-2 truncate text-white">Ethical Scaling</h4>
-<div class="w-full h-1 bg-surface-variant relative mb-1">
-<div class="absolute left-0 top-0 h-full w-1/3 bg-[#ffbc00]"></div>
+<div class="w-full h-1 bg-surface-variant relative mb-1 overflow-hidden">
+<div class="absolute left-0 top-0 h-full w-0 bg-[#ffbc00] transition-all" id="audio-progress"></div>
 </div>
 <div class="flex justify-between text-[9px] font-mono opacity-40">
-<span>12:45</span>
-<span>48:00</span>
+<span id="audio-current">00:00</span>
+<span id="audio-duration">--:--</span>
 </div>
 </div>
-<button class="w-12 h-12 bg-[#ffbc00] flex items-center justify-center hover:scale-95 transition-transform shrink-0">
-<span class="material-symbols-outlined text-[#131313]" data-weight="fill">play_arrow</span>
+<button class="w-12 h-12 bg-[#ffbc00] flex items-center justify-center hover:scale-95 transition-transform shrink-0" id="audio-play-btn">
+<span class="material-symbols-outlined text-[#131313]" data-weight="fill" id="play-icon">play_arrow</span>
 </button>
 </div>
 </div>
@@ -278,7 +285,6 @@
 <div class="absolute inset-0 bg-black z-0"></div>
 <div class="relative z-10 px-24 md:px-32 h-full grid grid-cols-12 gap-12 items-center">
 <div class="col-span-12 lg:col-span-5 flex flex-col gap-4">
-<!-- Keeps only the black-and-white rehearsal studio image -->
 <div class="w-full aspect-[16/10] bg-surface-container-highest overflow-hidden border border-[#ffbc00]/20">
 <img alt="Cozy high-end rehearsal studio in Stockholm" class="w-full h-full object-cover opacity-90 transition-all duration-1000 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDCoA5jfGDmqFQc565WIofbpMvKeWV1akqEkeviuXQ4BH44dEG2gN4fURk9cwCqAbgZAbD66Kaas9OF0uCucrH20uXvjQWbegy_VpYSg7aOY1eXiYU_L0GWXuEAojQk4RuYdzEg2M4DTCj9ZjsP5ZYJ_asKC-j6cwTj4M9zbH2T25tbfWr41pIlXF0UwdHYgdk6UTVZ_0ZIJaJmXzlTCb7brGHwXsg-fkeJWMHBUodH4rduQAdTxNfO5I0fWTQDA-h94QvqZuT8jo"/>
 </div>
@@ -334,11 +340,11 @@
 <div class="min-w-full h-full flex items-center justify-center snap-center px-24 pt-48 pb-32">
 <div class="grid grid-cols-12 gap-12 items-center w-full max-w-6xl">
 <div class="col-span-4 aspect-[4/5] overflow-hidden border border-white/10 group">
-<img alt="Mikaela" class="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs3KnpRjCotzHQg1JzzraGjJdn6Wi_pXiswLgWbkEqBcr5jW0S0J_0RI7CvMojplOL3es4aCN_mjGf7KFnu7IOntYiiX96uQDA2gtftAkKsuQ497mvaJnVKiLrZTdyXaY7h9lA2GkseyHGWUn3Ub5gdQvOMd6WNRXOD9hH3AenXI_WsZEvlhlk7lOFY9lPJwOZHnVFLHFDyd88_sKDABxFxeOZ4nJwqMDvezZoBmqNAqneBuOJzTF3fcku0uoJCnjSS49lm29C9QE"/>
+<img alt="Mikaela" class="w-full h-full object-cover grayscale brightness-110 transition-all duration-1000 group-hover:brightness-125 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9kBM4jTyU4dnXoFs-9C06E0hbidffz--kS3Xp54mIiB6ys61pHY3hkuKkzfWPVw_yBrikD4ZvTouRt0SY_bs0wdlXZY_jdEZjANsBAX6zn3JaRBJdRKOXgi2o0NH8fDduoI6AiCc781O6rK1fBOzk_5JVoH4h8rqWlt21TXaiHSo85QqAvoPNWMF5GJJuTc83uY_x3lprXrgXOJ1JPKRU4ToKXAh5B-ajPR_eysZIWaAxpefLIG_CTvSyKZYyUyXpIo1k1hM7hO8"/>
 </div>
 <div class="col-span-8 pl-8">
 <div class="mb-4">
-<span class="text-[#ffbc00] font-headline text-xs tracking-widest font-bold">UKRAINE / 19</span>
+<span class="text-[#ffbc00] font-headline text-xs tracking-widest font-bold">UKRAINE / 19 / CREATIVE LEAD</span>
 <h3 class="text-3xl font-headline font-bold text-white mt-1">MIKAELA</h3>
 </div>
 <div class="relative">
@@ -354,11 +360,11 @@
 <div class="min-w-full h-full flex items-center justify-center snap-center px-24 pt-48 pb-32">
 <div class="grid grid-cols-12 gap-12 items-center w-full max-w-6xl">
 <div class="col-span-4 aspect-[4/5] overflow-hidden border border-white/10 group">
-<img alt="Kofi" class="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWjTvtJ41arshPYFfy45K_UHe1DgiEnXxJoV1t0y7WTmU5r1pTLaM1yNwgRbclEY4q3LV7na3AW-NRkFHuHnEGKM3WKaVJZN0p0OZi4kT57zUUjqkjdHbhisHQC947AbqJLcoMyC-kvgmbzjmXQ0XTkBguYzt8tuR5K2PDdiGbFme9dE3cJbM1oCtUg1o1HLbSYZa9jrAcug4dFF67_AC_4ktAPQc76ek3IbLHKzYMLXpSBSi-NV3eHET2-2soBWgNhlWD5SERBm4"/>
+<img alt="Kofi" class="w-full h-full object-cover grayscale brightness-105 transition-all duration-1000 group-hover:brightness-120 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPw1sltJdH9l6_erGjNdPtJcEvCgTJ0_oTzILGxOrMX0xHmFda6bvAn7MdDtn1f7Vs7VgPK-IsT3InlVw52BHhLcutLicsWCA6dJ75wrZewGSZ0NzBqK5owIqxdDpfKEcYGYqLWF8jZIcCEHTuE6rErzII5tsd6G7Ls836UJJY1JLxaLh9IPv8U7WauUT_MhEQPAtFa3R621bIVznnB0PF7ptQEpLgAlxeiYQy3TOWHb4NZQrWr_1F831trKr0DKS3etY7BZZPFxc"/>
 </div>
 <div class="col-span-8 pl-8">
 <div class="mb-4">
-<span class="text-[#ffbc00] font-headline text-xs tracking-widest font-bold">UGANDA / 21</span>
+<span class="text-[#ffbc00] font-headline text-xs tracking-widest font-bold">UGANDA / 21 / DIGITAL ARTIST</span>
 <h3 class="text-3xl font-headline font-bold text-white mt-1">KOFI</h3>
 </div>
 <div class="relative">
@@ -370,11 +376,73 @@
 </div>
 </div>
 </div>
-<!-- (Other Pilot slides remain consistent) -->
+<!-- Saengdao -->
+<div class="min-w-full h-full flex items-center justify-center snap-center px-24 pt-48 pb-32">
+<div class="grid grid-cols-12 gap-12 items-center w-full max-w-6xl">
+<div class="col-span-4 aspect-[4/5] overflow-hidden border border-white/10 group">
+<img alt="Saengdao" class="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:brightness-110 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEnSVTSvw2u12UZO61t-o9-acBxmzHt1qzMAj1W7iOgAwr9sBL8HtvMevg0PaHQrhEkzc5gDRjRBHCeCmdzg2M-rrgircT6lKkZqV2b1z7JuNPMQeU_15qQEnMvbpHGMEggKgIwITA1oD4orRJBNYcNui5x3VM_Sj92R5cAgAYwmTqLZE9N7re4lDB7fWI7noDpMEba2_tw6jw7ohS6Eiwbps4Ny0UrC-sKBVaPawYmPWGpqfCkq3bwyUE1F0LPjdHc1ZeB5wsgKY"/>
+</div>
+<div class="col-span-8 pl-8">
+<div class="mb-4">
+<span class="text-[#ffbc00] font-headline text-xs tracking-widest font-bold">THAILAND / 24 / ARCHITECT</span>
+<h3 class="text-3xl font-headline font-bold text-white mt-1">SAENGDAO</h3>
+</div>
+<div class="relative">
+<span class="absolute -top-6 -left-4 text-5xl text-[#ffbc00] opacity-20 font-serif">“</span>
+<p class="text-lg md:text-xl font-light italic leading-relaxed text-on-surface/80 tracking-wide">
+                            "Designing for the future requires tools that understand the past. At Amber Lab, I've bridged the gap between traditional Thai structure and generative logic. Looking into the camera here, I feel a sense of clarity I never found in standard corporate spaces. The environment here isn't just about high-end GPUs; it's about the mental space to think beyond the grid."
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Juanita -->
+<div class="min-w-full h-full flex items-center justify-center snap-center px-24 pt-48 pb-32">
+<div class="grid grid-cols-12 gap-12 items-center w-full max-w-6xl">
+<div class="col-span-4 aspect-[4/5] overflow-hidden border border-white/10 group">
+<img alt="Juanita" class="w-full h-full object-cover grayscale brightness-95 transition-all duration-1000 group-hover:brightness-110 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa2BtcUw3tMWYLWyYwt3fU0CySrIi4rQMCOF4vt6efyCSxZNDy3In8Y3At-XSDkENIrvWb27PdB3F9EfYtzv8RBLUfbAeyiIoq8ktx9ZvHbv_brb4OB0sQltMkd4YRxOEb0VsXR5m_Wgo5HOMUS1v9ZQpyo-Gmrbp2gmO32auvEAA_1V-TViCDSBcct4Yfly85aPCyO5wBEXpNig-O4QWna2AyU6KA35Fl3FWxirZJLeFQrn2dxS7uU5Mum_BMBJIfB3uq3BRm818"/>
+</div>
+<div class="col-span-8 pl-8">
+<div class="mb-4">
+<span class="text-[#ffbc00] font-headline text-xs tracking-widest font-bold">COLOMBIA / 22 / MUSIC PRODUCER</span>
+<h3 class="text-3xl font-headline font-bold text-white mt-1">JUANITA</h3>
+</div>
+<div class="relative">
+<span class="absolute -top-6 -left-4 text-5xl text-[#ffbc00] opacity-20 font-serif">“</span>
+<p class="text-lg md:text-xl font-light italic leading-relaxed text-on-surface/80 tracking-wide">
+                            "Rhythm is a language, but AI is the translator for the 21st century. I came here to see if I could teach a machine the soul of Cumbia. I found that I wasn't teaching a machine; I was expanding my own reach. The Lab is a sanctuary where my heritage is the primary source code, not an afterthought."
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Luis -->
+<div class="min-w-full h-full flex items-center justify-center snap-center px-24 pt-48 pb-32">
+<div class="grid grid-cols-12 gap-12 items-center w-full max-w-6xl">
+<div class="col-span-4 aspect-[4/5] overflow-hidden border border-white/10 group">
+<img alt="Luis" class="w-full h-full object-cover grayscale brightness-105 transition-all duration-1000 group-hover:brightness-120 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkZzEugJP63iQaPEhY_e4onJRary-gjiOT9iUZTfyviEJPtYlSrqgMn_lSVXh84FxxAWRJc3QWUqTYKzgjmbg9Uns_AAxdchXscl758yVMNCHZkTBTA2yfWCNnhYTgTV3JaK0z7-dyLMOmNbWvDU73gSkXOUdgga0P4m4rvhgClqxdeMaqjU9Uj_fuWt0UHYDuMQlIBbYDniXTbAWOFr8VZ6akwLYwrlarNJjB9nmhqmrXKqa6tEP6xxen2KoNdbHtZ7Bqg9K7tFE"/>
+</div>
+<div class="col-span-8 pl-8">
+<div class="mb-4">
+<span class="text-[#ffbc00] font-headline text-xs tracking-widest font-bold">PORTUGAL / 26 / OCEANOGRAPHER &amp; FILM</span>
+<h3 class="text-3xl font-headline font-bold text-white mt-1">LUIS</h3>
+</div>
+<div class="relative">
+<span class="absolute -top-6 -left-4 text-5xl text-[#ffbc00] opacity-20 font-serif">“</span>
+<p class="text-lg md:text-xl font-light italic leading-relaxed text-on-surface/80 tracking-wide">
+                            "Living by the Atlantic, you learn that the biggest forces are the ones you can't see. Amber Lab provided the lens to visualize the invisible data of our oceans through generative cinema. The contrast of the rough coast and the precision of the Lab has given me a new perspective on how technology can serve nature, rather than consume it."
+                        </p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-4 z-20">
 <button class="w-2 h-2 rounded-full bg-[#ffbc00] opacity-100 pilot-dot" data-index="0"></button>
 <button class="w-2 h-2 rounded-full bg-white opacity-30 pilot-dot" data-index="1"></button>
+<button class="w-2 h-2 rounded-full bg-white opacity-30 pilot-dot" data-index="2"></button>
+<button class="w-2 h-2 rounded-full bg-white opacity-30 pilot-dot" data-index="3"></button>
+<button class="w-2 h-2 rounded-full bg-white opacity-30 pilot-dot" data-index="4"></button>
 </div>
 </section>
 <!-- Section 6: Budget Allocation -->
@@ -459,7 +527,7 @@
 </footer>
 </section>
 <script>
-    // Navigation Menu Rewrite logic
+    // Navigation Menu Logic
     const menuToggle = document.getElementById('menu-toggle');
     const diagonalMenu = document.getElementById('diagonal-menu');
     const menuIcon = document.getElementById('menu-icon');
@@ -483,7 +551,55 @@
 
     menuToggle.addEventListener('click', navToggle);
 
-    // Robust Vision Video Playback
+    // Audio Player Logic
+    const podcastAudio = document.getElementById('podcast-audio');
+    const audioPlayBtn = document.getElementById('audio-play-btn');
+    const playIcon = document.getElementById('play-icon');
+    const audioProgress = document.getElementById('audio-progress');
+    const audioCurrent = document.getElementById('audio-current');
+    const audioDuration = document.getElementById('audio-duration');
+    const audioBars = document.getElementById('audio-bars').children;
+
+    const formatTime = (time) => {
+        const mins = Math.floor(time / 60);
+        const secs = Math.floor(time % 60);
+        return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    };
+
+    podcastAudio.addEventListener('loadedmetadata', () => {
+        audioDuration.innerText = formatTime(podcastAudio.duration);
+    });
+
+    audioPlayBtn.addEventListener('click', () => {
+        if (podcastAudio.paused) {
+            podcastAudio.play();
+            playIcon.innerText = 'pause';
+        } else {
+            podcastAudio.pause();
+            playIcon.innerText = 'play_arrow';
+        }
+    });
+
+    podcastAudio.addEventListener('timeupdate', () => {
+        const progress = (podcastAudio.currentTime / podcastAudio.duration) * 100;
+        audioProgress.style.width = `${progress}%`;
+        audioCurrent.innerText = formatTime(podcastAudio.currentTime);
+        
+        // Simple visualizer effect
+        if (!podcastAudio.paused) {
+            Array.from(audioBars).forEach(bar => {
+                bar.style.height = `${Math.random() * 20 + 5}px`;
+            });
+        }
+    });
+
+    podcastAudio.addEventListener('ended', () => {
+        playIcon.innerText = 'play_arrow';
+        audioProgress.style.width = '0%';
+        Array.from(audioBars).forEach(bar => bar.style.height = '4px');
+    });
+
+    // Vision Video Playback
     const visionVideo = document.getElementById('vision-video');
     const visionSection = document.getElementById('vision');
 
@@ -501,7 +617,15 @@
         videoObserver.observe(visionSection);
     }
 
-    // Nav Links handling
+    // Scroll lock for 8 seconds (initial landing)
+    let canScroll = false;
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+        canScroll = true;
+        document.body.style.overflow = 'auto';
+    }, 8000);
+
+    // Nav Links smooth scroll
     document.querySelectorAll('a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
