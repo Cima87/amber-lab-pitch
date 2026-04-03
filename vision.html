@@ -109,12 +109,12 @@
 </div>
 </div>
 <div class="absolute left-1/2 -translate-x-1/2">
-<a class="text-2xl font-bold tracking-[0.2em] text-neutral-200 font-['Space_Grotesk'] uppercase hover:text-primary transition-colors duration-500" href="index.html#about">
+<a class="text-2xl font-bold tracking-[0.2em] text-neutral-200 font-['Space_Grotesk'] uppercase hover:text-primary transition-colors duration-500" href="index.html#vision">
                 AMBER LAB
             </a>
 </div>
 <div class="flex items-center gap-8">
-<a class="font-['Space_Grotesk'] tracking-widest uppercase text-neutral-400 hover:text-amber-400 transition-colors duration-500" href="#">Contact</a>
+<a class="font-['Space_Grotesk'] tracking-widest uppercase text-neutral-400 hover:text-amber-400 transition-colors duration-500" href="index.html#about-contact">Contact</a>
 </div>
 </nav>
 <!-- SideNavBar -->
@@ -131,26 +131,24 @@
 </aside>
 <!-- Hero Section / Vision -->
 <main class="relative min-h-screen flex flex-col justify-center items-start px-12 md:px-24 pt-32 overflow-hidden">
-<!-- Background: VR Stage Image -->
-<div class="absolute inset-0 z-0 opacity-40">
-<img alt="Atmospheric VR stage with people viewing a cosmic landscape" class="w-full h-full object-cover grayscale brightness-[0.3]" src="https://lh3.googleusercontent.com/aida/ADBb0uj5bMWoYW6D8foM6jP3TxTJ6N6UE27fm5cYYRgcobyhJCrNoWohlcoEFSkgRKBJJY2HEU58TJV4sE32srPjQZBvzhjUCozqE4F_ADwOvoEMZYSC5LfiBzjt-eoKyu6JyFE75OkgJ9wBJy3nyzDi-2MmBIxzjpRfWiRCqN0kC1KDiBJeOqS8JWX4_eIn-dJwSz3W9jBN1dalPo_Xc1DkjiEKQKK1sqF7vfELytoMXoCZg2FJeZh2aCann6tpFCnr4ckgQVX2jDbKWw"/>
-<div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background"></div>
-<div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
-</div>
-<div class="relative z-10 max-w-5xl">
+<div class="relative z-10 max-w-7xl w-full">
 <h1 class="font-headline text-5xl md:text-8xl font-bold leading-tight tracking-tighter mb-12">
                 Mastering the Surge of the <span class="text-primary-container text-glow">Digital Shoreline.</span>
 </h1>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-<div class="md:col-span-7">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-6">
 <h2 class="font-label text-xs tracking-[0.3em] uppercase text-primary mb-4">Our Vision</h2>
 <p class="font-body text-xl md:text-2xl font-light leading-relaxed text-on-surface-variant">
                         We stand on a digital shoreline watching a massive wave of Generative AI and XR crest on the horizon. While many fear this surge will wash away human artistry, Amber Lab sees a catalyst for movement. Our vision is to ensure that Nordic storytelling remains a master of its own craft, rather than a derivative of biased, foreign data sets.
                     </p>
-</div>
-<div class="md:col-span-5 flex flex-col gap-4 justify-end h-full">
+<div class="mt-8 flex flex-col gap-4">
 <div class="h-px w-full bg-outline-variant/30"></div>
 <span class="font-label text-xs tracking-[0.3em] uppercase text-primary">The Future We are Building</span>
+</div>
+</div>
+<div class="lg:col-span-6 relative group">
+<div class="absolute -inset-4 bg-primary/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+<img alt="Atmospheric VR stage with people viewing a cosmic landscape" class="relative z-10 w-full h-auto grayscale hover:grayscale-0 transition-all duration-700 border border-outline-variant/20" src="https://lh3.googleusercontent.com/aida/ADBb0uj5bMWoYW6D8foM6jP3TxTJ6N6UE27fm5cYYRgcobyhJCrNoWohlcoEFSkgRKBJJY2HEU58TJV4sE32srPjQZBvzhjUCozqE4F_ADwOvoEMZYSC5LfiBzjt-eoKyu6JyFE75OkgJ9wBJy3nyzDi-2MmBIxzjpRfWiRCqN0kC1KDiBJeOqS8JWX4_eIn-dJwSz3W9jBN1dalPo_Xc1DkjiEKQKK1sqF7vfELytoMXoCZg2FJeZh2aCann6tpFCnr4ckgQVX2jDbKWw"/>
 </div>
 </div>
 </div>
@@ -245,14 +243,17 @@
         const menu = document.getElementById('nav-menu');
         
         toggle.addEventListener('click', () => {
-            toggle.classList.toggle('active');
+            const isActive = toggle.classList.toggle('active');
             menu.classList.toggle('active');
             
             // Toggle container classes for children animations
             const links = menu.querySelectorAll('a');
             links.forEach((link) => {
-                link.parentElement.classList.toggle('group');
-                // The delay is handled by CSS classes in the HTML
+                if (isActive) {
+                    link.classList.remove('opacity-0', 'translate-x-4');
+                } else {
+                    link.classList.add('opacity-0', 'translate-x-4');
+                }
             });
         });
 
@@ -261,6 +262,8 @@
             link.addEventListener('click', () => {
                 toggle.classList.remove('active');
                 menu.classList.remove('active');
+                const links = menu.querySelectorAll('a');
+                links.forEach(l => l.classList.add('opacity-0', 'translate-x-4'));
             });
         });
     </script>
