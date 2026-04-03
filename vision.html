@@ -82,19 +82,37 @@
       .text-glow {
         text-shadow: 0 0 15px rgba(255, 188, 0, 0.3);
       }
+      /* Custom Navigation Transition Styles */
+      #nav-menu {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        pointer-events: none;
+        opacity: 0;
+      }
+      #nav-menu.active {
+        pointer-events: auto;
+        opacity: 1;
+      }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-8 bg-neutral-950/60 backdrop-blur-xl transition-all duration-500">
-<div class="flex items-center">
-<button class="text-neutral-400 hover:text-amber-400 transition-colors duration-500 group">
-<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+<div class="flex items-center relative">
+<button class="text-neutral-400 hover:text-amber-400 transition-colors duration-500 group z-50" id="nav-toggle">
+<span class="material-symbols-outlined text-3xl transition-transform duration-500 group-[.active]:rotate-45" data-icon="add">add</span>
 </button>
+<!-- Diagonally expanding menu -->
+<div class="absolute top-0 left-0 flex flex-col gap-6 pt-12 pl-4" id="nav-menu">
+<a class="font-['Space_Grotesk'] text-sm tracking-[0.3em] uppercase text-neutral-500 hover:text-primary transition-all duration-300 translate-x-4 opacity-0 group-[.active]:translate-x-8 group-[.active]:opacity-100 delay-[100ms]" href="vision.html">Vision</a>
+<a class="font-['Space_Grotesk'] text-sm tracking-[0.3em] uppercase text-neutral-500 hover:text-primary transition-all duration-300 translate-x-4 opacity-0 group-[.active]:translate-x-16 group-[.active]:opacity-100 delay-[200ms]" href="index.html#purpose">Purpose</a>
+<a class="font-['Space_Grotesk'] text-sm tracking-[0.3em] uppercase text-neutral-500 hover:text-primary transition-all duration-300 translate-x-4 opacity-0 group-[.active]:translate-x-24 group-[.active]:opacity-100 delay-[300ms]" href="index.html#about">About</a>
 </div>
-<div class="absolute left-1/2 -translate-x-1/2 text-2xl font-bold tracking-[0.2em] text-neutral-200 font-['Space_Grotesk'] uppercase">
-            AMBER LAB
-        </div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2">
+<a class="text-2xl font-bold tracking-[0.2em] text-neutral-200 font-['Space_Grotesk'] uppercase hover:text-primary transition-colors duration-500" href="index.html#about">
+                AMBER LAB
+            </a>
+</div>
 <div class="flex items-center gap-8">
 <a class="font-['Space_Grotesk'] tracking-widest uppercase text-neutral-400 hover:text-amber-400 transition-colors duration-500" href="#">Contact</a>
 </div>
@@ -113,9 +131,9 @@
 </aside>
 <!-- Hero Section / Vision -->
 <main class="relative min-h-screen flex flex-col justify-center items-start px-12 md:px-24 pt-32 overflow-hidden">
-<!-- Background: Diverse creators engaged with tech -->
+<!-- Background: VR Stage Image -->
 <div class="absolute inset-0 z-0 opacity-40">
-<img alt="Diverse Nordic creators working with holographic technology" class="w-full h-full object-cover grayscale brightness-[0.3]" data-alt="cinematic portrait of diverse young creators in a dimly lit studio in Copenhagen, working with glowing amber holographic interfaces and VR headsets, atmosphere is professional and visionary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZvxB_0D5nmyGIQtm0PwA46i3KE0hSXMcCvGmX0edm_iBGAKX8Y7NzAm97YWEvnIhOpiyLaqxIFK79ujhdLYhs0CgjXDLuk9g2lzAzwo7X__gAptoHHPxooCmtYne0r_HIfoLLNLQqNrgbJA2FH2Rn2kwhpArXZiS7cXUx_Pnkf5bZXRzMFynQ5Z_gN8jrqIwZn1Qj-Qkw6AV2fg2BleDmpEeoSmN29x2zDYX7ysCXW-xg6P4abb0pNm-gM8HtQYYnWyPifzSnrd4"/>
+<img alt="Atmospheric VR stage with people viewing a cosmic landscape" class="w-full h-full object-cover grayscale brightness-[0.3]" src="https://lh3.googleusercontent.com/aida/ADBb0uj5bMWoYW6D8foM6jP3TxTJ6N6UE27fm5cYYRgcobyhJCrNoWohlcoEFSkgRKBJJY2HEU58TJV4sE32srPjQZBvzhjUCozqE4F_ADwOvoEMZYSC5LfiBzjt-eoKyu6JyFE75OkgJ9wBJy3nyzDi-2MmBIxzjpRfWiRCqN0kC1KDiBJeOqS8JWX4_eIn-dJwSz3W9jBN1dalPo_Xc1DkjiEKQKK1sqF7vfELytoMXoCZg2FJeZh2aCann6tpFCnr4ckgQVX2jDbKWw"/>
 <div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background"></div>
 <div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
 </div>
@@ -222,4 +240,28 @@
 <a class="font-label text-[10px] tracking-widest text-neutral-500 hover:text-on-surface transition-colors uppercase" href="#">Hardware Commons</a>
 </div>
 </footer>
+<script>
+        const toggle = document.getElementById('nav-toggle');
+        const menu = document.getElementById('nav-menu');
+        
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('active');
+            menu.classList.toggle('active');
+            
+            // Toggle container classes for children animations
+            const links = menu.querySelectorAll('a');
+            links.forEach((link) => {
+                link.parentElement.classList.toggle('group');
+                // The delay is handled by CSS classes in the HTML
+            });
+        });
+
+        // Close menu when clicking links
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                toggle.classList.remove('active');
+                menu.classList.remove('active');
+            });
+        });
+    </script>
 </body></html>
