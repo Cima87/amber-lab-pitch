@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
+<html class="dark" lang="en" style="scroll-snap-type: y mandatory;"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AMBER LAB | Identity</title>
+<title>AMBER LAB | Generative AI for Creatives</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@100;300;400;600;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&amp;family=Inter:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
@@ -13,53 +13,53 @@
         theme: {
           extend: {
             colors: {
-              "on-primary-fixed": "#261a00",
-              "inverse-on-surface": "#303030",
-              "secondary": "#ffb4a8",
-              "on-secondary-container": "#5c0000",
-              "surface-variant": "#353535",
-              "on-primary": "#402d00",
-              "background": "#131313",
-              "on-primary-container": "#6d5000",
-              "on-error-container": "#ffdad6",
-              "primary-fixed-dim": "#fbbc00",
-              "surface": "#131313",
-              "inverse-surface": "#e2e2e2",
-              "primary-fixed": "#ffdfa0",
-              "on-surface": "#e2e2e2",
-              "surface-container": "#1f1f1f",
-              "error": "#ffb4ab",
-              "surface-bright": "#393939",
-              "secondary-fixed-dim": "#ffb4a8",
-              "primary-container": "#ffbf00",
-              "on-surface-variant": "#d4c5ab",
-              "tertiary-fixed-dim": "#c6c6c7",
-              "surface-dim": "#131313",
-              "on-secondary-fixed-variant": "#930100",
-              "on-primary-fixed-variant": "#5c4300",
-              "on-tertiary-container": "#535455",
-              "surface-container-lowest": "#0e0e0e",
-              "on-secondary-fixed": "#410000",
-              "on-secondary": "#690100",
-              "primary": "#ffe2ab",
-              "on-error": "#690005",
-              "secondary-container": "#ff5540",
-              "inverse-primary": "#795900",
               "secondary-fixed": "#ffdad4",
-              "outline-variant": "#504532",
-              "on-tertiary-fixed-variant": "#454747",
-              "on-background": "#e2e2e2",
-              "surface-container-low": "#1b1b1b",
+              "on-error-container": "#ffdad6",
+              "secondary-fixed-dim": "#ffb4a8",
+              "primary-fixed-dim": "#fbbc00",
+              "surface-container-lowest": "#0e0e0e",
               "error-container": "#93000a",
+              "surface-dim": "#131313",
+              "on-secondary": "#690100",
+              "on-background": "#e2e2e2",
+              "on-secondary-fixed": "#410000",
               "on-tertiary": "#2f3131",
-              "on-tertiary-fixed": "#1a1c1c",
-              "tertiary": "#e5e5e5",
-              "surface-container-highest": "#353535",
-              "tertiary-fixed": "#e2e2e2",
-              "tertiary-container": "#c9c9c9",
-              "surface-tint": "#fbbc00",
+              "on-primary-container": "#6d5000",
+              "on-error": "#690005",
+              "on-primary-fixed-variant": "#5c4300",
+              "on-surface": "#e2e2e2",
+              "secondary-container": "#ff5540",
+              "on-tertiary-container": "#535455",
               "surface-container-high": "#2a2a2a",
-              "outline": "#9c8f78"
+              "surface": "#131313",
+              "on-primary-fixed": "#261a00",
+              "surface-container-low": "#1b1b1b",
+              "surface-tint": "#fbbc00",
+              "primary-fixed": "#ffdfa0",
+              "on-tertiary-fixed-variant": "#454747",
+              "error": "#ffb4ab",
+              "surface-container": "#1f1f1f",
+              "primary": "#ffe2ab",
+              "background": "#131313",
+              "outline-variant": "#504532",
+              "primary-container": "#ffbf00",
+              "tertiary-fixed": "#e2e2e2",
+              "tertiary": "#e5e5e5",
+              "tertiary-fixed-dim": "#c6c6c7",
+              "on-tertiary-fixed": "#1a1c1c",
+              "secondary": "#ffb4a8",
+              "inverse-primary": "#795900",
+              "tertiary-container": "#c9c9c9",
+              "surface-bright": "#393939",
+              "inverse-surface": "#e2e2e2",
+              "surface-variant": "#353535",
+              "outline": "#9c8f78",
+              "on-surface-variant": "#d4c5ab",
+              "on-secondary-fixed-variant": "#930100",
+              "on-secondary-container": "#5c0000",
+              "surface-container-highest": "#353535",
+              "inverse-on-surface": "#303030",
+              "on-primary": "#402d00"
             },
             fontFamily: {
               "headline": ["Space Grotesk"],
@@ -72,248 +72,619 @@
       }
     </script>
 <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body { 
+            background-color: #131313;
+            overflow-x: hidden;
+            scrollbar-width: none;
+        }
+        body::-webkit-scrollbar { display: none; }
+        
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
         }
-        ::-webkit-scrollbar { display: none; }
-        body { -ms-overflow-style: none; scrollbar-width: none; }
-        .tonal-transition { background: linear-gradient(to bottom, #131313, #0e0e0e); }
-        section { scroll-snap-align: start; }
-        .snap-container { scroll-snap-type: y mandatory; overflow-y: scroll; height: 100vh; }
+
+        #diagonal-menu {
+            clip-path: circle(0% at 3rem 3rem);
+            transition: clip-path 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+            z-index: 1000;
+        }
+        #diagonal-menu.active {
+            clip-path: circle(150% at 3rem 3rem);
+        }
+
+        .scroll-section {
+            height: 100dvh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vimeo-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw;
+            min-height: 100dvh;
+            min-width: 177.77vh;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        .bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        .pilot-carousel {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .pilot-carousel::-webkit-scrollbar {
+            display: none;
+        }
     </style>
 </head>
-<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
-<!-- Top Navigation (Shell) -->
-<nav class="bg-zinc-950/60 backdrop-blur-xl text-amber-500 fixed top-0 w-full rounded-none flex items-center justify-between px-10 h-24 w-full z-50">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-amber-500 hover:text-amber-400 transition-colors duration-500 cursor-pointer" data-icon="add">add</span>
-<span class="font-label text-[10px] tracking-[0.3em] uppercase opacity-60 md:block hidden">Menu</span>
-</div>
-<div class="font-['Space_Grotesk'] tracking-tighter uppercase text-2xl font-bold tracking-[0.2em] text-amber-500 mx-auto">
-            AMBER LAB
-        </div>
-<div class="flex items-center gap-4">
-<a class="font-label text-[10px] tracking-[0.3em] uppercase text-amber-500 hover:text-amber-400 transition-colors duration-500" href="#contact">Contact</a>
+<body class="font-body text-on-surface select-none" style="overflow: auto;">
+<!-- Navigation Shell: TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-[1001] flex justify-between items-center px-12 py-8 bg-transparent border-none font-headline tracking-widest uppercase">
+<button aria-expanded="false" class="flex items-center group relative z-[9999]" id="menu-toggle">
+<span class="material-symbols-outlined text-[#ffbc00] text-3xl transition-transform duration-700 ease-in-out group-active:scale-95" id="menu-icon">add</span>
+</button>
+<a class="absolute left-1/2 -translate-x-1/2 text-xl font-bold tracking-[0.2em] text-[#ffbc00] hover:opacity-80 transition-opacity" href="#hero">
+        AMBER LAB
+    </a>
+<div class="flex gap-8 items-center">
+<a class="text-[#e2e2e2] hover:text-[#ffbc00] transition-colors duration-500 nav-link" href="#about-contact">Contact</a>
 </div>
 </nav>
-<main class="snap-container">
-<!-- Hero Section -->
-<section class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black" id="hero">
-<div class="absolute inset-0 z-0">
-<iframe allow="autoplay; fullscreen" allowfullscreen="" class="w-full h-full scale-[1.35] object-cover" frameborder="0" src="https://player.vimeo.com/video/1179142545?background=1&amp;autoplay=1&amp;loop=1&amp;byline=0&amp;title=0"></iframe>
-<div class="absolute inset-0 bg-black/40"></div>
+<!-- SideNavBar (Full Screen Menu) -->
+<div class="fixed inset-0 bg-[#0e0e0e]/95 backdrop-blur-2xl flex justify-center px-24 w-full h-full grid grid-cols-2" id="diagonal-menu">
+<div class="flex flex-col justify-end pb-32">
+<div class="space-y-6">
+<div class="overflow-hidden">
+<a class="block text-[5.25rem] font-bold font-headline leading-none text-[#e2e2e2] hover:text-[#ffbc00] hover:translate-x-4 transition-all duration-500 underline decoration-4 decoration-transparent hover:decoration-[#ffbc00] nav-link" href="#vision">VISION</a>
 </div>
-<div class="relative z-10 text-center">
-<h1 class="font-headline text-[15vw] md:text-[12vw] leading-none font-bold tracking-tighter text-amber-500 mix-blend-difference">
-                    AMBER LAB
-                </h1>
+<div class="overflow-hidden">
+<a class="block text-[5.25rem] font-bold font-headline leading-none text-[#e2e2e2] hover:text-[#ffbc00] hover:translate-x-4 transition-all duration-500 underline decoration-4 decoration-transparent hover:decoration-[#ffbc00] nav-link" href="#purpose">PURPOSE</a>
+</div>
+<div class="overflow-hidden">
+<a class="block text-[5.25rem] font-bold font-headline leading-none text-[#e2e2e2] hover:text-[#ffbc00] hover:translate-x-4 transition-all duration-500 underline decoration-4 decoration-transparent hover:decoration-[#ffbc00] nav-link" href="#about">ABOUT</a>
+</div>
+</div>
+</div>
+<div class="h-full flex items-center justify-center p-12 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary opacity-20 mix-blend-color z-10 pointer-events-none"></div>
+<img alt="Abstract Nordic Map" class="max-h-[819px] w-auto object-contain opacity-60 mix-blend-screen grayscale contrast-125" src="https://lh3.googleusercontent.com/aida/ADBb0ujTFgjwqw3WXsQQR_fI-OXiuowTKVaf224VZH0qV58keTBuwmJHKWJOOEJTirQXfgZbp0pzTxH_lv3uOSYn2SuUjio1f6K62q7fPaee42sokTVUXGMDgS9SVed6m2iIfX_6Avbyk2XubFxT5HvM7hoKk6A9wucRSe9X6hDEhcdbQFmbe4i127mJXi81KsqY6M92dr2nksAvtpQmadvllLPz_GlNZ6A3m8dE26oAr5GBgmxGzuX9WSfeU_9Czpzx-WmAtXHtTbWdaQ"/>
+</div>
+</div>
+<!-- Section 1: Landing (Cinematic Hero) -->
+<section class="scroll-section bg-surface-container-lowest" id="hero" style="scroll-snap-align: start; scroll-snap-stop: always;">
+<div class="vimeo-wrapper">
+<iframe allow="autoplay; fullscreen" class="w-full h-full pointer-events-none" frameborder="0" src="https://player.vimeo.com/video/1179142545?background=1&amp;autoplay=1&amp;loop=1&amp;byline=0&amp;title=0&amp;muted=1"></iframe>
 </div>
 </section>
-<!-- Vision Section -->
-<section class="relative h-screen w-full flex flex-col justify-center px-10 md:px-24 bg-surface-container-lowest overflow-hidden" id="vision">
-<div class="absolute inset-0 opacity-20 pointer-events-none">
-<video autoplay="" class="w-full h-full object-cover" loop="" muted="" src="noise.mp4"></video>
+<!-- Section 2: Vision Page (Fixed Video) -->
+<section class="scroll-section bg-surface-container-lowest relative" id="vision" style="scroll-snap-align: start; scroll-snap-stop: always;">
+<div class="absolute inset-0 z-0 overflow-hidden">
+<video autoplay="" class="bg-video opacity-100" id="vision-video" loop="" muted="" playsinline="">
+<source src="noise.mp4" type="video/mp4"/>
+</video>
+<div class="absolute inset-0 bg-black/50"></div>
 </div>
-<div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-10">
-<div class="md:col-span-4">
-<h2 class="font-headline text-8xl md:text-9xl font-bold tracking-tighter text-amber-500">VISION</h2>
+<div class="relative z-10 p-24 md:p-32 h-full flex flex-col justify-end items-start pb-48">
+<h2 class="text-[6rem] md:text-[8.5rem] font-light font-headline text-on-surface mb-8 tracking-tight leading-none opacity-90">VISION</h2>
+<div class="max-w-2xl bg-black/10 p-12 backdrop-blur-sm border-l border-[#ffbc00]/30 -mt-6">
+<p class="text-xl md:text-[1.35rem] font-light leading-relaxed text-on-surface tracking-wide">
+                We envision a future where creativity is defined by the diversity of us as humans. In a world where gen AI is unavoidable AMBER LAB is providing a creative platform with access to gen AI for all. 
+            </p>
+<p class="text-xl md:text-[1.35rem] font-light leading-relaxed text-on-surface/80 mt-6 tracking-wide">
+                AMBER LAB thereby gives birth to the next global miracle, from neighborhoods that other institutions overlook.
+            </p>
+<div class="mt-12">
+<a class="inline-flex items-center gap-6 group text-[#ffbc00] hover:text-white transition-all duration-500" data-nav-external="true" href="vision.html">
+<span class="text-sm font-headline tracking-[0.3em] font-medium uppercase">Read more about our Vision...</span>
+<span class="material-symbols-outlined text-2xl group-hover:translate-x-3 transition-transform duration-500">arrow_forward</span>
+</a>
 </div>
-<div class="md:col-span-7 md:col-start-6 flex items-end">
-<p class="font-body text-xl md:text-3xl leading-snug font-light text-on-surface">
-                        A cinematic synthesis of high-impact identity and digital sovereignty. We curate the void to create light, building a premium future for creators who demand precision and gravity.
+</div>
+</div>
+</section>
+<!-- Section 3: Purpose Detail -->
+<section class="scroll-section bg-surface-container-lowest relative" id="purpose" style="scroll-snap-align: start; scroll-snap-stop: always;">
+<div class="absolute inset-0 bg-black z-0"></div>
+<div class="relative z-10 px-24 md:px-32 h-full grid grid-cols-12 gap-12 items-center">
+<!-- Left Column: Purpose Text -->
+<div class="col-span-12 lg:col-span-7 flex flex-col justify-center">
+<h2 class="text-[5rem] md:text-[7rem] font-light font-headline text-on-surface mb-6 tracking-tight leading-none opacity-90">PURPOSE</h2>
+<div class="max-w-3xl bg-black/40 p-10 backdrop-blur-sm border-l border-[#ffbc00]/30">
+<h3 class="text-2xl md:text-3xl font-headline font-bold text-[#ffbc00] mb-4 tracking-tight uppercase">UNLOCKING THE NEXT MIRACLE</h3>
+<p class="text-lg md:text-xl font-light italic leading-relaxed text-on-surface/90 tracking-wide mb-8">
+                    "From ABBA to Avicii, access was the key that unlocked Sweden’s musical heart. We are providing that same key for the digital future—dismantling the barriers so that the ‘unheard’ can lead the global conversation."
+                </p>
+<div class="space-y-6 font-body">
+<div class="flex gap-4 items-start">
+<div class="w-1 h-10 bg-[#ffbc00] shrink-0 mt-1"></div>
+<div>
+<h4 class="font-bold text-sm text-white mb-0.5 uppercase tracking-wider">Breaking the Poverty Barrier</h4>
+<p class="text-on-surface/70 text-sm leading-relaxed">Through €450k in direct support and €15k stipends, we remove the “entry fee” to the digital future.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-1 h-10 bg-[#ffbc00] shrink-0 mt-1"></div>
+<div>
+<h4 class="font-bold text-sm text-white mb-0.5 uppercase tracking-wider">Linguistic Sovereignty</h4>
+<p class="text-on-surface/70 text-sm leading-relaxed">We fine-tune AI models to honor the specific dialects and folklore of diaspora communities.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-1 h-10 bg-[#ffbc00] shrink-0 mt-1"></div>
+<div>
+<h4 class="font-bold text-sm text-white mb-0.5 uppercase tracking-wider">The Amber Promise</h4>
+<p class="text-on-surface/70 text-sm leading-relaxed">We don’t “save” voices; we provide the sanctuary where they lead the conversation.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Image and Compact Podcast Player -->
+<div class="col-span-12 lg:col-span-5 flex flex-col gap-6 justify-center">
+<div class="w-full aspect-video bg-surface-container-highest overflow-hidden relative">
+<img alt="Professional podcast recording session" class="w-full h-full object-cover grayscale brightness-90 hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3KMkRPzdspf_jlNz12it0wkSq_72R_nUwiRzMrAswPTEbYVfFRGTH8UNm2v22aeTRlGMzDE2mVv1ZcVJkPsC4ldnP-Wnhwmhk0Xw0vM0c0BwzHau9LWXzJWL1FgrzJgCl_BsKU5uUkMn1xsitZ0mcfwaosRIu_3pSx5vRhiUG8iJ1NFH-LWV1yrci4M6iWAnA7HtZhLJvcK6hKk7NOzRTuw1ycRep9cL4UVkkeHhjpkRCmjFmilpYK_TWEaj8qAV8s-_7CqyMHOE"/>
+<div class="absolute bottom-4 left-4 bg-black/60 px-3 py-1 backdrop-blur-md">
+<span class="text-[10px] font-mono tracking-widest text-[#ffbc00] uppercase">Podcast In-Session 04</span>
+</div>
+</div>
+<div class="bg-surface-container-highest p-6 relative">
+<audio id="podcast-audio" preload="metadata" src="podcast.mp4"></audio>
+<div class="flex items-center gap-6">
+<div class="w-20 h-20 bg-surface-container-lowest flex items-center justify-center shrink-0 overflow-hidden relative">
+<span class="material-symbols-outlined text-[#ffbc00] scale-[1.8] absolute z-0" id="audio-visualizer-icon">graphic_eq</span>
+<div class="absolute inset-0 bg-[#ffbc00]/10 flex items-end justify-center gap-1 p-2" id="audio-bars">
+<div class="w-1 bg-[#ffbc00]/40 h-2 transition-all duration-300"></div>
+<div class="w-1 bg-[#ffbc00]/40 h-4 transition-all duration-300"></div>
+<div class="w-1 bg-[#ffbc00]/40 h-3 transition-all duration-300"></div>
+<div class="w-1 bg-[#ffbc00]/40 h-5 transition-all duration-300"></div>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-[9px] font-mono text-[#ffbc00] uppercase tracking-tighter">Podcast</span>
+<span class="text-[9px] font-mono text-on-surface/40">EP 04</span>
+</div>
+<h4 class="text-lg font-bold font-headline mb-2 truncate text-white">Ethical Scaling</h4>
+<div class="w-full h-1 bg-surface-variant relative mb-1 overflow-hidden">
+<div class="absolute left-0 top-0 h-full w-0 bg-[#ffbc00] transition-all" id="audio-progress"></div>
+</div>
+<div class="flex justify-between text-[9px] font-mono opacity-40">
+<span id="audio-current">00:00</span>
+<span id="audio-duration">--:--</span>
+</div>
+</div>
+<button class="w-12 h-12 bg-[#ffbc00] flex items-center justify-center hover:scale-95 transition-transform shrink-0" id="audio-play-btn">
+<span class="material-symbols-outlined text-[#131313]" data-weight="fill" id="play-icon">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: About Section (Cleanup) -->
+<section class="scroll-section bg-surface-container-lowest relative" id="about" style="scroll-snap-align: start; scroll-snap-stop: always;">
+<div class="absolute inset-0 bg-black z-0"></div>
+<div class="relative z-10 px-24 md:px-32 h-full grid grid-cols-12 gap-12 items-center">
+<div class="col-span-12 lg:col-span-5 flex flex-col gap-4">
+<div class="w-full aspect-[16/10] bg-surface-container-highest overflow-hidden border border-[#ffbc00]/20">
+<img alt="Cozy high-end rehearsal studio in Stockholm" class="w-full h-full object-cover opacity-90 transition-all duration-1000 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDCoA5jfGDmqFQc565WIofbpMvKeWV1akqEkeviuXQ4BH44dEG2gN4fURk9cwCqAbgZAbD66Kaas9OF0uCucrH20uXvjQWbegy_VpYSg7aOY1eXiYU_L0GWXuEAojQk4RuYdzEg2M4DTCj9ZjsP5ZYJ_asKC-j6cwTj4M9zbH2T25tbfWr41pIlXF0UwdHYgdk6UTVZ_0ZIJaJmXzlTCb7brGHwXsg-fkeJWMHBUodH4rduQAdTxNfO5I0fWTQDA-h94QvqZuT8jo"/>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-7 flex flex-col justify-center">
+<h2 class="text-[5rem] md:text-[7rem] font-light font-headline text-on-surface mb-6 tracking-tight leading-none opacity-90 uppercase">ABOUT</h2>
+<div class="max-w-2xl bg-black/40 p-10 backdrop-blur-sm border-l border-[#ffbc00]/30 space-y-8">
+<div>
+<h3 class="text-2xl font-headline font-bold text-[#ffbc00] mb-4 tracking-tight uppercase">THE NEXT SWEDISH MIRACLE</h3>
+<p class="text-lg font-light leading-relaxed text-on-surface/90 tracking-wide">
+                        AMBER LAB is more than an incubator; it is a sanctuary. We have built a physical and digital environment designed to foster the next wave of global breakthroughs from the voices that have historically been excluded from the tech narrative.
                     </p>
 </div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container p-6 border border-outline-variant/30 group hover:border-[#ffbc00]/50 transition-colors">
+<h4 class="text-xs font-headline font-bold text-[#ffbc00] mb-2 uppercase tracking-widest">MIRRORS OF SUCCESS</h4>
+<p class="text-[13px] text-on-surface/70 font-light leading-relaxed">
+                            Access is the key. We reflect the heritage of Sweden's musical evolution into the digital AI frontier.
+                        </p>
 </div>
-</section>
-<!-- Purpose Section -->
-<section class="h-screen w-full flex flex-col justify-center px-10 md:px-24 bg-black" id="purpose">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
-<div class="md:col-span-6 space-y-12">
-<div class="space-y-4">
-<p class="font-label text-xs tracking-[0.4em] text-zinc-600 uppercase">Foundational Intent</p>
-<blockquote class="font-headline text-4xl md:text-5xl font-medium leading-tight">
-                            "The history of all hitherto existing society is the history of class struggles."
-                        </blockquote>
-</div>
-<ul class="space-y-6">
-<li class="flex items-center gap-6 group">
-<span class="w-8 h-[1px] bg-amber-500 group-hover:w-16 transition-all duration-500"></span>
-<span class="font-headline text-2xl tracking-tight uppercase group-hover:text-amber-500 transition-colors">Breaking the Poverty Barrier</span>
-</li>
-<li class="flex items-center gap-6 group">
-<span class="w-8 h-[1px] bg-amber-500 group-hover:w-16 transition-all duration-500"></span>
-<span class="font-headline text-2xl tracking-tight uppercase group-hover:text-amber-500 transition-colors">Linguistic Sovereignty</span>
-</li>
-<li class="flex items-center gap-6 group">
-<span class="w-8 h-[1px] bg-amber-500 group-hover:w-16 transition-all duration-500"></span>
-<span class="font-headline text-2xl tracking-tight uppercase group-hover:text-amber-500 transition-colors">The Amber Promise</span>
-</li>
-</ul>
-</div>
-<div class="md:col-span-6 relative aspect-square">
-<img class="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-1000" data-alt="Unheard Voices The Podcast cover image featuring a vintage microphone and the text 'Unheard Voices The Podcast' in amber on a black background." src="https://lh3.googleusercontent.com/aida/ADBb0ug5tcIqpCrhsi2v4F5lswsYu5HobNA9TDcJaznSbJ7wKn1LrirupD0HhMzuT21b9A9Es94uNk-dHIjdIPUA9uWtP-noklakjuN8qYzjJYID8yRBEUwVZvnzRg8ICld0vMmznW8khAkngh3nyH4beWbjQCnhYZJKdrUkkqff69YfZlE87BmjOoSA8mvx_kH4hUKQzjiEINhIU9FNA642lxvcDzjM5UQNmtoKxO76N2RUZL0EmzWQVJdg05uCwPGDgsiIo2jcHhKZTA"/>
-<div class="absolute bottom-8 left-8 right-8 bg-zinc-950/80 backdrop-blur-md p-6 border-l-2 border-amber-500">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-amber-500" data-icon="play_circle" style="font-variation-settings: 'FILL' 1;">play_circle</span>
-<div class="flex-1">
-<div class="h-1 bg-zinc-800 w-full relative">
-<div class="absolute h-full bg-amber-500 w-1/3"></div>
+<div class="bg-surface-container p-6 border border-outline-variant/30 group hover:border-[#ffbc00]/50 transition-colors">
+<h4 class="text-xs font-headline font-bold text-[#ffbc00] mb-2 uppercase tracking-widest">CHAMBER OF MIRACLES</h4>
+<p class="text-[13px] text-on-surface/70 font-light leading-relaxed">
+                            A high-end sanctuary where technology meets artisan creativity, enabling the 'unheard' to lead.
+                        </p>
 </div>
 </div>
-<span class="font-label text-[10px] tracking-widest uppercase">Podcast.mp4</span>
+<div class="grid grid-cols-2 gap-8 pt-4">
+<div>
+<h4 class="text-[10px] font-headline font-bold text-white mb-2 uppercase tracking-widest border-b border-[#ffbc00]/30 pb-2">LOCATION</h4>
+<p class="text-xs text-on-surface/60 font-light">Stockholm, Sweden. A hub of innovation fueled by Nordic heritage and global diversity.</p>
+</div>
+<div>
+<h4 class="text-[10px] font-headline font-bold text-white mb-2 uppercase tracking-widest border-b border-[#ffbc00]/30 pb-2">IMPACT</h4>
+<p class="text-xs text-on-surface/60 font-light">Removing financial and technical barriers for over 30+ international creators annually.</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- About Section -->
-<section class="h-screen w-full flex items-center justify-center bg-surface-container-low px-10 md:px-24" id="about">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-0 w-full max-w-7xl">
-<div class="relative group overflow-hidden">
-<img class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000 grayscale brightness-50" data-alt="Moody black and white photo of an atmospheric music studio basement with instruments and vintage amplifiers in shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvMAdXscigrKuoU3ma0sLvCN36VtUlXEqxmDmQ_3fompjfJEMk2_g0PdH7VQZgzudZrSwGLOUlZa50mIdtII300u66kPkDARdHnWHbcWyO8E9pIWamaxjRsaUANHoqdw5fq0eBShtVNc_wN_zG-8eEthzGytYqeL20osY_9Oa8qXU3fxmnvVpJXMyutmHN1EBcfnYG1KeJDjtAxeOwaaa2tr-GklMTUQkC2aYE6EvPp-paCGQpqET5zhQ4FCF0z1Ld1uhOdEF34S8"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<!-- Section 5: PILOT Program -->
+<section class="scroll-section bg-surface-container-lowest relative overflow-hidden" id="pilot" style="scroll-snap-align: start; scroll-snap-stop: always;">
+<div class="absolute top-24 left-24 z-20 max-w-xl">
+<div class="text-[5rem] font-light font-headline leading-none text-white opacity-90">PILOT</div>
+<h2 class="text-xs font-headline tracking-[0.5em] text-[#ffbc00] uppercase font-bold mt-2 mb-6">The Pilot Program</h2>
+<p class="text-sm font-light leading-relaxed text-on-surface/70 tracking-wide border-l border-[#ffbc00]/30 pl-4">
+            We at Amber Lab have launched a Pilot project, with stunning results proving that there is a need to give creatives AI tools to enhance their output.
+        </p>
 </div>
-<div class="bg-zinc-950 p-12 md:p-24 flex flex-col justify-center space-y-8">
-<h3 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-amber-500 leading-none">ACCESS IS THE KEY</h3>
-<p class="font-body text-zinc-400 leading-relaxed text-lg">
-                        We dismantle the gatekeepers. Amber Lab operates at the intersection of raw garage-band grit and crystalline digital execution. Our narrative is one of reclamation—returning the tools of production to the hands that build the culture.
-                    </p>
-<div class="pt-4">
-<button class="border border-amber-500/30 px-10 py-4 font-label text-xs tracking-widest uppercase text-amber-500 hover:bg-amber-500 hover:text-black transition-all duration-500">
-                            Explore Archive
-                        </button>
-</div>
-</div>
-</div>
-</section>
-<!-- Pilot Section (Bento Grid Style) -->
-<section class="min-h-screen w-full bg-surface-container-lowest py-24 px-10 md:px-24" id="pilot">
-<div class="mb-20">
-<h4 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter">THE PILOTS</h4>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+<div class="h-full w-full flex items-center overflow-x-auto pilot-carousel snap-x snap-mandatory" id="pilot-scroller">
 <!-- Mikaela -->
-<div class="relative group h-[600px] overflow-hidden">
-<img class="w-full h-full object-cover grayscale brightness-75 group-hover:scale-110 transition-transform duration-700" data-alt="Close-up black and white portrait of a woman named Mikaela with a serious, thoughtful expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBQtWtxcpJ9esNWyIuqeCavuLr6fyIAogDg9UBFkcZbndTlGPa3ZrDWaUj1owAII6D99AAKNsQ9WzduBt6ollMFumltlVaav3A2dbsX4qjgsk_RicVOpYIR8FKNlprd1PclSNrB-CGWa7ymkHVWdts1YgTTY3guS0JDIZRXYtEnNtsE4gWVtpsVqKEuoXdjny_0wT_M28PgkCqkvzlmRlopg1k1h_8AJ_HoSC05TR143Kn5JeSpII81es7V-XzVLa7O51sNRAZRt0"/>
-<div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90"></div>
-<div class="absolute bottom-8 left-8 right-8 space-y-2">
-<p class="font-label text-amber-500 text-[10px] tracking-widest uppercase">Mikaela</p>
-<p class="font-body text-sm leading-snug text-zinc-300">"The code is our new syntax for freedom."</p>
+<div class="min-w-full h-full flex items-center justify-center snap-center px-24 pt-48 pb-32">
+<div class="grid grid-cols-12 gap-12 items-center w-full max-w-6xl">
+<div class="col-span-4 aspect-[4/5] overflow-hidden border border-white/10 group">
+<img alt="Mikaela" class="w-full h-full object-cover grayscale brightness-110 transition-all duration-1000 group-hover:brightness-125 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO7D0gQhZm0wiM4G6qJ1pderfG_8Dq0UDhWiqhELaA96dMbdYQ9BSGifSiHdJbRsDC68bGbc5nWC4uujBt7XwCaS48ym-vz8jTRPnTFDMqlqCb4GhVvuTwMjtY3hL-2P4ndqXY1P7yUaAst8qOlVxkN9n-gWt8dCFIxChz7gGVYBhFymn5GMfd2ROL8EBZtpojcZhhZzGnXwgt6bKKQEoHEQHvgKW8DzXVd1Q9Th_ARgjvswIFypNIUx4dfAcSgIOUhvWJ1bTr5MM"/>
+</div>
+<div class="col-span-8 pl-8">
+<div class="mb-4">
+<span class="text-[#ffbc00] font-headline text-xs tracking-widest font-bold">UKRAINE / 19 / CREATIVE LEAD</span>
+<h3 class="text-3xl font-headline font-bold text-white mt-1">MIKAELA</h3>
+</div>
+<div class="relative">
+<span class="absolute -top-6 -left-4 text-5xl text-[#ffbc00] opacity-20 font-serif">“</span>
+<p class="text-lg md:text-xl font-light italic leading-relaxed text-on-surface/80 tracking-wide">
+                            "Back home, my world was reduced to what I could capture on a cracked screen between sirens. Amber Lab is the first place that hasn’t treated my story like a tragedy to be archived, but like a world to be built. Using the Chamber of Miracles, I’m not just posting videos anymore; I’m inviting people into an infinite version of my Ukraine that can’t be destroyed. For the first time, I’m not just a refugee with a phone. I’m a creator with a voice."
+                        </p>
+</div>
+</div>
 </div>
 </div>
 <!-- Kofi -->
-<div class="relative group h-[600px] overflow-hidden md:mt-12">
-<img class="w-full h-full object-cover grayscale brightness-75 group-hover:scale-110 transition-transform duration-700" data-alt="Close-up black and white portrait of a man named Kofi with intense eyes and a minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYvubmBBYDIdjR36DGjaDDyPSjuvGjIQ5IyxXs-i48xk5jh5gu94BGWfJQzSg5yFzdQXNsS-AiSI-cU2hKoEKau-hTJimgfd3pPl6yWnF2ardFz1AhNyW0y2mITB1Mx7uY8bhbGuBZblC5UcK18rjA7m5M0CJDjXs-uZ3arYCvdkVWB0Sy8hE-j8EAo9GmJbVPGBzMEFwiLvAzsd6l-ok9LtimvHrJMd9dXt_oYjrgx2hwKrdGiRzMSkQ_OmJ1HcdK0r3Yoh9gpHo"/>
-<div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90"></div>
-<div class="absolute bottom-8 left-8 right-8 space-y-2">
-<p class="font-label text-amber-500 text-[10px] tracking-widest uppercase">Kofi</p>
-<p class="font-body text-sm leading-snug text-zinc-300">"We don't just broadcast; we reclaim the airwaves."</p>
+<div class="min-w-full h-full flex items-center justify-center snap-center px-24 pt-48 pb-32">
+<div class="grid grid-cols-12 gap-12 items-center w-full max-w-6xl">
+<div class="col-span-4 aspect-[4/5] overflow-hidden border border-white/10 group">
+<img alt="Kofi" class="w-full h-full object-cover grayscale brightness-105 transition-all duration-1000 group-hover:brightness-120 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNpTBvZ0eNRSeKiRdMKBA6nLr87leGJUJK2Pic_wgWLmIiNIjKEkDn93qZORXhc6L6N_D0qPWlSFFpg_hY8_xi6PQY8ECUdnQt7YZrOuaUuaGv9sIPI8hDTTaWeZZPG6bN62wQxqUG2TFBqgGBBn0uyJeySyXBbe2RcvEIgyKt_6rc5dIxnKObpYrI6ZbD5Z1o1saL1b8qKeqkXG2BD6g4z-Io4JkJWFYw5zkUtNg5S6gBoZy4aqZ7wi6a-_llDYXeYyE8ZEVMlPg"/>
+</div>
+<div class="col-span-8 pl-8">
+<div class="mb-4">
+<span class="text-[#ffbc00] font-headline text-xs tracking-widest font-bold">UGANDA / 21 / DIGITAL ARTIST</span>
+<h3 class="text-3xl font-headline font-bold text-white mt-1">KOFI</h3>
+</div>
+<div class="relative">
+<span class="absolute -top-6 -left-4 text-5xl text-[#ffbc00] opacity-20 font-serif">“</span>
+<p class="text-lg md:text-xl font-light italic leading-relaxed text-on-surface/80 tracking-wide">
+                            "In my city, we say that art is a shadow of life, but I’ve always lacked the light to make my shadows tall. Amber Lab changed everything by giving me Data Sovereignty; knowing I own 100% of my AI-augmented work means my heritage isn’t for sale, it’s for my people. The stipends removed the weight of financial barriers from my chest, finally allowing me to learn from the best mentors, play with best technology and express my voice to its full potential."
+                        </p>
+</div>
+</div>
 </div>
 </div>
 <!-- Saengdao -->
-<div class="relative group h-[600px] overflow-hidden">
-<img class="w-full h-full object-cover grayscale brightness-75 group-hover:scale-110 transition-transform duration-700" data-alt="Close-up black and white portrait of Saengdao looking away from the camera in a moody setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxKaow3WboCh3kKPh6fCWV5bgGhfx4731RBdi4yyVLeWbV1nuYIDmPTT5XF89d7GfeLI0nYea-mU7BUeL-7Zkpbw_Hxk9O2CtG0E-TFtFR-vgTzUzr0KBoH103e49ThX73N2ty_FgEJEWEHd0YFrBWWiES1g-Wx1AU2pno5orV1CqCBbtXUQ6zKzjPxWXbYq1Wan0Bs0JR7j1UBcCLwfwkdEPl3EmuJ5IGIYZFiOky3rg_NmKOXLR8H2lpfLvWwBJWDM4geIh1pP0"/>
-<div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90"></div>
-<div class="absolute bottom-8 left-8 right-8 space-y-2">
-<p class="font-label text-amber-500 text-[10px] tracking-widest uppercase">Saengdao</p>
-<p class="font-body text-sm leading-snug text-zinc-300">"A promise is only as good as the data that backs it."</p>
+<div class="min-w-full h-full flex items-center justify-center snap-center px-24 pt-48 pb-32">
+<div class="grid grid-cols-12 gap-12 items-center w-full max-w-6xl">
+<div class="col-span-4 aspect-[4/5] overflow-hidden border border-white/10 group">
+<img alt="Saengdao" class="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:brightness-110 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiSztvIEl8vSjm-ACpVc0pejoSAEFScANTE3V96xFESVQV13eVvgPuZBPuxr5yyUKNvXDZKlFwfmE5FdUGbfbkkRnqWkV5QNxyuKPi1fJxkneewWLSss07_XxPYbczu8OepSlPLEZXh0bC1nijMg8z_Wbhl65wBnlJjBMineGXda2MHhFd0p1UUNCsSYOfWlhYF4ayVhekx0935LMkr3ujsYuhgaHF88yOnoMVgoPIBLQeGnU0IQIAHQeGVPmxW9zqcoA0vB6YDqA"/>
+</div>
+<div class="col-span-8 pl-8">
+<div class="mb-4">
+<span class="text-[#ffbc00] font-headline text-xs tracking-widest font-bold">THAILAND / 24 / ARCHITECT</span>
+<h3 class="text-3xl font-headline font-bold text-white mt-1">SAENGDAO</h3>
+</div>
+<div class="relative">
+<span class="absolute -top-6 -left-4 text-5xl text-[#ffbc00] opacity-20 font-serif">“</span>
+<p class="text-lg md:text-xl font-light italic leading-relaxed text-on-surface/80 tracking-wide">
+                            "Designing for the future requires tools that understand the past. At Amber Lab, I've bridged the gap between traditional Thai structure and generative logic. Looking into the camera here, I feel a sense of clarity I never found in standard corporate spaces. The environment here isn't just about high-end GPUs; it's about the mental space to think beyond the grid."
+                        </p>
+</div>
+</div>
 </div>
 </div>
 <!-- Juanita -->
-<div class="relative group h-[600px] overflow-hidden md:mt-12">
-<img class="w-full h-full object-cover grayscale brightness-75 group-hover:scale-110 transition-transform duration-700" data-alt="Close-up black and white portrait of Juanita with sharp focus and professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4eGXL4HwNB-g24w5hrbf-u9Ru0TeVlvg-kci36CnxpPBFrvOIoaEOw5pxexgkkg8M6BTuHaK9s2AI2qiTzcPRwaWn9gi9xU1ka-ZdCSEQXazf4jGn8RZHFjrZMDw4FzS8YHYZ2uvqGuFWbsb3adh6LbwT4H-ZsKRYAwroWdlfosZVfInF9CikOpEXE5lc5f_yIxZY3o_2d4bwcqF2mvbN2M3Gldt7NEjCDoY9vPkGR4LbZXkOnxNv1u7A48K8zDBnINBasOUSO2k"/>
-<div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90"></div>
-<div class="absolute bottom-8 left-8 right-8 space-y-2">
-<p class="font-label text-amber-500 text-[10px] tracking-widest uppercase">Juanita</p>
-<p class="font-body text-sm leading-snug text-zinc-300">"Sovereignty starts with our own words."</p>
+<div class="min-w-full h-full flex items-center justify-center snap-center px-24 pt-48 pb-32">
+<div class="grid grid-cols-12 gap-12 items-center w-full max-w-6xl">
+<div class="col-span-4 aspect-[4/5] overflow-hidden border border-white/10 group">
+<img alt="Juanita" class="w-full h-full object-cover grayscale brightness-95 transition-all duration-1000 group-hover:brightness-110 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVHCfeo6xoDtDknZJVBBzEjMZGvFX2Ah9_-zhkvEL9lqdwN3H9XorE0ZcBqKfyphMkJ0rajchkHD0UmqbszTVfk31DRgLWDtQ4RLIM7wi4Y37lzF-lAnXLbu1HqUewfApYj5zpwLdob4JyUWFJS8iIqEPrw9EyOcAvTr9GO5-bQiFt9OxvtXnuQhL_h47URfStmCXhauH-I3qZPoAtslLtmsyVeJn3-GwI1aN4RPfrXU059qYERd4yGqHKlv0L_C1jstekLrs0pFg"/>
+</div>
+<div class="col-span-8 pl-8">
+<div class="mb-4">
+<span class="text-[#ffbc00] font-headline text-xs tracking-widest font-bold">COLOMBIA / 22 / MUSIC PRODUCER</span>
+<h3 class="text-3xl font-headline font-bold text-white mt-1">JUANITA</h3>
+</div>
+<div class="relative">
+<span class="absolute -top-6 -left-4 text-5xl text-[#ffbc00] opacity-20 font-serif">“</span>
+<p class="text-lg md:text-xl font-light italic leading-relaxed text-on-surface/80 tracking-wide">
+                            "Rhythm is a language, but AI is the translator for the 21st century. I came here to see if I could teach a machine the soul of Cumbia. I found that I wasn't teaching a machine; I was expanding my own reach. The Lab is a sanctuary where my heritage is the primary source code, not an afterthought."
+                        </p>
+</div>
+</div>
 </div>
 </div>
 <!-- Luis -->
-<div class="relative group h-[600px] overflow-hidden">
-<img class="w-full h-full object-cover grayscale brightness-75 group-hover:scale-110 transition-transform duration-700" data-alt="Close-up black and white portrait of Luis with a slight smile in dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv5D6xp_cclMYNcisBFDQPAOrXM9ZGRgo2AzppA9zX0EpC4cU5C7xlwny9SNoKPK7II2QoThu1pJtCBHtPZF8CwShRo5VQUbEL-AoWKbY03s093t7EkX-DEqGCrZpfOc5pKQSbphK5107v-jjWhUIjZ_9FTw5UHRZOtXdkVApmC28W8hMNZaAUG2idYYWjaCOvonDiSTkQRHG-kuZlCMZdLf6ZnmiUtIq3WHfz2RupD76aTJI826spW-vF2_TyvSS0vjTNfa7DB7U"/>
-<div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90"></div>
-<div class="absolute bottom-8 left-8 right-8 space-y-2">
-<p class="font-label text-amber-500 text-[10px] tracking-widest uppercase">Luis</p>
-<p class="font-body text-sm leading-snug text-zinc-300">"The studio is where the resistance begins."</p>
+<div class="min-w-full h-full flex items-center justify-center snap-center px-24 pt-48 pb-32">
+<div class="grid grid-cols-12 gap-12 items-center w-full max-w-6xl">
+<div class="col-span-4 aspect-[4/5] overflow-hidden border border-white/10 group">
+<img alt="Luis" class="w-full h-full object-cover grayscale brightness-105 transition-all duration-1000 group-hover:brightness-120 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV3B3tg76T_-DVKRGOYQPt5qrnGA2q68rxy2_ggaOjRywP6DHfFwlUZiYIE_p-JpvOTDtKPNHFf2AZUr2qUUcl9UR2eGcgP3HgFD4QJLTTex6adr_D663eEn3ADqWDCVSq1Bk2XDSgpPHdviO4yOARq65KQdiQV0Ic9vjSO1m2S7wP1wYK15rr8jk3d5VtlAoJbay_Se5REIinQjQGeq81W7Rynyxloam6hYXf9sAwI857KNPdTyn7UxU7iKcwQ0H_BE6qYzkm6nQ"/>
+</div>
+<div class="col-span-8 pl-8">
+<div class="mb-4">
+<span class="text-[#ffbc00] font-headline text-xs tracking-widest font-bold">PORTUGAL / 26 / OCEANOGRAPHER &amp; FILM</span>
+<h3 class="text-3xl font-headline font-bold text-white mt-1">LUIS</h3>
+</div>
+<div class="relative">
+<span class="absolute -top-6 -left-4 text-5xl text-[#ffbc00] opacity-20 font-serif">“</span>
+<p class="text-lg md:text-xl font-light italic leading-relaxed text-on-surface/80 tracking-wide">
+                            "Living by the Atlantic, you learn that the biggest forces are the ones you can't see. Amber Lab provided the lens to visualize the invisible data of our oceans through generative cinema. The contrast of the rough coast and the precision of the Lab has given me a new perspective on how technology can serve nature, rather than consume it."
+                        </p>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-4 z-20">
+<button class="w-2 h-2 rounded-full bg-[#ffbc00] opacity-100 pilot-dot" data-index="0"></button>
+<button class="w-2 h-2 rounded-full bg-white opacity-30 pilot-dot" data-index="1"></button>
+<button class="w-2 h-2 rounded-full bg-white opacity-30 pilot-dot" data-index="2"></button>
+<button class="w-2 h-2 rounded-full bg-white opacity-30 pilot-dot" data-index="3"></button>
+<button class="w-2 h-2 rounded-full bg-white opacity-30 pilot-dot" data-index="4"></button>
 </div>
 </section>
-<!-- Budget Allocation Section -->
-<section class="h-screen w-full flex items-center justify-center bg-black px-10 md:px-24" id="budget">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-20 w-full">
-<div class="flex items-center justify-center">
-<!-- Interactive Chart Simulation -->
-<div class="relative w-96 h-96">
-<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
-<!-- Green Computing -->
-<circle cx="50" cy="50" fill="transparent" r="40" stroke="#ffbc00" stroke-dasharray="125.6 251.2" stroke-opacity="0.8" stroke-width="12"></circle>
-<!-- Direct Creator Support -->
-<circle cx="50" cy="50" fill="transparent" r="40" stroke="#ffbc00" stroke-dasharray="75.36 251.2" stroke-dashoffset="-125.6" stroke-opacity="0.6" stroke-width="12"></circle>
-<!-- Guest Artist Residency -->
-<circle cx="50" cy="50" fill="transparent" r="40" stroke="#ffbc00" stroke-dasharray="67 251.2" stroke-dashoffset="-200.96" stroke-opacity="0.4" stroke-width="12"></circle>
-<!-- Community Outreach -->
-<circle cx="50" cy="50" fill="transparent" r="40" stroke="#ffbc00" stroke-dasharray="25 251.2" stroke-dashoffset="-267.96" stroke-opacity="0.2" stroke-width="12"></circle>
-<!-- Data Sovereignty -->
-<circle cx="50" cy="50" fill="transparent" r="40" stroke="#ffffff" stroke-dasharray="8.4 251.2" stroke-dashoffset="-292.96" stroke-width="14"></circle>
+<!-- Section 6: Budget Allocation -->
+<section class="scroll-section bg-surface flex flex-col justify-start px-24 pt-48 pb-12" id="budget" style="scroll-snap-align: start; scroll-snap-stop: always;">
+<div class="grid grid-cols-12 gap-12 mb-8">
+<div class="col-span-6">
+<h2 class="text-6xl font-bold font-headline">Budget Allocation</h2>
+<div class="mt-6 border-l-4 border-[#ffbc00] pl-6 mb-12">
+<h3 class="text-xs font-headline tracking-widest text-[#ffbc00] uppercase mb-2">Vision &amp; Core Philosophy</h3>
+<p class="text-on-surface text-xl font-light leading-relaxed">
+                    Transforming €1.8M into a sanctuary for underrepresented storytellers, setting a global standard for ethical AI.
+                </p>
+</div>
+<div class="flex items-center gap-12 bg-surface-container-lowest p-8">
+<div class="relative shrink-0">
+<svg class="w-64 h-64 transform -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#2a2a2a" stroke-width="20"></circle>
+<circle class="cursor-pointer transition-all duration-500 hover:stroke-[#ffe2ab]" cx="50" cy="50" data-label="Green Computing" data-value="€750k" fill="transparent" id="slice-1" r="40" stroke="#ffbc00" stroke-dasharray="104.5 251.2" stroke-dashoffset="0" stroke-width="20"></circle>
+<circle class="cursor-pointer transition-all duration-500 hover:stroke-[#ffdad4]" cx="50" cy="50" data-label="Direct Creator Support" data-value="€450k" fill="transparent" id="slice-2" r="40" stroke="#ffb4a8" stroke-dasharray="62.8 251.2" stroke-dashoffset="-104.5" stroke-width="20"></circle>
+<circle class="cursor-pointer transition-all duration-500 hover:stroke-white" cx="50" cy="50" data-label="Guest Artist Residency" data-value="€400k" fill="transparent" id="slice-3" r="40" stroke="#e2e2e2" stroke-dasharray="55.8 251.2" stroke-dashoffset="-167.3" stroke-width="20"></circle>
+<circle class="cursor-pointer transition-all duration-500 hover:stroke-[#ffbf00]" cx="50" cy="50" data-label="Community Outreach" data-value="€150k" fill="transparent" id="slice-4" r="40" stroke="#795900" stroke-dasharray="20.8 251.2" stroke-dashoffset="-223.1" stroke-width="20"></circle>
+<circle class="cursor-pointer transition-all duration-500 hover:stroke-white" cx="50" cy="50" data-label="Data Sovereignty" data-value="€50k" fill="transparent" id="slice-5" r="40" stroke="#ffffff" stroke-dasharray="7.1 251.2" stroke-dashoffset="-243.9" stroke-width="20"></circle>
 </svg>
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="text-center">
-<p class="font-label text-[10px] tracking-[0.4em] opacity-40">TOTAL</p>
-<p class="font-headline text-4xl font-bold">€1.8M</p>
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="text-[8px] font-mono text-[#ffbc00] tracking-[0.2em]">TOTAL</span>
+<span class="text-2xl font-bold font-headline text-white">€1.8M</span>
+</div>
+</div>
+<div class="flex-1 h-32 border-l border-outline-variant pl-8 flex flex-col justify-center" id="chart-detail">
+<h3 class="text-[10px] font-headline tracking-widest text-on-surface/40 uppercase mb-1" id="detail-label">Hover a segment</h3>
+<p class="text-3xl font-bold font-headline text-[#ffbc00]" id="detail-value">--</p>
+</div>
+</div>
+</div>
+<div class="col-span-6 flex flex-col justify-between pt-2">
+<div>
+<h3 class="text-xs font-headline tracking-widest text-[#ffbc00] uppercase mb-6">Investment Legend</h3>
+<div class="grid grid-cols-1 gap-4 text-[11px] font-mono tracking-tight">
+<!-- Legend Items -->
+<div class="flex gap-3 items-start group">
+<div class="w-3 h-3 mt-0.5 shrink-0 bg-[#ffbc00]"></div>
+<div>
+<span class="text-[#ffbc00] font-bold block mb-1">GREEN COMPUTING - €750,000</span>
+<p class="text-on-surface/50 leading-relaxed">High-GPU local workstations to reduce cloud energy; carbon-offsetting for all AI processing.</p>
+</div>
+</div>
+<div class="flex gap-3 items-start group">
+<div class="w-3 h-3 mt-0.5 shrink-0 bg-[#ffb4a8]"></div>
+<div>
+<span class="text-[#ffb4a8] font-bold block mb-1">DIRECT CREATOR SUPPORT - €450,000</span>
+<p class="text-on-surface/50 leading-relaxed">€15k stipends for 30 creators, removing the “poverty barrier” to digital literacy.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="flex flex-col justify-center space-y-6">
-<h5 class="font-headline text-3xl font-bold tracking-tight mb-8">CAPITAL ALLOCATION</h5>
-<div class="space-y-4">
-<div class="flex items-center justify-between border-b border-white/5 pb-2">
-<span class="font-body text-zinc-400">Green Computing</span>
-<span class="font-label text-amber-500">€750,000</span>
-</div>
-<div class="flex items-center justify-between border-b border-white/5 pb-2">
-<span class="font-body text-zinc-400">Direct Creator Support</span>
-<span class="font-label text-amber-500">€450,000</span>
-</div>
-<div class="flex items-center justify-between border-b border-white/5 pb-2">
-<span class="font-body text-zinc-400">Guest Artist Residency</span>
-<span class="font-label text-amber-500">€400,000</span>
-</div>
-<div class="flex items-center justify-between border-b border-white/5 pb-2">
-<span class="font-body text-zinc-400">Community Outreach</span>
-<span class="font-label text-amber-500">€150,000</span>
-</div>
-<div class="flex items-center justify-between py-2 bg-white/5 px-4 -mx-4">
-<span class="font-body text-white font-bold">Data Sovereignty</span>
-<span class="font-label text-white">€50,000</span>
-</div>
+<div class="pt-12 flex justify-end">
+<a class="inline-flex items-center gap-4 group" href="budget.html">
+<span class="text-sm font-headline tracking-widest">FULL BUDGET BREAKDOWN</span>
+<span class="material-symbols-outlined text-[#ffbc00] group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
 </div>
 </div>
 </div>
 </section>
-<!-- Contact Section -->
-<section class="h-screen w-full flex flex-col items-center justify-center bg-zinc-950 px-10" id="contact">
-<div class="text-center space-y-8">
-<h6 class="font-headline text-7xl md:text-[12vw] font-black tracking-tighter leading-none">GET IN TOUCH!</h6>
-<div class="group cursor-pointer">
-<a class="font-label text-xl md:text-3xl tracking-[0.2em] text-amber-500 hover:text-white transition-colors duration-500" href="mailto:LAB@AMBER.STUDIO">
-                        LAB@AMBER.STUDIO
-                    </a>
-<div class="h-[1px] w-0 group-hover:w-full bg-white transition-all duration-700 mx-auto mt-2"></div>
+<!-- Section 7: Get in Touch & Footer -->
+<section class="scroll-section bg-surface-container-lowest flex flex-col justify-between" id="about-contact" style="scroll-snap-align: start; scroll-snap-stop: always;">
+<div class="flex-1 flex flex-col items-center justify-center px-12 text-center">
+<h2 class="text-5xl md:text-7xl font-bold font-headline tracking-widest text-[#ffbc00] mb-12">GET IN TOUCH!</h2>
+<a class="text-2xl md:text-3xl font-light font-headline hover:text-[#ffbc00] transition-colors duration-700 opacity-60" href="mailto:hello@amberlab.ai">
+            LAB@AMBER.STUDIO
+        </a>
+<div class="mt-24 flex gap-12 text-[10px] font-mono tracking-widest text-on-surface/30">
+<span class="hover:text-on-surface cursor-pointer">INSTAGRAM</span>
+<span class="hover:text-on-surface cursor-pointer">X.COM</span>
+<span class="hover:text-on-surface cursor-pointer">LINKEDIN</span>
 </div>
 </div>
-</section>
-<!-- Footer Shell -->
-<footer class="bg-zinc-950 w-full rounded-none border-t border-zinc-800/10 flex justify-between items-center px-10 py-8 w-full border-t border-white/5 font-['Inter'] text-[10px] tracking-widest uppercase">
-<div class="text-zinc-600">
-                © 2024 AMBER LAB. ALL RIGHTS RESERVED.
-            </div>
-<div class="flex gap-8">
-<a class="text-zinc-600 hover:text-zinc-200 transition-opacity ease-in-out duration-300" href="#">Identity</a>
-<a class="text-zinc-600 hover:text-zinc-200 transition-opacity ease-in-out duration-300" href="#">Cinematics</a>
-<a class="text-zinc-600 hover:text-zinc-200 transition-opacity ease-in-out duration-300" href="#">Archive</a>
-</div>
+<footer class="w-full py-12 px-12 flex justify-center text-center bg-[#131313]">
+<p class="text-[10px] font-mono tracking-tighter text-[#e2e2e2] uppercase">
+            AMBER LAB, providing generative AI to Europe's creatives, hosted by the Nordics.
+        </p>
 </footer>
-</main>
+</section>
+<script>
+    // Navigation Menu Logic
+    const menuToggle = document.getElementById('menu-toggle');
+    const diagonalMenu = document.getElementById('diagonal-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    let menuOpen = false;
+
+    const navToggle = (e) => {
+        if(e) e.preventDefault();
+        menuOpen = !menuOpen;
+        menuToggle.setAttribute('aria-expanded', menuOpen);
+        
+        if (menuOpen) {
+            diagonalMenu.classList.add('active');
+            menuIcon.innerText = 'close';
+            document.body.style.overflow = 'hidden';
+        } else {
+            diagonalMenu.classList.remove('active');
+            menuIcon.innerText = 'add';
+            document.body.style.overflow = 'auto';
+        }
+    };
+
+    menuToggle.addEventListener('click', navToggle);
+
+    // Audio Player Logic
+    const podcastAudio = document.getElementById('podcast-audio');
+    const audioPlayBtn = document.getElementById('audio-play-btn');
+    const playIcon = document.getElementById('play-icon');
+    const audioProgress = document.getElementById('audio-progress');
+    const audioCurrent = document.getElementById('audio-current');
+    const audioDuration = document.getElementById('audio-duration');
+    const audioBars = document.getElementById('audio-bars').children;
+
+    const formatTime = (time) => {
+        const mins = Math.floor(time / 60);
+        const secs = Math.floor(time % 60);
+        return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    };
+
+    podcastAudio.addEventListener('loadedmetadata', () => {
+        audioDuration.innerText = formatTime(podcastAudio.duration);
+    });
+
+    audioPlayBtn.addEventListener('click', () => {
+        if (podcastAudio.paused) {
+            podcastAudio.play();
+            playIcon.innerText = 'pause';
+        } else {
+            podcastAudio.pause();
+            playIcon.innerText = 'play_arrow';
+        }
+    });
+
+    podcastAudio.addEventListener('timeupdate', () => {
+        const progress = (podcastAudio.currentTime / podcastAudio.duration) * 100;
+        audioProgress.style.width = `${progress}%`;
+        audioCurrent.innerText = formatTime(podcastAudio.currentTime);
+        
+        // Simple visualizer effect
+        if (!podcastAudio.paused) {
+            Array.from(audioBars).forEach(bar => {
+                bar.style.height = `${Math.random() * 20 + 5}px`;
+            });
+        }
+    });
+
+    podcastAudio.addEventListener('ended', () => {
+        playIcon.innerText = 'play_arrow';
+        audioProgress.style.width = '0%';
+        Array.from(audioBars).forEach(bar => bar.style.height = '4px');
+    });
+
+    // Vision Video Playback
+    const visionVideo = document.getElementById('vision-video');
+    const visionSection = document.getElementById('vision');
+
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                visionVideo.play().catch(e => console.log("Autoplay check:", e));
+            } else {
+                visionVideo.pause();
+            }
+        });
+    }, { threshold: 0.1 });
+
+    if (visionSection && visionVideo) {
+        videoObserver.observe(visionSection);
+    }
+
+    // Scroll lock for 8 seconds (initial landing)
+    let canScroll = false;
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+        canScroll = true;
+        document.body.style.overflow = 'auto';
+    }, 8000);
+
+    // Nav Links smooth scroll
+    document.querySelectorAll('a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    if (menuOpen) navToggle();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+
+    // Chart detail logic
+    const slices = document.querySelectorAll('svg circle[id^="slice-"]');
+    const detailLabel = document.getElementById('detail-label');
+    const detailValue = document.getElementById('detail-value');
+
+    slices.forEach(slice => {
+        slice.addEventListener('mouseenter', () => {
+            detailLabel.innerText = slice.getAttribute('data-label');
+            detailValue.innerText = slice.getAttribute('data-value');
+            slice.style.strokeWidth = "24px";
+        });
+        slice.addEventListener('mouseleave', () => {
+            detailLabel.innerText = "Hover a segment";
+            detailValue.innerText = "--";
+            slice.style.strokeWidth = "20px";
+        });
+    });
+
+    // Pilot Carousel Logic
+    const pilotScroller = document.getElementById('pilot-scroller');
+    const pilotDots = document.querySelectorAll('.pilot-dot');
+    
+    if(pilotScroller) {
+        pilotScroller.addEventListener('scroll', () => {
+            const index = Math.round(pilotScroller.scrollLeft / pilotScroller.clientWidth);
+            pilotDots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('bg-[#ffbc00]', 'opacity-100');
+                    dot.classList.remove('bg-white', 'opacity-30');
+                } else {
+                    dot.classList.remove('bg-[#ffbc00]', 'opacity-100');
+                    dot.classList.add('bg-white', 'opacity-30');
+                }
+            });
+        });
+
+        pilotDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const index = dot.getAttribute('data-index');
+                pilotScroller.scrollTo({
+                    left: index * pilotScroller.clientWidth,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    }
+</script>
 </body></html>
