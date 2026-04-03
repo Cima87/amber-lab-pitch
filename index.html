@@ -141,8 +141,8 @@
     </button>
 </div>
 <!-- Navigation Shell: TopNavBar -->
-<nav class="fixed top-0 left-0 w-full z-[1001] flex justify-between items-center px-12 py-8 bg-transparent border-none font-headline tracking-widest uppercase">
-<button aria-expanded="false" class="flex items-center group relative z-[9999]" id="menu-toggle">
+<nav class="fixed top-0 left-0 w-full flex justify-between items-center px-12 py-8 bg-transparent border-none font-headline tracking-widest uppercase z-[10000]">
+<button aria-expanded="false" class="flex items-center group relative z-[10001]" id="menu-toggle">
 <span class="material-symbols-outlined text-[#ffbc00] text-3xl transition-transform duration-700 ease-in-out group-active:scale-95" id="menu-icon">add</span>
 </button>
 <a class="absolute left-1/2 -translate-x-1/2 text-xl font-bold tracking-[0.2em] text-[#ffbc00] hover:opacity-80 transition-opacity" href="#hero">
@@ -577,8 +577,7 @@
         </p>
 </footer>
 </section>
-<script>
-    const vimeoId = '1179874118';
+<script>const vimeoId = '1179874118';
     
     // UI Elements
     const introScreen = document.getElementById('intro-screen');
@@ -595,42 +594,33 @@
 
     // First Interaction: Enter
     enterBtn.addEventListener('click', () => {
-        // Dynamic Vimeo Injection
         vimeoContainer.innerHTML = `
             <div style="padding:0; position:relative; width:100%; height:100%;">
-                <iframe id="vimeo-iframe" src="https://player.vimeo.com/video/${vimeoId}?autoplay=1&title=0&byline=0&portrait=0&controls=0&dnt=1" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        title="AMBER LAB HERO">
-                </iframe>
-            </div>
+<iframe allow="autoplay; fullscreen; picture-in-picture" frameborder="0" id="vimeo-iframe" src="https://player.vimeo.com/video/${vimeoId}?autoplay=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=0&amp;dnt=1" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="AMBER LAB HERO">
+</iframe>
+</div>
         `;
 
         const iframe = document.getElementById('vimeo-iframe');
         player = new Vimeo.Player(iframe);
 
-        // Listen for video end
         player.on('ended', () => {
             outroScreen.classList.add('active');
         });
 
-        // Fade out intro
         introScreen.style.opacity = '0';
         setTimeout(() => {
             introScreen.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Re-enable scroll
+            document.body.style.overflow = 'auto';
         }, 1200);
     });
 
-    // Replay Interaction
     replayBtn.addEventListener('click', () => {
         outroScreen.classList.remove('active');
         player.setCurrentTime(0);
         player.play();
     });
 
-    // Navigation logic
     const navToggle = (e) => {
         if(e) e.preventDefault();
         menuOpen = !menuOpen;
@@ -649,7 +639,6 @@
 
     menuToggle.addEventListener('click', navToggle);
 
-    // Audio Player Logic (Preserved)
     const podcastAudio = document.getElementById('podcast-audio');
     const audioPlayBtn = document.getElementById('audio-play-btn');
     const playIcon = document.getElementById('play-icon');
@@ -692,7 +681,6 @@
         });
     }
 
-    // Vision Video Playback (Preserved)
     const visionVideo = document.getElementById('vision-video');
     const visionSection = document.getElementById('vision');
     const videoObserver = new IntersectionObserver((entries) => {
@@ -706,7 +694,6 @@
     }, { threshold: 0.1 });
     if (visionSection && visionVideo) videoObserver.observe(visionSection);
 
-    // Chart detail logic (Preserved)
     const slices = document.querySelectorAll('svg circle[id^="slice-"]');
     const detailLabel = document.getElementById('detail-label');
     const detailValue = document.getElementById('detail-value');
@@ -723,7 +710,6 @@
         });
     });
 
-    // Smooth scroll for anchors
     document.querySelectorAll('a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
@@ -738,7 +724,6 @@
         });
     });
 
-    // Pilot Carousel Logic (Preserved)
     const pilotScroller = document.getElementById('pilot-scroller');
     const pilotDots = document.querySelectorAll('.pilot-dot');
     if(pilotScroller) {
@@ -760,6 +745,5 @@
                 pilotScroller.scrollTo({ left: index * pilotScroller.clientWidth, behavior: 'smooth' });
             });
         });
-    }
-</script>
+    }</script>
 ```</body></html>
